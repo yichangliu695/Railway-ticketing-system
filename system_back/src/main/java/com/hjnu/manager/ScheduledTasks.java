@@ -1,4 +1,4 @@
-package com.hjnu;
+package com.hjnu.manager;
 
 
 import com.hjnu.bean.AllOrder;

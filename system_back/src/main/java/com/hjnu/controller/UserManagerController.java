@@ -1,5 +1,9 @@
 package com.hjnu.controller;
 
+import com.hjnu.model.po.PassengerInfo;
+import com.hjnu.model.po.User;
+import com.hjnu.model.vo.UserInfo;
+import com.hjnu.model.vo.UserInfoReturnData;
 import com.hjnu.utils.RedisUtils;
 import com.hjnu.bean.*;
 import com.hjnu.service.PassengerService;

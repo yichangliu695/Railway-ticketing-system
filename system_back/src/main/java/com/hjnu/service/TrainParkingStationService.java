@@ -1,6 +1,6 @@
 package com.hjnu.service;
 
-import com.hjnu.bean.TrainParkingInfo;
+import com.hjnu.model.po.TrainParkingInfo;
 import com.hjnu.dao.TrainParkingStationDao;
 import org.springframework.stereotype.Service;
 

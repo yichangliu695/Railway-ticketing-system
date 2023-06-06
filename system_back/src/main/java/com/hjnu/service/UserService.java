@@ -1,10 +1,8 @@
 package com.hjnu.service;
 
-import com.hjnu.bean.User;
+import com.hjnu.model.po.User;
 import com.hjnu.bean.UserLogin;
 import com.hjnu.dao.UserDao;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 

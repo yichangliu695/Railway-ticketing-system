@@ -3,7 +3,7 @@ package com.hjnu.controller;
 import com.hjnu.utils.RedisUtils;
 import com.hjnu.bean.RespBean;
 import com.hjnu.service.PassengerService;
-import com.hjnu.bean.PassengerInfo;
+import com.hjnu.model.po.PassengerInfo;
 import com.hjnu.bean.PassengerInfoReturnData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,8 @@
 package com.hjnu.dao;
 
-import com.hjnu.bean.SeatInfo;
-import com.hjnu.bean.TrainInfo;
-import com.hjnu.bean.TrainParkingInfo;
+import com.hjnu.model.po.SeatInfo;
+import com.hjnu.model.po.TrainInfo;
+import com.hjnu.model.po.TrainParkingInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

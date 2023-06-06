@@ -2,143 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e6a1b75-298f-44a7-a7c4-20164ed4b530" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/AddPassenger.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/AddPassenger.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/AllOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/AllOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ChangePassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ChangePassword.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ChangeUserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ChangeUserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/NoTripOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/NoTripOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/PassengerInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/PassengerInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TicketChange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TicketChange.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TicketOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TicketOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TrainInfoList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainInfoList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TrainParkingInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainParkingInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TrainSchedule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainSchedule.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TrainTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainTransfer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TrainTransferTicketQuery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainTransferTicketQuery.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/TransferTicketOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TransferTicketOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/manage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/manage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ticketInquiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ticketInquiry.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/GetAllUserReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/GetAllUserReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/PassengerInfoReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/PassengerInfoReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/SearchTrainInfoReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/SearchTrainInfoReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/SeatInfoReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/SeatInfoReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/TrainInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/TrainInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/TrainInfoReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/TrainInfoReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/TrainParkingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/TrainParkingInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/TrainParkingInfoReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/bean/TrainParkingInfoReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/config/GlobalCorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/PassengerManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/PassengerManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainInfoSelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainInfoSelectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainTicketOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainTicketOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/UserManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/UserManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/PassengerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainParkingStationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainParkingStationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainTicketOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainTicketOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/manager/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/manager/ScheduledTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/OrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/PassengerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/PassengerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/SeatInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/SeatInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/UserInfoReturnData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/UserInfoReturnData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/PassengerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/TrainInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/TrainParkingStationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/TrainParkingStationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/TrainTicketOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/TrainTicketOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/utils/RedisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/utils/RedisUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/resources/application.yml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrainInfoList.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TrainInfoList.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainParkingInfo.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TrainParkingInfo.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="n#style#0;n#el-row#0;n#el-form#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainSchedule.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TrainSchedule.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="n#style#0;n#el-row#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#el-col#1;n#el-row#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-switch#0;n#el-row#0;n#el-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-table#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-row#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#el-col#0;n#el-row#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#el-row#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainTransfer.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TrainTransfer.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainTransferTicketQuery.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TrainTransferTicketQuery.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransferTicketOrder.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TransferTicketOrder.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfo.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/UserInfo.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vueEdit.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/vueEdit.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketChange.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/TicketChange.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5115">
-              <caret line="341" column="148" selection-start-line="341" selection-start-column="148" selection-end-line="341" selection-end-column="148" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ticketInquiry.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/page/ticketInquiry.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -161,7 +65,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/page/ChangePassword.vue" root0="SKIP_INSPECTION" />
@@ -230,6 +134,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
@@ -241,6 +148,7 @@
     <option name="width" value="1440" />
     <option name="height" value="825" />
   </component>
+  <component name="ProjectId" id="2QpHo38SvtQ5nrTaqiP3G2DLMFR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -313,22 +221,20 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.12.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Coding/train_ticket_system/system_front",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/api" />
@@ -338,21 +244,11 @@
       <recent name="$PROJECT_DIR$/src/image" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.dev">
-    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2-manage/manage/index.html" />
-    <configuration name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2-manage/manage/index.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -360,8 +256,20 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
     </configuration>
-    <configuration name="local" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="local" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -369,20 +277,24 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="npm.dev (1)" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.local" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.local" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -436,6 +348,7 @@
       <workItem from="1566893384911" duration="5383000" />
       <workItem from="1567005421317" duration="3114000" />
       <workItem from="1567251934790" duration="425000" />
+      <workItem from="1686043775711" duration="148000" />
     </task>
     <servers />
   </component>
@@ -476,15 +389,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/node_modules/karma/config.tpl.js" />
-      </list>
-    </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -510,7 +415,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">

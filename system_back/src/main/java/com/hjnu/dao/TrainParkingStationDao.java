@@ -1,6 +1,6 @@
 package com.hjnu.dao;
 
-import com.hjnu.bean.TrainParkingInfo;
+import com.hjnu.model.po.TrainParkingInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

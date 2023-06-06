@@ -1,8 +1,7 @@
 package com.hjnu.service;
 
-import com.hjnu.bean.PassengerInfo;
+import com.hjnu.model.po.PassengerInfo;
 import com.hjnu.dao.PassengerDao;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

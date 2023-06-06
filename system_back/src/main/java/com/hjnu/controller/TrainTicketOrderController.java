@@ -1,6 +1,7 @@
 package com.hjnu.controller;
 
 
+import com.hjnu.model.po.OrderList;
 import com.hjnu.utils.RedisUtils;
 import com.hjnu.bean.*;
 import com.hjnu.service.OrderListService;
