@@ -1,7 +1,5 @@
 package com.hjnu.controller;
 
-
-import com.example.db_design_service.bean.*;
 import com.hjnu.bean.*;
 import com.hjnu.service.TrainInfoService;
 import com.hjnu.service.TrainParkingStationService;

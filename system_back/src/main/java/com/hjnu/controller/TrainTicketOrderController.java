@@ -1,8 +1,7 @@
 package com.hjnu.controller;
 
 
-import com.hjnu.RedisUtils;
-import com.example.db_design_service.bean.*;
+import com.hjnu.utils.RedisUtils;
 import com.hjnu.bean.*;
 import com.hjnu.service.OrderListService;
 import com.hjnu.service.TrainParkingStationService;
