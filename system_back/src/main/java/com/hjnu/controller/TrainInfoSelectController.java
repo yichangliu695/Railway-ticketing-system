@@ -1,6 +1,9 @@
 package com.hjnu.controller;
 
 import com.hjnu.bean.*;
+import com.hjnu.model.po.SeatInfo;
+import com.hjnu.model.po.TrainInfo;
+import com.hjnu.model.po.TrainParkingInfo;
 import com.hjnu.service.TrainInfoService;
 import com.hjnu.service.TrainParkingStationService;
 import org.slf4j.Logger;

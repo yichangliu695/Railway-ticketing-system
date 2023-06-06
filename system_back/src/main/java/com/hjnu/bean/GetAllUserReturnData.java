@@ -1,5 +1,7 @@
 package com.hjnu.bean;
 
+import com.hjnu.model.po.User;
+
 import java.util.List;
 
 public class GetAllUserReturnData {

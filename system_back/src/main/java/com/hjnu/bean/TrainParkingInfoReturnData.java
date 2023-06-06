@@ -1,5 +1,7 @@
 package com.hjnu.bean;
 
+import com.hjnu.model.po.TrainParkingInfo;
+
 import java.util.List;
 
 /**

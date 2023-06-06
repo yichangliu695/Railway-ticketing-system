@@ -1,6 +1,6 @@
 package com.hjnu.dao;
 
-import com.hjnu.bean.PassengerInfo;
+import com.hjnu.model.po.PassengerInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

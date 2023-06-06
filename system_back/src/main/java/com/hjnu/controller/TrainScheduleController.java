@@ -29,6 +29,7 @@ public class TrainScheduleController {
 
     @Resource
     private TrainScheduleService trainScheduleService;
+
     @Resource
     private RedisUtils redisUtils;
     private static final Logger logger = LoggerFactory.getLogger(TrainInfoSelectController.class);

@@ -5,14 +5,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configuration
-
 /**
+ *
  *在服务端解决跨域问题
  *接受客户端的option请求并返回
  *
- *
  */
+
+@Configuration
 public class GlobalCorsConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {

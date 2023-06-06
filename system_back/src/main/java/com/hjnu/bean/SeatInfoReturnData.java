@@ -1,5 +1,7 @@
 package com.hjnu.bean;
 
+import com.hjnu.model.po.SeatInfo;
+
 import java.util.List;
 
 public class SeatInfoReturnData {

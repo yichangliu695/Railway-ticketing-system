@@ -1,6 +1,6 @@
 package com.hjnu.dao;
 
-import com.hjnu.bean.User;
+import com.hjnu.model.po.User;
 import com.hjnu.bean.UserLogin;
 import org.apache.ibatis.annotations.*;
 

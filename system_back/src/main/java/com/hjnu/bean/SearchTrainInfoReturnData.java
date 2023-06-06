@@ -1,5 +1,7 @@
 package com.hjnu.bean;
 
+import com.hjnu.model.po.TrainInfo;
+
 /**
  *
  * 作为查找 列车信息  的返回类

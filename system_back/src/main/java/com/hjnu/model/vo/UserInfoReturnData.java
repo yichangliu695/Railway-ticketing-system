@@ -1,4 +1,7 @@
-package com.hjnu.bean;
+package com.hjnu.model.vo;
+
+import com.hjnu.model.vo.UserInfo;
+
 /**
  *
  *

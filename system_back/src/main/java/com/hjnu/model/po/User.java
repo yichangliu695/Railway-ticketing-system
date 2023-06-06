@@ -1,4 +1,4 @@
-package com.hjnu.bean;
+package com.hjnu.model.po;
 
 import javax.xml.crypto.Data;
 import java.util.Date;

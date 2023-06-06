@@ -1,5 +1,7 @@
 package com.hjnu.bean;
 
+import com.hjnu.model.po.PassengerInfo;
+
 import java.util.List;
 
 /**

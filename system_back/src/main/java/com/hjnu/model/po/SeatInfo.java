@@ -1,4 +1,4 @@
-package com.hjnu.bean;
+package com.hjnu.model.po;
 
 public class SeatInfo {
     private String train_no;

@@ -1,4 +1,4 @@
-package com.hjnu.bean;
+package com.hjnu.model.po;
 
 /**、
  *乘客类   对应数据的passenger表
