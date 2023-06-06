@@ -1,6 +1,6 @@
 package com.hjnu.controller;
 
-import com.hjnu.RedisUtils;
+import com.hjnu.utils.RedisUtils;
 import com.hjnu.bean.*;
 import com.hjnu.service.PassengerService;
 import com.hjnu.service.UserService;
@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import com.example.db_design_service.bean.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
