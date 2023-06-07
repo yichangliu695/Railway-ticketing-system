@@ -1,9 +1,9 @@
 package com.hjnu.controller;
 
+import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
 import com.hjnu.service.TrainScheduleService;
 import com.hjnu.service.TrainTickerQueryService;
-import com.hjnu.bean.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;

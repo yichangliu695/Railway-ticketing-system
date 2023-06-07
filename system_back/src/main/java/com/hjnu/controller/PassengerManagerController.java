@@ -1,10 +1,10 @@
 package com.hjnu.controller;
 
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.bean.RespBean;
+import com.hjnu.model.vo.RespBean;
 import com.hjnu.service.PassengerService;
 import com.hjnu.model.po.PassengerInfo;
-import com.hjnu.bean.PassengerInfoReturnData;
+import com.hjnu.model.vo.PassengerInfoReturnData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;

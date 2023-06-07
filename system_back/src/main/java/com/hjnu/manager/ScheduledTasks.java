@@ -1,8 +1,8 @@
 package com.hjnu.manager;
 
 
-import com.hjnu.bean.AllOrder;
-import com.hjnu.bean.GetAllNoTripData;
+import com.hjnu.model.vo.AllOrder;
+import com.hjnu.model.vo.GetAllNoTripData;
 import com.hjnu.service.OrderListService;
 import com.hjnu.service.TrainTicketOrderService;
 import org.springframework.scheduling.annotation.Scheduled;

@@ -1,9 +1,9 @@
 package com.hjnu.controller;
 
-import com.hjnu.bean.*;
 import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
+import com.hjnu.model.vo.*;
 import com.hjnu.service.TrainInfoService;
 import com.hjnu.service.TrainParkingStationService;
 import org.slf4j.Logger;
@@ -42,7 +42,7 @@ public class TrainInfoSelectController {
      * @return
      */
     @RequestMapping(value ="/traininfo",method = RequestMethod.GET)
-    public TrainInfoReturnData TrainInfo(Integer offset,Integer limit)
+    public TrainInfoReturnData TrainInfo(Integer offset, Integer limit)
     {
 
         List<TrainInfo>  trainInfos = trainInfoService.selectAllTrainInfo(offset,limit);

@@ -2,10 +2,8 @@ package com.hjnu.controller;
 
 import com.hjnu.model.po.PassengerInfo;
 import com.hjnu.model.po.User;
-import com.hjnu.model.vo.UserInfo;
-import com.hjnu.model.vo.UserInfoReturnData;
+import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.bean.*;
 import com.hjnu.service.PassengerService;
 import com.hjnu.service.UserService;
 import org.slf4j.Logger;
@@ -49,25 +47,21 @@ public class UserManagerController {
     @RequestMapping(value ="/login",method = RequestMethod.POST)
     public RespBean UserLogin(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
 
-
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult.getFieldError().getDefaultMessage());
         }
         String username = (String) request.get("user_name");
         String password = (String) request.get("password");
 
-        try
-        {
+        try {
             /**
-             *
              * 查找是否有此用户
              */
 
             List<UserLogin> userlogins = userService.selectAllUserLogin();
 
             for (UserLogin userlogin : userlogins) {
-                if (userlogin.getUser_phone_number().equals(username)  && userlogin.getUser_password().equals(password))
-                {
+                if (userlogin.getUser_phone_number().equals(username)  && userlogin.getUser_password().equals(password)) {
                     logger.info("登录信息如下");
                     logger.info(username);
                     logger.info(password);
@@ -77,17 +71,10 @@ public class UserManagerController {
                     User user  = userService.selectUserInfo(userlogin.getUser_phone_number());
                     String token =user.getUser_real_name()+","+user.getUser_phone_number()+","+user.getUser_email()+","+user.getUser_type()+","+user.getUser_gender()
                             +","+user.getUser_id_number()+","+user.getUser_address();
-                    //                Token token =new Token(userlogin.getUser_phone_number()+"+++"+userlogin.getUser_password());
-//                String [] roles= new String[1];
-//                roles[0] = "admin";
-//                User user = userService.selectUserInfo(userlogin.getUser_phone_number());
-//                UserInfoReturnData data = new UserInfoReturnData(roles,user.getUser_phone_number(),user.getUser_id_number(),user.getUser_real_name());
-
                     /**
                      * 将用户登陆信息存入token中
                      */
                     redisUtils.set(userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password(),token);
-//                        redisUtils.get(token.getToken());
 
                     return new RespBean(1,userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password());
 
@@ -95,8 +82,7 @@ public class UserManagerController {
             }
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e) {
             logger.info("登录失败");
             return new RespBean(404, "失败");
         }

@@ -1,7 +1,7 @@
 package com.hjnu.service;
 
 import com.hjnu.model.po.User;
-import com.hjnu.bean.UserLogin;
+import com.hjnu.model.vo.UserLogin;
 import com.hjnu.dao.UserDao;
 import org.springframework.stereotype.Service;
 

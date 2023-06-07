@@ -2,8 +2,8 @@ package com.hjnu.controller;
 
 
 import com.hjnu.model.po.OrderList;
+import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.bean.*;
 import com.hjnu.service.OrderListService;
 import com.hjnu.service.TrainParkingStationService;
 import com.hjnu.service.TrainTickerQueryService;
@@ -472,7 +472,7 @@ public class TrainTicketOrderController {
      * @return
      */
     @RequestMapping(value ="/getOrderList",method = RequestMethod.GET)
-    public GetOrderListReturnData GetOrderList(@RequestParam String token,String datetime,String train_no,String start_no,String end_no) {
+    public GetOrderListReturnData GetOrderList(@RequestParam String token, String datetime, String train_no, String start_no, String end_no) {
 
         String user = redisUtils.get(token);
 

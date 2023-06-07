@@ -1,7 +1,7 @@
 package com.hjnu.controller;
 
+import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.bean.*;
 import com.hjnu.service.OrderListService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,32 +47,26 @@ public class OrderListController {
         return new GetAllOrderListReturnData(1,getAllOrderListLists);
     }
 
-    private String GetResult_Seat_no(String Seat_type,int seat_no)
-    {
+    private String GetResult_Seat_no(String Seat_type,int seat_no) {
         String result_seat = null;
-        if(Seat_type.equals("特等座") )
-        {
+        if(Seat_type.equals("特等座") ) {
 
 
             result_seat = String.valueOf(seat_no/3 +1) +"排";
-            if(seat_no%3 == 0)
-            {
+            if(seat_no%3 == 0) {
                 result_seat +="A座";
             }
-            if(seat_no%3 == 1)
-            {
+            if(seat_no%3 == 1) {
                 result_seat +="B座";
             }
-            if(seat_no%3 == 2)
-            {
+            if(seat_no%3 == 2) {
                 result_seat +="C座";
             }
 
 
         }
 
-        if(Seat_type.equals("一等座") )
-        {
+        if(Seat_type.equals("一等座") ) {
             result_seat = String.valueOf(seat_no/4 +1) +"排";
             if(seat_no%4 == 0)
             {

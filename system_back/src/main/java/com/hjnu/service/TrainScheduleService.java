@@ -1,7 +1,7 @@
 package com.hjnu.service;
 
-import com.hjnu.bean.TrainScheduleInfo;
-import com.hjnu.bean.TrainTransferSchedule;
+import com.hjnu.model.vo.TrainScheduleInfo;
+import com.hjnu.model.vo.TrainTransferSchedule;
 import com.hjnu.dao.TrainScheduleDao;
 import org.springframework.stereotype.Service;
 

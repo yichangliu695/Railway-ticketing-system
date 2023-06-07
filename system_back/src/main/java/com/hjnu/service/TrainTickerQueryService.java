@@ -1,11 +1,10 @@
 package com.hjnu.service;
 
 
-import com.hjnu.bean.TrainSeatCount;
-import com.hjnu.bean.TrainSeatQuery;
-import com.hjnu.bean.TrainTicketPriceInfo;
+import com.hjnu.model.vo.TrainSeatCount;
+import com.hjnu.model.vo.TrainSeatQuery;
+import com.hjnu.model.vo.TrainTicketPriceInfo;
 import com.hjnu.dao.TrainTicketQueryDao;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
