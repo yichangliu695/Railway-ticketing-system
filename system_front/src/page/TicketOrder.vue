@@ -246,7 +246,7 @@
                 active:0,
                 dialogTableVisible: false,
                 dialogTableVisible_GD: false,
-                show_passenger:false,
+                show_passenger:true,
                 show_passenger_ticket:false,
                 show_order_list:false,
                 passenger_count:0,
@@ -258,7 +258,13 @@
                 low_seat_GD:[],
                 tableDatas:[],
                 passenger_data:
-                [],
+                [
+                   /* {
+                        passenger_real_name:'胡安兴',
+                        passenger_phone_number:'17343529433',
+                        passenger_id_number:'532124111111'
+                    }*/
+                ],
                 ticket_data: [],
                 dialogFormVisible_wx:false,
                 dialogFormVisible_zfb:false,

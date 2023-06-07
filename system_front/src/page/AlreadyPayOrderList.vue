@@ -83,7 +83,7 @@
                     label="订单状态"
                     prop="order_status">
                 </el-table-column>-->
-                <el-table-column label="操作" width="200">
+<!--                <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
                         <el-button
                             size="mini"
@@ -91,9 +91,9 @@
                             @click="handlePay(scope.row.order_id)">支付</el-button>
 
                     </template>
-                </el-table-column>
+                </el-table-column>-->
             </el-table>
-            <el-dialog title="支付" :visible.sync="dialogTableVisible" style="width: 1500px">
+<!--            <el-dialog title="支付" :visible.sync="dialogTableVisible" style="width: 1500px">
                 <el-row>
                     <el-col :span="12"><div class="grid-content bg-purple">
                         <div class="block">
@@ -117,7 +117,7 @@
                     type="success"
                     style="margin-left: 300px"
                     @click="handlepaysuccess()">支付成功</el-button>
-            </el-dialog>
+            </el-dialog>-->
             <div class="Pagination">
                 <el-pagination
                     @size-change="handleSizeChange"
@@ -235,10 +235,10 @@
             },
             handlePay(order_id)
             {
-                    this.dialogTableVisible = true;
-                    this.order_list = order_id+",";
+                this.dialogTableVisible = true;
+                this.order_list = order_id+",";
             },
-           async handlepaysuccess()
+            async handlepaysuccess()
             {
                 console.log(this.order_list)
                 const res = await  paySuccess({token:getCookie("token"),order_list:this.order_list});

@@ -163,14 +163,14 @@
 
 
             </el-dialog>
-            <el-row style="margin-top: 30px;margin-left: 150px">
+<!--            <el-row style="margin-top: 30px;margin-left: 150px">
                 <el-col :span="24"><div class="grid-content bg-purple-dark" style="color: #1c8de0">如果查询结果中没有满足需求的车次，您还可以使用接续换乘 功能，查询途中换乘一次的部分列车余票情况</div></el-col>
             </el-row>
             <el-row style="margin-top: 30px;margin-left: 400px">
                 <el-col :span="24"><div class="grid-content bg-purple">
                     <el-button type="primary"   @click="transfer()">接续换乘</el-button>
                 </div></el-col>
-            </el-row>
+            </el-row>-->
         </div>
     </div>
 </template>
@@ -185,6 +185,16 @@
             return {
                 value1: false,
                 tableData: [
+                    {
+                        train_number: '2016-05-02',
+                        start_station: '北京',
+                        end_station: '上海',
+                        start_time: '2001.10.20.10.10',
+                        arrive_time: '2001.10.21.10.10',
+                        high_seat_price:'2',
+                        medium_seat_price: '32',
+                        low_seat_price: '12'
+                    }
                 ],
                 selectTable: {},
                 searchForm:
