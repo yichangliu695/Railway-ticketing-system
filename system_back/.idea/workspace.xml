@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/20.c84919f68d5639020257.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/app.6d5a625a1f37385d880b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/manifest.0b9b993878b84b4b1284.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/PassengerManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/PassengerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoSelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainTicketOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainTicketQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/UserManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/manager/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/manager/ScheduledTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainTickerQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainTickerQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/utils/RedisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/utils/RedisUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/manage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/20.9a623f6c517d53e282f6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/app.67a8780b1f78e1851dd5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/manifest.bef9fc29f3024697eec4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/config/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/config/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/manage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/manage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +112,7 @@
       <workItem from="1686016308647" duration="1731000" />
       <workItem from="1686018156491" duration="3609000" />
       <workItem from="1686042248383" duration="4116000" />
-      <workItem from="1686122176075" duration="7689000" />
+      <workItem from="1686122176075" duration="8369000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码提交">
       <created>1685989857778</created>
@@ -162,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686124749303</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="前后端联调">
+      <created>1686132949468</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686132949468</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
