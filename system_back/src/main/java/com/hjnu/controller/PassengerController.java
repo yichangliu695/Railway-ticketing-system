@@ -22,14 +22,14 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/passenger")
-public class PassengerManagerController {
+public class PassengerController {
 
     @Resource
     private PassengerService passengerService;
     @Resource
     private RedisUtils redisUtils;
 
-    private static final Logger logger = LoggerFactory.getLogger(PassengerManagerController.class);
+    private static final Logger logger = LoggerFactory.getLogger(PassengerController.class);
 
     /**
      *

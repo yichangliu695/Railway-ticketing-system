@@ -39,8 +39,7 @@ public class OrderListController {
         String user_phone_number = data[1];
 
         List<GetAllOrderList> getAllOrderListLists = orderListService.getAllOrderLists(user_phone_number);
-       for(GetAllOrderList getAllOrderList :getAllOrderListLists)
-       {
+       for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
        }
 

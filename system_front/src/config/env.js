@@ -11,10 +11,10 @@ let routerMode = 'hash';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
-	baseUrl = 'http://localhost:18080';
+	baseUrl = 'http://localhost:8080';
     baseImgPath = 'http://b-ssl.duitang.com/uploads/item/201510/08/20151008192345_uPC5U.jpeg';
 }else{
-	baseUrl = 'http://localhost:18080';
+	baseUrl = 'http://localhost:8080';
     baseImgPath = 'http://b-ssl.duitang.com/uploads/item/201510/08/20151008192345_uPC5U.jpeg';
 }
 

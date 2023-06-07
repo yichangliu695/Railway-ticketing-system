@@ -26,8 +26,8 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/train")
-public class TrainInfoSelectController {
-    private static final Logger logger = LoggerFactory.getLogger(TrainInfoSelectController.class);
+public class TrainInfoController {
+    private static final Logger logger = LoggerFactory.getLogger(TrainInfoController.class);
     @Resource
     private TrainInfoService  trainInfoService;
 

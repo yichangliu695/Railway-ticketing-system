@@ -7,9 +7,6 @@ import org.springframework.stereotype.Component;
 /**
  *使用redis做缓存
  *
- *缓存类  提供简单的get和set方法
- *
- * redis的配置在application.propertis中
  */
 @Component
 public class RedisUtils {
@@ -18,9 +15,6 @@ public class RedisUtils {
 
     /**
      * 读取缓存
-     *
-     * @param key
-     * @return
      */
     public String get(final String key) {
         return redisTemplate.opsForValue().get(key);

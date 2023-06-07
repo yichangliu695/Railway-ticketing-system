@@ -11,11 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- *
- *
  * 对应TrainTickerQueryDao
- *
- *
  */
 @Service
 public class TrainTickerQueryService {
@@ -29,10 +25,6 @@ public class TrainTickerQueryService {
      *根据出发地 目的地 列车号
      *
      * 查询列车票价
-     * @param start_station
-     * @param end_station
-     * @param train_no
-     * @return
      */
     public  TrainTicketPriceInfo queryTicketPrice_GD(String start_station , String end_station,String train_no)
     {
@@ -48,11 +40,6 @@ public class TrainTickerQueryService {
      *
      * 根据列车编号  列车起始站 和目的站 时间
      * 查询已经被预定的列车票数
-     * @param train_no
-     * @param start_no
-     * @param end_no
-     * @param datetime
-     * @return
      */
     public List<TrainSeatQuery> queryTrainSeat(String train_no,String start_no,String end_no,String datetime)
     {

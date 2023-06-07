@@ -8,7 +8,6 @@ import com.hjnu.service.PassengerService;
 import com.hjnu.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,7 +22,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/user")
-public class UserManagerController {
+public class UserController {
     @Resource
     private UserService userService;
 
@@ -33,70 +32,45 @@ public class UserManagerController {
 
     @Resource
     private RedisUtils redisUtils;
-    private static final Logger logger = LoggerFactory.getLogger(UserManagerController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     /**
      *
      * 用户登录
      *
      * 对应前端的 login请求
-     * @param request
-     * @param bindingResult
-     * @return
      */
     @RequestMapping(value ="/login",method = RequestMethod.POST)
-    public RespBean UserLogin(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-        }
+    public RespBean UserLogin(@Valid @RequestBody Map<String,Object> request) {
         String username = (String) request.get("user_name");
         String password = (String) request.get("password");
-
         try {
-            /**
-             * 查找是否有此用户
-             */
-
             List<UserLogin> userlogins = userService.selectAllUserLogin();
 
             for (UserLogin userlogin : userlogins) {
                 if (userlogin.getUser_phone_number().equals(username)  && userlogin.getUser_password().equals(password)) {
-                    logger.info("登录信息如下");
-                    logger.info(username);
-                    logger.info(password);
+                    logger.info("username{} password{}",username,password);
                     logger.info("登录成功");
 
                     //token生成  用户信息redis缓存
                     User user  = userService.selectUserInfo(userlogin.getUser_phone_number());
-                    String token =user.getUser_real_name()+","+user.getUser_phone_number()+","+user.getUser_email()+","+user.getUser_type()+","+user.getUser_gender()
-                            +","+user.getUser_id_number()+","+user.getUser_address();
-                    /**
-                     * 将用户登陆信息存入token中
-                     */
-                    redisUtils.set(userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password(),token);
 
-                    return new RespBean(1,userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password());
 
+                    return saveToken(user,userlogin);
                 }
             }
 
-        }
-        catch(Exception e) {
-            logger.info("登录失败");
-            return new RespBean(404, "失败");
+        } catch(Exception e) {
+            logger.info(e.getMessage());
+            return new RespBean(404, "登录异常");
         }
         return new RespBean(404, "失败");
     }
 
     /**
      * 登陆成功后，向前端返回cookie中的内容 作为用户登陆的标记
-     *
      * 并且将用户登陆信息存入token中
-     *
      * 对应前端的getAdminInfo请求
-     * @param token
-     * @return
      */
     @RequestMapping(value ="/info",method = RequestMethod.GET)
     public UserInfoReturnData GetUserInfo(@RequestParam String token) {
@@ -110,7 +84,6 @@ public class UserManagerController {
         {
             return new UserInfoReturnData(404,new UserInfo("null","null","null","null","null","null","null"));
         }
-
     }
 
     /**
@@ -118,16 +91,10 @@ public class UserManagerController {
      * 用户注册
      *
      * 对应前端的register请求
-     * @param request
-     * @param bindingResult
-     * @return
      */
     @RequestMapping(value ="/register",method = RequestMethod.POST)
-    public RespBean UserRegister(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
+    public RespBean UserRegister(@Valid @RequestBody Map<String,Object> request) {
 
-        if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-        }
         String username = (String) request.get("user_phone_number");
         String password = (String) request.get("user_password");
         String user_password_2 = (String)request.get("user_password_2");
@@ -138,65 +105,44 @@ public class UserManagerController {
         String user_address = (String)request.get("user_address");
         String user_type = (String)request.get("user_type");
         try {
-
-            /**
-             * 查询此用户是否已经注册
-             */
+            //查询此用户是否已经注册
             List<UserLogin> userlogins = userService.selectAllUserLogin();
             for (UserLogin userlogin : userlogins) {
-                if(userlogin.getUser_phone_number().equals(username))
-                {
+                if(userlogin.getUser_phone_number().equals(username)) {
                     logger.info("重复");
                     return new RespBean(403,"用户名重复");
-
-
                 }
-                else if(!user_password_2.equals(password))
-                {
+                else if(!user_password_2.equals(password)) {
                     logger.info("两次输入不相同");
                     return new RespBean(404,"两次输入不相同");
-                }
-                else
-                {
+                } else {
 
-                    /**
-                     *
-                     * 如果没有重复 则进行注册
-                     */
                     int type = 0 ;
-                    if(user_type.equals("成人"))
-                    {
+                    if(user_type.equals("成人")) {
                         type = 1;
                     }
-                    else if(user_type.equals("学生"))
-                    {
+                    else if(user_type.equals("学生")) {
                         type = 0;
                     }
                     int gender = -1;
-                    if(user_gender.equals("女"))
-                    {
+                    if(user_gender.equals("女")) {
                         gender = 0;
-                    }
-                    else if(user_gender.equals("男"))
-                    {
+                    } else if(user_gender.equals("男")) {
                         gender = 1;
                     }
                     try {
                         User user  = new User(username,password,user_email,user_real_name,type,user_id_number,gender,user_address);
                         boolean flag = userService.insertUser(user);
-                        if(flag)
-                        {
+                        if(flag) {
                             logger.info("注册成功");
                             return new RespBean(1,userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password());
                         }
-                        else
-                        {
+                        else {
                             logger.info("注册失败");
                             return new RespBean(405,"注册失败");
                         }
                     }
-                    catch (Exception e)
-                    {
+                    catch (Exception e) {
                         logger.info("注册失败");
                         return new RespBean(403,"用户名重复");
                     }
@@ -209,10 +155,10 @@ public class UserManagerController {
         {
             return new RespBean(405,"注册失败");
         }
-
         return new RespBean(405,"注册失败");
 
     }
+
     @RequestMapping(value ="/signout",method = RequestMethod.GET)
     public RespBean signout() {
         try {
@@ -238,20 +184,16 @@ public class UserManagerController {
     public UserInfoReturnData getUserInfo(@RequestParam String token) {
         String user = redisUtils.get(token);
         String data [] = user.split(",");
-        if(data[3].equals("2"))
-        {
+        if(data[3].equals("2")) {
             data[3] ="管理员";
         }
-        if(data[3].equals("0"))
-        {
+        if(data[3].equals("0")) {
             data[3] ="学生";
         }
-        if(data[3].equals("1"))
-        {
+        if(data[3].equals("1")) {
             data[3] ="成人";
         }
-        if(data[4].equals("1"))
-        {
+        if(data[4].equals("1")) {
             data[4] ="男";
         }
         if(data[4].equals("0"))
@@ -267,16 +209,10 @@ public class UserManagerController {
      * 修改个人信息的接口
      *
      * 对应前端的changeUserInfo请求
-     * @param request
-     * @param bindingResult
-     * @return
      */
     @RequestMapping(value ="/changeuserinfo",method = RequestMethod.POST)
-    public RespBean ChangeUserInfo(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
+    public RespBean ChangeUserInfo(@Valid @RequestBody Map<String,Object> request) {
 
-        if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-        }
         String token = (String)request.get("token");
         String user_real_name = (String)request.get("user_real_name");
         String user_email = (String) request.get("user_email");
@@ -328,16 +264,10 @@ public class UserManagerController {
      *
      * 修改密码的接口
      * 对应前端的 changePassword请求
-     * @param request
-     * @param bindingResult
-     * @return
      */
     @RequestMapping(value ="/changepassword",method = RequestMethod.POST)
-    public RespBean ChangePassword(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
+    public RespBean ChangePassword(@Valid @RequestBody Map<String,Object> request) {
 
-        if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-        }
         String token = (String)request.get("token");
         String user_old_password = (String)request.get("user_old_password");
         String user_new_password = (String)request.get("user_new_password");
@@ -357,17 +287,10 @@ public class UserManagerController {
 
     /**
      * 管理员登陆
-     * @param request
-     * @param bindingResult
-     * @return
      */
     @RequestMapping(value ="/adminLogin",method = RequestMethod.POST)
-    public RespBean AdminLogin(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
+    public RespBean AdminLogin(@Valid @RequestBody Map<String,Object> request) {
 
-
-        if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-        }
         String username = (String) request.get("user_name");
         String password = (String) request.get("password");
 
@@ -380,14 +303,18 @@ public class UserManagerController {
                 {
 
                     //token生成  用户信息redis缓存
-                    String token =user.getUser_real_name()+","+user.getUser_phone_number()+","+user.getUser_email()+","+user.getUser_type()+","+user.getUser_gender()
-                            +","+user.getUser_id_number()+","+user.getUser_address();
+                    String token =user.getUser_real_name()+","
+                            +user.getUser_phone_number()+","
+                            +user.getUser_email()+","
+                            +user.getUser_type()+","
+                            +user.getUser_gender() +","
+                            +user.getUser_id_number()+","
+                            +user.getUser_address();
 
                     /**
                      * 将用户登陆信息存入token中
                      */
                     redisUtils.set(user.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+user.getUser_password(),token);
-//                        redisUtils.get(token.getToken());
 
                     return new RespBean(1,user.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+user.getUser_password());
 
@@ -406,8 +333,6 @@ public class UserManagerController {
 
     /**
      * 获取所有用户
-     * @param token
-     * @return
      */
     @RequestMapping(value ="/getAllUser",method = RequestMethod.GET)
     public GetAllUserReturnData getAllUser(@RequestParam String token) {
@@ -457,13 +382,25 @@ public class UserManagerController {
                 return new RespBean(1,"删除成功");
 
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return new RespBean(404,"删除失败");
         }
 
     }
 
+    public RespBean saveToken(User user,UserLogin userlogin){
+        String token =user.getUser_real_name()+","
+                +user.getUser_phone_number()+","
+                +user.getUser_email()+","+user.getUser_type()+","
+                +user.getUser_gender() +","
+                +user.getUser_id_number()+","
+                +user.getUser_address();
+        /**
+         * 将用户登陆信息存入token中
+         */
+        redisUtils.set(userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password(),token);
+
+        return new RespBean(1,userlogin.getUser_phone_number()+"msbfajshbadsmnfbasmfa"+userlogin.getUser_password());
+    }
 
 }

@@ -32,16 +32,14 @@ public class TrainScheduleController {
 
     @Resource
     private RedisUtils redisUtils;
-    private static final Logger logger = LoggerFactory.getLogger(TrainInfoSelectController.class);
+
+    private static final Logger logger = LoggerFactory.getLogger(TrainInfoController.class);
 
     /**
      *
      * 根据起始站 目的站  查询符合条件的列车信息
      *
      * 对应前端的searchTrainSchedule请求
-     * @param train_start_station
-     * @param train_end_station
-     * @return
      */
     @RequestMapping(value ="/searchTrainSchedule",method = RequestMethod.GET)
     public TrainScheduleReturnData GetTrainScheduleInfo(@RequestParam String train_start_station, String train_end_station) {
@@ -54,12 +52,7 @@ public class TrainScheduleController {
 
     /**
      * 返回列车具体的经停信息
-     *
      * 对应前端的getTrainScheduleList请求
-     * @param train_start_station_no
-     * @param train_end_station_no
-     * @param train_no
-     * @return
      */
     @RequestMapping(value ="/getTrainScheduleList",method = RequestMethod.GET)
     public TrainScheduleReturnData GetTrainScheduleInfoList(@RequestParam String train_start_station_no, String  train_end_station_no, String train_no) {
@@ -72,8 +65,6 @@ public class TrainScheduleController {
     /**
      *
      * 查询接续换乘路线
-     * @param train_start_station
-     * @param train_end_station
      */
 
     @RequestMapping(value ="/searchTransferSchedule",method = RequestMethod.GET)
@@ -116,8 +107,7 @@ public class TrainScheduleController {
             return new TrainTransferScheduleReturnData(1,trainTransferScheduleList);
     }
 
-    public int getMin(String time)
-    {
+    public int getMin(String time) {
         String [] time2 = time.split(":");
         int Hour = Integer.parseInt(time2[0]);
         int Min = Integer.parseInt(time2[1]);

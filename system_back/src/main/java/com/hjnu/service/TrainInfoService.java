@@ -11,8 +11,6 @@ import java.util.List;
 
 /**
  *对应TrainInfoDao
- *
- *
  */
 @Service
 public class TrainInfoService {

@@ -25,7 +25,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/query")
-public class TrainTicketQueryController {
+public class TicketController {
 
     @Resource
     private TrainTickerQueryService trainTickerQueryService;
@@ -35,16 +35,13 @@ public class TrainTicketQueryController {
 
     @Resource
     private RedisUtils redisUtils;
-    private static final Logger logger = LoggerFactory.getLogger(TrainTicketQueryController.class);
+    private static final Logger logger = LoggerFactory.getLogger(TicketController.class);
 
     /**
      *
      * 根据出发地 目的地查询票价以及出行时间
      *
      * 对应前端的queryTrainTicket请求
-     * @param train_start_station
-     * @param train_end_station
-     * @param datetime
      */
     @RequestMapping(value ="/queryTrainTicket",method = RequestMethod.GET)
     public TrainTicketPriceQueryReturnData GetTrainScheduleInfo(@RequestParam String train_start_station, String train_end_station, String datetime) {
@@ -69,7 +66,7 @@ public class TrainTicketQueryController {
             List<TrainTicketPriceInfo> trainTicketPriceInfos = new ArrayList<>();
             for(TrainScheduleInfo trainScheduleInfo :trainScheduleInfos)
             {
-                    if(trainScheduleInfo.getTrain_number().substring(0,1).equals("G") ||trainScheduleInfo.getTrain_number().substring(0,1).equals("D"))
+                    if(trainScheduleInfo.getTrain_number().charAt(0) == 'G' || trainScheduleInfo.getTrain_number().charAt(0) == 'D')
                     {
 
                         trainTicketPriceInfos.add(trainTickerQueryService.queryTicketPrice_GD(train_start_station,train_end_station,trainScheduleInfo.getTrain_no()));
@@ -95,7 +92,7 @@ public class TrainTicketQueryController {
             for(TrainTicketPriceInfo trainTicketPriceInfo :trainTicketPriceInfos)
             {
                 if( trainTicketPriceInfo != null) {
-                    if(trainTicketPriceInfo.getTrain_number().substring(0,1).equals("G") ||trainTicketPriceInfo.getTrain_number().substring(0,1).equals("D"))
+                    if(trainTicketPriceInfo.getTrain_number().charAt(0) == 'G' || trainTicketPriceInfo.getTrain_number().charAt(0) == 'D')
                     {
                         if(!trainTicketPriceInfo.getHigh_seat_price().equals(""))
                         {
@@ -135,7 +132,7 @@ public class TrainTicketQueryController {
 
             if(trainTicketPriceInfo != null)
             {
-                if(trainTicketPriceInfo.getTrain_number().substring(0,1).equals("G") ||trainTicketPriceInfo.getTrain_number().substring(0,1).equals("D"))
+                if(trainTicketPriceInfo.getTrain_number().charAt(0) == 'G' || trainTicketPriceInfo.getTrain_number().charAt(0) == 'D')
                 {
                     if(trainTicketPriceInfo.getHigh_seat_price().equals(""))
                     {
@@ -188,13 +185,8 @@ public class TrainTicketQueryController {
        {
            return new TrainTicketPriceQueryReturnData(1,trainTicketPriceInfos);
        }
-       else if(trainTicketPriceInfos.size() == 0)
-       {
+       else {
            return new TrainTicketPriceQueryReturnData(404,trainTicketPriceInfos);
-       }
-       else
-       {
-           return new TrainTicketPriceQueryReturnData(405,trainTicketPriceInfos);
        }
 
     }
@@ -222,7 +214,7 @@ public class TrainTicketQueryController {
         List<TrainRemainingSeats> trainRemainingSeatsList =  new ArrayList<>();
         logger.info("41412412412");
         logger.info(train_number.substring(0,1));
-            if(train_number.substring(0,1).equals("G") || train_number.substring(0,1).equals("D"))
+            if(train_number.charAt(0) == 'G' || train_number.charAt(0) == 'D')
             {
                 logger.info("777777");
                 for(TrainSeatCount trainSeatCount : trainSeatCountList)
@@ -301,7 +293,7 @@ public class TrainTicketQueryController {
         for(TrainTransferSchedule trainTransferSchedule:trainTransferScheduleList)
         {
             TrainTicketPriceInfo temp1 ,temp2;
-            if(trainTransferSchedule.getTrain_number_1().substring(0,1).equals("G") ||trainTransferSchedule.getTrain_number_1().substring(0,1).equals("D")  )
+            if(trainTransferSchedule.getTrain_number_1().charAt(0) == 'G' || trainTransferSchedule.getTrain_number_1().charAt(0) == 'D')
             {
                 temp1 = trainTickerQueryService.queryTicketPrice_GD(trainTransferSchedule.getStart_station_name(),trainTransferSchedule.getTransfer_station_name(),trainTransferSchedule.getTrain_no_1());
             }
@@ -310,7 +302,7 @@ public class TrainTicketQueryController {
                  temp1 = trainTickerQueryService.queryTicketPrice(trainTransferSchedule.getStart_station_name(),trainTransferSchedule.getTransfer_station_name(),trainTransferSchedule.getTrain_no_1());
 
             }
-            if(trainTransferSchedule.getTrain_number_2().substring(0,1).equals("G") ||trainTransferSchedule.getTrain_number_2().substring(0,1).equals("D")  )
+            if(trainTransferSchedule.getTrain_number_2().charAt(0) == 'G' || trainTransferSchedule.getTrain_number_2().charAt(0) == 'D')
             {
                  temp2 = trainTickerQueryService.queryTicketPrice_GD(trainTransferSchedule.getTransfer_station_name(),trainTransferSchedule.getEnd_station_name(),trainTransferSchedule.getTrain_no_2());
             }
@@ -355,7 +347,7 @@ public class TrainTicketQueryController {
         {
             if(trainTransferTicketPriceInfo != null)
             {
-                if(trainTransferTicketPriceInfo.getTrain_number_1().substring(0,1).equals("G") ||trainTransferTicketPriceInfo.getTrain_number_1().substring(0,1).equals("D"))
+                if(trainTransferTicketPriceInfo.getTrain_number_1().charAt(0) == 'G' ||trainTransferTicketPriceInfo.getTrain_number_1().substring(0,1).equals("D"))
                 {
                     if(!trainTransferTicketPriceInfo.getHigh_seat_price_1().equals(""))
                     {
