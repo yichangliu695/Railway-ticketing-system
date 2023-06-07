@@ -11,9 +11,9 @@
                     <el-submenu index="2">
                         <template slot="title"><i class="el-icon-document"></i>列车信息查询</template>
                         <el-menu-item index="TrainInfoList">列车信息</el-menu-item>
-                        <el-menu-item index="SearchTrainInfo">列车时刻表</el-menu-item>
+<!--                        <el-menu-item index="SearchTrainInfo">列车时刻表</el-menu-item>-->
                         <el-menu-item index="TrainSchedule">列车查询</el-menu-item>
-                        <el-menu-item index="TrainTransfer">接续换乘</el-menu-item>
+<!--                        <el-menu-item index="TrainTransfer">接续换乘</el-menu-item>-->
                         <!--<el-menu-item index="foodList">食品列表</el-menu-item>-->
                         <!--<el-menu-item index="orderList">订单列表</el-menu-item>-->
 
@@ -24,23 +24,25 @@
                         <template slot="title"><i class="el-icon-plus"></i>车票查询及购买</template>
                         <el-menu-item index="ticketInquiry">余票查询</el-menu-item>
                         <el-menu-item index="TicketOrder">车票购买</el-menu-item>
+<!--
                         <el-menu-item index="TrainTransferTicketQuery">接续换乘</el-menu-item>
                         <el-menu-item index="TransferTicketOrder">接续换乘车票购买</el-menu-item>
+-->
 
                     </el-submenu>
                     <el-submenu index="4">
                         <template slot="title"><i class="el-icon-star-on"></i>订单信息</template>
                         <el-menu-item index="AllOrderList">全部订单</el-menu-item>
                         <el-menu-item index="NoPayOrderList">未支付订单</el-menu-item>
-                        <el-menu-item index="NoTripOrderList">未出行订单</el-menu-item>
-                        <el-menu-item index="TicketChange">订单改签</el-menu-item>
-
+<!--                        <el-menu-item index="NoTripOrderList">未出行订单</el-menu-item>-->
+<!--                        <el-menu-item index="TicketChange">订单改签</el-menu-item>-->
+                        <el-menu-item index="AlreadyPayOrderList">已支付订单</el-menu-item>
                     </el-submenu>
                     <el-submenu index="6">
                         <template slot="title"><i class="el-icon-setting"></i>个人信息</template>
                         <el-menu-item index="UserInfo">个人信息</el-menu-item>
-                        <el-menu-item index="ChangeUserInfo">修改个人信息</el-menu-item>
-                        <el-menu-item index="ChangePassword">修改密码</el-menu-item>
+<!--                        <el-menu-item index="ChangeUserInfo">修改个人信息</el-menu-item>
+                        <el-menu-item index="ChangePassword">修改密码</el-menu-item>-->
                         <el-menu-item index="PassengerInfo">乘客信息</el-menu-item>
                         <el-menu-item index="AddPassenger">添加乘客信息</el-menu-item>
                         <!-- <el-menu-item index="sendMessage">发送通知</el-menu-item> -->

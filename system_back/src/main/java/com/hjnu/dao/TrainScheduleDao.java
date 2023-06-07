@@ -1,7 +1,7 @@
 package com.hjnu.dao;
 
-import com.hjnu.bean.TrainScheduleInfo;
-import com.hjnu.bean.TrainTransferSchedule;
+import com.hjnu.model.vo.TrainScheduleInfo;
+import com.hjnu.model.vo.TrainTransferSchedule;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

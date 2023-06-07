@@ -1,7 +1,7 @@
 package com.hjnu.dao;
 
 import com.hjnu.model.po.User;
-import com.hjnu.bean.UserLogin;
+import com.hjnu.model.vo.UserLogin;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

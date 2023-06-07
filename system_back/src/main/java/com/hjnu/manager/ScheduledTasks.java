@@ -1,8 +1,8 @@
 package com.hjnu.manager;
 
 
-import com.hjnu.bean.AllOrder;
-import com.hjnu.bean.GetAllNoTripData;
+import com.hjnu.model.vo.AllOrder;
+import com.hjnu.model.vo.GetAllNoTripData;
 import com.hjnu.service.OrderListService;
 import com.hjnu.service.TrainTicketOrderService;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -26,43 +25,32 @@ public class ScheduledTasks {
     @Scheduled(fixedRate = 60000)
     public void updateOrderStatus() {
         List<GetAllNoTripData> getAllNoTripDataList = orderListService.GetAllNoTripOrder();
-        Iterator<GetAllNoTripData> iterator = getAllNoTripDataList.iterator();
 
-        while (iterator.hasNext())
-        {
-            GetAllNoTripData getAllNoTripData = iterator.next();
-            String TrainStartTime = trainTicketOrderService.getTrainStartTime(getAllNoTripData.getTrain_no(),getAllNoTripData.getStart_station_no());
+        for (GetAllNoTripData getAllNoTripData : getAllNoTripDataList) {
+            String TrainStartTime = trainTicketOrderService.getTrainStartTime(getAllNoTripData.getTrain_no(), getAllNoTripData.getStart_station_no());
 
-            TrainStartTime = TrainStartTime+":00";
-            if(TrainStartTime.compareTo(String.valueOf(dateFormat))<0 )
-            {
+            TrainStartTime = TrainStartTime + ":00";
+            if (TrainStartTime.compareTo(String.valueOf(dateFormat)) < 0) {
                 orderListService.UpdatePayOrderStatus(getAllNoTripData.getOrder_id());
             }
 
         }
 
         List<AllOrder> allNopayList = orderListService.GetAllNoPayOrder();
-        Iterator<AllOrder> iterator2 = allNopayList.iterator();
 
 
-        while (iterator2.hasNext())
-        {
-            AllOrder allNppay = iterator2.next();
-           String order_create_date = allNppay.getOrder_create_time();
-           order_create_date = order_create_date.substring(11);
-            int a = Integer.parseInt(order_create_date.substring(0,2));
-            a = a+1;
-            if(a<10)
-            {
-                order_create_date ="0"+ String.valueOf(a)+order_create_date.substring(2);
-            }
-            else
-            {
-                order_create_date =String.valueOf(a)+order_create_date.substring(2);
+        for (AllOrder allNppay : allNopayList) {
+            String order_create_date = allNppay.getOrder_create_time();
+            order_create_date = order_create_date.substring(11);
+            int a = Integer.parseInt(order_create_date.substring(0, 2));
+            a = a + 1;
+            if (a < 10) {
+                order_create_date = "0" + a + order_create_date.substring(2);
+            } else {
+                order_create_date = a + order_create_date.substring(2);
             }
 
-            if(order_create_date.compareTo(String.valueOf(dateFormat)) >0)
-            {
+            if (order_create_date.compareTo(String.valueOf(dateFormat)) > 0) {
                 orderListService.UpdateNoPayOrderStatus(allNppay.getOrder_id());
             }
 

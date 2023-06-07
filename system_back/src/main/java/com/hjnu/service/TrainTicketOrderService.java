@@ -1,7 +1,7 @@
 package com.hjnu.service;
 
-import com.hjnu.bean.AllOrder;
-import com.hjnu.bean.GetOrderList;
+import com.hjnu.model.vo.AllOrder;
+import com.hjnu.model.vo.GetOrderList;
 import com.hjnu.model.po.OrderList;
 import com.hjnu.dao.TrainTicketOrderDao;
 import org.springframework.stereotype.Service;

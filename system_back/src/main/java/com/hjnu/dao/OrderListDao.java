@@ -1,10 +1,10 @@
 package com.hjnu.dao;
 
 
-import com.hjnu.bean.AllOrder;
-import com.hjnu.bean.GetAllNoTripData;
-import com.hjnu.bean.GetAllOrderList;
-import com.hjnu.bean.GetOrderList;
+import com.hjnu.model.vo.AllOrder;
+import com.hjnu.model.vo.GetAllNoTripData;
+import com.hjnu.model.vo.GetAllOrderList;
+import com.hjnu.model.vo.GetOrderList;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

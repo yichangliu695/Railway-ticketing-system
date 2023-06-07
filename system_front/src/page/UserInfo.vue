@@ -11,6 +11,7 @@
                 <div slot="header" class="clearfix">
                     <span>个人信息</span>
                     <el-button style="float: right; padding: 3px 0"  @click="GoChangeUserInfo" type="text">修改个人信息</el-button>
+                    <el-button style="float: right; padding: 3px 5px"  @click="GoChangePassword" type="text">修改密码</el-button>
                 </div>
                     <el-col :span="12">
                         <div class="demo-basic--circle">
@@ -92,8 +93,12 @@
             },
             GoChangeUserInfo()
             {
-                this.$router.push('/ChangeUserInfo      ')
+                this.$router.push('/ChangeUserInfo')
+            },
+            GoChangePassword(){
+                this.$router.push('./ChangePassword')
             }
+
         },
     }
 </script>

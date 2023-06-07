@@ -1,8 +1,8 @@
 package com.hjnu.dao;
 
-import com.hjnu.bean.TrainSeatCount;
-import com.hjnu.bean.TrainSeatQuery;
-import com.hjnu.bean.TrainTicketPriceInfo;
+import com.hjnu.model.vo.TrainSeatCount;
+import com.hjnu.model.vo.TrainSeatQuery;
+import com.hjnu.model.vo.TrainTicketPriceInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
