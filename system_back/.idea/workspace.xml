@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,7 @@
       <workItem from="1686016308647" duration="1731000" />
       <workItem from="1686018156491" duration="3609000" />
       <workItem from="1686042248383" duration="4116000" />
-      <workItem from="1686122176075" duration="8369000" />
+      <workItem from="1686122176075" duration="8697000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码提交">
       <created>1685989857778</created>
@@ -149,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686132949468</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="前后端联调">
+      <created>1686134172403</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686134172403</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
