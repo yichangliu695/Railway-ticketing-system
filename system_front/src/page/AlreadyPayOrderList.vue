@@ -212,7 +212,7 @@
             },
             async getLists() {
                 try {
-                    const res2 = await getNoPayOrderList({token: getCookie("token")});
+                    const res2 = await getAlreadyPayOrderList({token: getCookie("token")});
                     if (res2.status == 1) {
 
                         console.log("getLists")

@@ -44,6 +44,13 @@ export const getPassengerInfo= data => fetch('/passenger/getPassengerInfo', data
 export const addPassengerInfo= data => fetch('/passenger/addPassengerInfo', data,'POST');
 
 /**
+ * 添加车次信息
+ * @param data
+ */
+export const AddTrainInformation= data => fetch('/trainSchedule/AddTrainInformation', data,'POST');
+
+
+/**
  * 删除乘客
  * @param data
  */
