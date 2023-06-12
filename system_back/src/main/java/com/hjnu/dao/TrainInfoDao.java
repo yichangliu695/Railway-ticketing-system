@@ -4,41 +4,23 @@ import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
 import org.apache.ibatis.annotations.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 /**
  *
- * 查询所有列车信息
- * 或者查询某辆列车信息
+ * trainInfo 持久层
  */
 @Mapper
 public interface TrainInfoDao {
 
-    /**
-     *
-     * 查询所有列车信息
-     * @return
-     */
     @Select("SELECT * FROM train_info LIMIT 100")
     List<TrainInfo> findAllTrainInfo();
 
-    /**
-     *
-     * 前端列车信息分页查询
-     * @param offset
-     * @param limit
-     * @return
-     */
     @Select("SELECT * FROM train_info LIMIT #{limit} OFFSET  #{offset}")
     List<TrainInfo> findTrainInfoByLimit(@Param("offset") int offset,@Param("limit") int limit);
 
 
-    /**
-     *
-     * 根据车次查询列车
-     * @param train_number
-     * @return
-     */
     @Select("SELECT * FROM train_info where train_number = #{train_number}")
     TrainInfo findTrainInfo(@Param("train_number") String train_number);
 
@@ -81,4 +63,6 @@ public interface TrainInfoDao {
     @Update("update train_info set train_start_station=#{train_start_station},train_end_station=#{train_end_station} where train_number=#{train_number}")
     void updateStation(@Param("train_number") String train_number, @Param("train_start_station") String train_start_station,@Param("train_end_station") String train_end_station);
 
+    @Delete("delete from train_info where train_number=#{train_number}")
+    void deleteTrainByNumber(@Param("train_number") String train_number);
 }

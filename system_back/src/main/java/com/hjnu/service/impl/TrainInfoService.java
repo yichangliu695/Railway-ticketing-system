@@ -5,7 +5,9 @@ import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
 import com.hjnu.dao.TrainInfoDao;
 import com.hjnu.model.vo.UpdateStation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -94,5 +96,9 @@ public class TrainInfoService {
         String start_station_name = updateStation.getTrain_start_station();
         String end_station_name = updateStation.getTrain_end_station();
         trainInfoDao.updateStation(train_number,start_station_name,end_station_name);
+    }
+
+    public void deleteTrainInfo(String train_number) {
+        trainInfoDao.deleteTrainByNumber(train_number);
     }
 }

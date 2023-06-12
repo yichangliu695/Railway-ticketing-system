@@ -9,10 +9,7 @@ import com.hjnu.service.impl.StationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -56,9 +53,6 @@ public class TrainInfoController {
      *
      * 根据车次查询列车信息
      *
-     * 对应前端的SearchTrainInfoData请求
-     * @param train_number
-     * @return
      */
     @RequestMapping(value ="/searchtraininfo",method = RequestMethod.GET)
     public SearchTrainInfoReturnData SearchTrainInfo(String train_number)
@@ -77,8 +71,6 @@ public class TrainInfoController {
      *
      *根据车次查询列车的经停信息
      * 对应前端的 SearchTrainParkingInfo请求
-     * @param train_number
-     * @return
      */
     @RequestMapping(value ="/searchtrainparkingInfo",method = RequestMethod.GET)
     public TrainParkingInfoReturnData SearchTrainInfoList(String train_number)
@@ -95,48 +87,32 @@ public class TrainInfoController {
 
     }
 
-       @RequestMapping(value ="/updateTrainTypeStart",method = RequestMethod.GET)
-    public RespBean updateTrainTypeStart(String train_no)
-    {
-
-        try
-        {
+    @RequestMapping(value ="/updateTrainTypeStart",method = RequestMethod.GET)
+    public RespBean updateTrainTypeStart(String train_no) {
+        try {
             trainInfoService.updateTrainTypeStart(train_no);
             return new RespBean(1,"修改成功");
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return new RespBean(404,"修改失败");
         }
     }
 
     @RequestMapping(value ="/updateTrainTypeStop",method = RequestMethod.GET)
-    public RespBean updateTrainTypeStop(String train_no)
-    {
-
-        try
-        {
+    public RespBean updateTrainTypeStop(String train_no) {
+        try {
             trainInfoService.updateTrainTypeStop(train_no);
             return new RespBean(1,"修改成功");
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return new RespBean(404,"修改失败");
         }
     }
 
     @RequestMapping(value ="/selectSeatInfoByTrainNumber",method = RequestMethod.GET)
-    public SeatInfoReturnData SelectSeatInfoByTrainNumber(String train_number)
-    {
-
-        try
-        {
-
+    public SeatInfoReturnData SelectSeatInfoByTrainNumber(String train_number) {
+        try {
             return new SeatInfoReturnData(1, trainInfoService.SelectSeatInfoByTrainNumber(train_number));
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
 
             logger.info(e.getMessage());
             return new SeatInfoReturnData(404,null);
@@ -146,19 +122,13 @@ public class TrainInfoController {
 
 
     @RequestMapping(value ="/deleteTrainSeat",method = RequestMethod.GET)
-    public RespBean deleteTrainSeat(String train_no,String carriage_no)
-    {
-        try
-        {
-
+    public RespBean deleteTrainSeat(String train_no,String carriage_no) {
+        try {
             trainInfoService.deleteTrainSeat(train_no,carriage_no);
             return new RespBean(1, "删除成功");
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
 
-            logger.info(e.getMessage());
             return new RespBean(404,"删除失败");
 
         }
@@ -300,6 +270,19 @@ public class TrainInfoController {
     public RespBean changeStationInfo(@RequestBody UpdateStation updateStation){
         trainInfoService.updateTrainStation(updateStation);
         return new RespBean(1,"修改成功");
+    }
+
+    /**
+     * 删除车次信息
+     */
+    @RequestMapping(value = "/deleteTrainInfo",method = RequestMethod.POST)
+    public RespBean deleteTrainInfo(@RequestBody UpdateStation updateStation){
+        try {
+            trainInfoService.deleteTrainInfo(updateStation.getTrain_number());
+        } catch (Exception e) {
+            return new RespBean(404,"删除失败");
+        }
+        return new RespBean(1,"删除成功");
     }
 
 
