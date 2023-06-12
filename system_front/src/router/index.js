@@ -7,7 +7,10 @@ const login = r => require.ensure([], () => r(require('@/page/login')), 'login')
 const register = r => require.ensure([], () => r(require('@/page/register')), 'register');
 const manage = r => require.ensure([], () => r(require('@/page/manage')), 'manage');
 const home = r => require.ensure([], () => r(require('@/page/home')), 'home');
+
 const TrainInfoList = r => require.ensure([], () => r(require('@/page/TrainInfoList')), 'TrainInfoList');
+const SiteInformation = r => require.ensure([], () => r(require('@/page/SiteInformation')), 'SiteInformation');
+
 const TrainParkingInfo = r => require.ensure([], () => r(require('@/page/TrainParkingInfo')), 'TrainParkingInfo');
 const TrainSchedule = r => require.ensure([], () => r(require('@/page/TrainSchedule')), 'TrainSchedule');
 const TrainTransfer = r => require.ensure([], () => r(require('@/page/TrainTransfer')), 'TrainTransfer');
@@ -55,6 +58,11 @@ const routes = [
 			component: TrainInfoList,
 			meta: ['列车信息查询', '列车信息'],
 		},{
+            path: '/SiteInformation',
+            component: SiteInformation,
+            meta: ['列车信息查询', '站点信息'],
+        },
+            {
                 path: '/SearchTrainInfo',
                 component: TrainParkingInfo,
                 meta: ['列车信息查询', '列车时刻表'],
