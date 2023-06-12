@@ -22,24 +22,167 @@ import java.util.Objects;
 public class OrderListController {
     @Resource
     private RedisUtils redisUtils;
-
     @Resource
     private OrderListService orderListService;
-
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
 
+    /**
+     * 所有订单
+     */
     @RequestMapping(value ="/getAllOrderList",method = RequestMethod.GET)
     public GetAllOrderListReturnData GetAllOrderList(@RequestParam String token) {
+        String user = redisUtils.get(token);
+        String[] data = user.split(",");
+        String user_phone_number = data[1];
+        List<GetAllOrderList> getAllOrderList = orderListService.getAllOrderLists(user_phone_number);
+        return new GetAllOrderListReturnData(1,getAllOrderList);
+    }
+
+
+    /**
+     * 未支付订单
+     */
+    @RequestMapping(value ="/getNoPayOrderList",method = RequestMethod.GET)
+    public GetAllOrderListReturnData GetNoPauOrderList(@RequestParam String token) {
+
+        String user = redisUtils.get(token);
+        String[] data = user.split(",");
+        String user_phone_number = data[1];
+        List<GetAllOrderList> getNoPayOrderList = orderListService.getNopayOrderLists(user_phone_number);
+        return new GetAllOrderListReturnData(1,getNoPayOrderList);
+
+    }
+
+    /**
+     * 已支付订单
+     */
+    @RequestMapping(value ="/getAlreadyPayOrderList",method = RequestMethod.GET)
+    public GetAllOrderListReturnData GetAlreadyPayOrderList(@RequestParam String token) {
+
+        String user = redisUtils.get(token);
+        String[] data = user.split(",");
+        String user_phone_number = data[1];
+        List<GetAllOrderList> getAlreadyPayOrderList = orderListService.getAlreadyPayOrderLists(user_phone_number);
+
+        return new GetAllOrderListReturnData(1,getAlreadyPayOrderList);
+
+    }
+
+    @RequestMapping(value ="/refundTicket",method = RequestMethod.GET)
+    public RespBean RefundTicket(@RequestParam String token, String order_id) {
+        String user = redisUtils.get(token);
+        String[] data = user.split(",");
+        String user_phone_number = data[1];
+        orderListService.RefundTicket(user_phone_number,order_id);
+        return new RespBean(1,"退票成功，购票金额自动退回账户");
+    }
+    @RequestMapping(value ="/getNotripOrderList",method = RequestMethod.GET)
+    public GetAllOrderListReturnData GetNoTripOrderList(@RequestParam String token) {
+
+        String user = redisUtils.get(token);
+        String[] data = user.split(",");
+        String user_phone_number = data[1];
+        List<GetAllOrderList> getNotripOrderListLists = orderListService.getNotripOrderLists(user_phone_number);
+        logger.info(String.valueOf(getNotripOrderListLists.size()));
+        for(GetAllOrderList getAllOrderList :getNotripOrderListLists) {
+            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
+        }
+        return new GetAllOrderListReturnData(1,getNotripOrderListLists);
+
+    }
+
+    @RequestMapping(value ="/ticketChange",method = RequestMethod.POST)
+    public RespBean TicketChange(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+        }
+        String order_id = (String)request.get("order_id");
+        String passenger_phone_number  =  (String)request.get("passenger_phone_number");
+
+        orderListService.ChangeTicket(passenger_phone_number,order_id);
+        return new RespBean(1,"改签成功");
+
+
+    }
+
+    @RequestMapping(value ="/getOrder",method = RequestMethod.POST)
+    public GetOrderListReturnData getOrderInfo(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            System.out.println(Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage());
+        }
+
+        String order_id = (String)request.get("order_id");
+
+        List<GetOrderList> getOrderLists = orderListService.getOrderInof(order_id);
+        for(GetOrderList getOrderList:getOrderLists) {
+            getOrderList.setSeat_no(GetResult_Seat_no(getOrderList.getSeat_type(), Integer.parseInt(getOrderList.getSeat_no())));
+        }
+
+        return new GetOrderListReturnData(1,getOrderLists);
+    }
+
+
+    @RequestMapping(value ="/getOrderChangeResult",method = RequestMethod.GET)
+    public GetOrderListReturnData getOrderChangeResult(@RequestParam String token,String datetime,String train_no,String start_no,String end_no ,String passenger_phone_number)  {
+
         String user = redisUtils.get(token);
 
         String[] data = user.split(",");
 
+        datetime = datetime.substring(0,10);
         String user_phone_number = data[1];
+        logger.info(datetime);
+        List<GetOrderList> getOrderLists =   orderListService.GetOrderChagngeList(user_phone_number,datetime,train_no,start_no,end_no,passenger_phone_number);
+        logger.info(String.valueOf(getOrderLists.size()));
+        for(GetOrderList getOrderList:getOrderLists) {
+            getOrderList.setSeat_no(GetResult_Seat_no(getOrderList.getSeat_type(), Integer.parseInt(getOrderList.getSeat_no())));
+        }
 
-        List<GetAllOrderList> getAllOrderListLists = orderListService.getAllOrderLists(user_phone_number);
+        return new GetOrderListReturnData(1,getOrderLists);
+
+    }
+
+    /**
+     * 该订单要多少
+     */
+    @RequestMapping(value ="/getOrderMoney",method = RequestMethod.GET)
+    public RespBean getOrderChangeResult(@RequestParam String order_id)  {
+
+        String order_money = orderListService.getOrderMoney(order_id);
+
+        return new RespBean(1,order_money);
+    }
+
+    /**
+     * 获取所有订单
+     */
+    @RequestMapping(value ="/getAllOrder",method = RequestMethod.GET)
+    public GetAllOrderListReturnData GetOrderList(){
+
+        List<GetAllOrderList> getAllOrderListLists = orderListService.GetAllOrder();
+        for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
+            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
+        }
 
         return new GetAllOrderListReturnData(1,getAllOrderListLists);
     }
+
+    /**
+     * 通过手机号码查询订单
+     */
+    @RequestMapping(value ="/getOrderByPhoneNumber",method = RequestMethod.GET)
+    public GetAllOrderListReturnData getOrderByPhoneNumber(@RequestParam String user_phone_number){
+
+        List<GetAllOrderList> getAllOrderListLists = orderListService.getAllOrderLists(user_phone_number);
+        for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
+            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
+        }
+
+        return new GetAllOrderListReturnData(1,getAllOrderListLists);
+    }
+
 
     private String GetResult_Seat_no(String Seat_type,int seat_no) {
         String result_seat = null;
@@ -54,26 +197,19 @@ public class OrderListController {
             if(seat_no%3 == 2) {
                 result_seat +="C座";
             }
-
-
         }
-
         if(Seat_type.equals("一等座") ) {
-            result_seat = String.valueOf(seat_no/4 +1) +"排";
-            if(seat_no%4 == 0)
-            {
+            result_seat = seat_no / 4 + 1 +"排";
+            if(seat_no%4 == 0) {
                 result_seat +="A座";
             }
-            if(seat_no%4 == 1)
-            {
+            if(seat_no%4 == 1) {
                 result_seat +="B座";
             }
-            if(seat_no%4 == 2)
-            {
+            if(seat_no%4 == 2) {
                 result_seat +="C座";
             }
-            if(seat_no%4 == 3)
-            {
+            if(seat_no%4 == 3) {
                 result_seat +="D座";
             }
         }
@@ -142,140 +278,6 @@ public class OrderListController {
             }
         }
         return result_seat;
-    }
-    @RequestMapping(value ="/getNotripOrderList",method = RequestMethod.GET)
-    public GetAllOrderListReturnData GetNoTripOrderList(@RequestParam String token) {
-
-        logger.info(token);
-        String user = redisUtils.get(token);
-
-        String[] data = user.split(",");
-
-        String user_phone_number = data[1];
-        List<GetAllOrderList> getNotripOrderListLists = orderListService.getNotripOrderLists(user_phone_number);
-        logger.info(String.valueOf(getNotripOrderListLists.size()));
-        for(GetAllOrderList getAllOrderList :getNotripOrderListLists)
-        {
-            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
-
-        }
-        return new GetAllOrderListReturnData(1,getNotripOrderListLists);
-
-    }
-
-    /**
-     * 未支付订单
-     */
-    @RequestMapping(value ="/getNoPayOrderList",method = RequestMethod.GET)
-    public GetAllOrderListReturnData GetNoPauOrderList(@RequestParam String token) {
-
-        logger.info(token);
-        String user = redisUtils.get(token);
-
-        String[] data = user.split(",");
-
-        String user_phone_number = data[1];
-        List<GetAllOrderList> getNoPayOrderListLists = orderListService.getNopayOrderLists(user_phone_number);
-        for(GetAllOrderList getAllOrderList :getNoPayOrderListLists) {
-            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
-
-        }
-        return new GetAllOrderListReturnData(1,getNoPayOrderListLists);
-
-    }
-    @RequestMapping(value ="/refundTicket",method = RequestMethod.GET)
-    public RespBean RefundTicket(@RequestParam String token, String order_id) {
-        String user = redisUtils.get(token);
-        String[] data = user.split(",");
-        String user_phone_number = data[1];
-        orderListService.RefundTicket(user_phone_number,order_id);
-        return new RespBean(1,"退票成功，购票金额自动退回账户");
-    }
-
-    @RequestMapping(value ="/ticketChange",method = RequestMethod.POST)
-    public RespBean TicketChange(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-        }
-        String order_id = (String)request.get("order_id");
-        String passenger_phone_number  =  (String)request.get("passenger_phone_number");
-
-        orderListService.ChangeTicket(passenger_phone_number,order_id);
-        return new RespBean(1,"改签成功");
-
-
-    }
-
-    @RequestMapping(value ="/getOrder",method = RequestMethod.POST)
-    public GetOrderListReturnData getOrderInfo(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            System.out.println(Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage());
-        }
-
-        String order_id = (String)request.get("order_id");
-
-        List<GetOrderList> getOrderLists = orderListService.getOrderInof(order_id);
-        for(GetOrderList getOrderList:getOrderLists) {
-            getOrderList.setSeat_no(GetResult_Seat_no(getOrderList.getSeat_type(), Integer.parseInt(getOrderList.getSeat_no())));
-        }
-
-        return new GetOrderListReturnData(1,getOrderLists);
-    }
-
-
-    @RequestMapping(value ="/getOrderChangeResult",method = RequestMethod.GET)
-    public GetOrderListReturnData getOrderChangeResult(@RequestParam String token,String datetime,String train_no,String start_no,String end_no ,String passenger_phone_number)  {
-
-        String user = redisUtils.get(token);
-
-        String[] data = user.split(",");
-
-        datetime = datetime.substring(0,10);
-        String user_phone_number = data[1];
-        logger.info(datetime);
-        List<GetOrderList> getOrderLists =   orderListService.GetOrderChagngeList(user_phone_number,datetime,train_no,start_no,end_no,passenger_phone_number);
-        logger.info(String.valueOf(getOrderLists.size()));
-        for(GetOrderList getOrderList:getOrderLists) {
-            getOrderList.setSeat_no(GetResult_Seat_no(getOrderList.getSeat_type(), Integer.parseInt(getOrderList.getSeat_no())));
-        }
-
-        return new GetOrderListReturnData(1,getOrderLists);
-
-    }
-
-    @RequestMapping(value ="/getOrderMoney",method = RequestMethod.GET)
-    public RespBean getOrderChangeResult(@RequestParam String order_id)  {
-
-        String order_money = orderListService.getOrderMoney(order_id);
-
-        return new RespBean(1,order_money);
-    }
-
-    /**
-     * 所有订单
-     */
-    @RequestMapping(value ="/getAllOrder",method = RequestMethod.GET)
-    public GetAllOrderListReturnData GetOrderList(){
-
-        List<GetAllOrderList> getAllOrderListLists = orderListService.GetAllOrder();
-        for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
-            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
-        }
-
-        return new GetAllOrderListReturnData(1,getAllOrderListLists);
-    }
-
-    @RequestMapping(value ="/getOrderByPhoneNumber",method = RequestMethod.GET)
-    public GetAllOrderListReturnData getOrderByPhoneNumber(@RequestParam String user_phone_number){
-
-        List<GetAllOrderList> getAllOrderListLists = orderListService.getAllOrderLists(user_phone_number);
-        for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
-            getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
-        }
-
-        return new GetAllOrderListReturnData(1,getAllOrderListLists);
     }
 
 }

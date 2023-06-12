@@ -2,6 +2,8 @@ package com.hjnu.model.vo;
 
 import lombok.Data;
 
+import java.util.Objects;
+
 @Data
 public class GetAllOrderList {
     private String order_id;
@@ -35,6 +37,12 @@ public class GetAllOrderList {
         this.passenger_id_number = passenger_id_number;
         this.order_money = order_money;
     }
-
+    public boolean equals(Object obj){
+        GetAllOrderList o=(GetAllOrderList) obj;
+        if (Objects.equals(this.getOrder_id(), o.getOrder_id())){
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -12,7 +12,9 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderListService {
@@ -24,34 +26,28 @@ public class OrderListService {
      * 所有订单
      */
     public List<GetAllOrderList> getAllOrderLists (String user_phone_number) {
+
         //查询订单表
         List<GetAllOrderList> allOrderLists = orderListDao.GetAllOrderList(user_phone_number);
+
+        List<GetAllOrderList> myList = allOrderLists.stream().distinct().collect(Collectors.toList());
         //补全座位号和座位类型
-        allOrderLists.forEach(item ->{
-            String seat_type=orderListDao.getSeatTypeByNo(item.getSeat_no());
-            if(seat_type!=null){
-                item.setSeat_type(seat_type);
-            }
+        myList.forEach(item ->{
+            String seat_type=orderListDao.getSeatTypeByNo(item.getCarriage_no());
+            item.setSeat_type(seat_type);
+
         });
-
-        return allOrderLists;
+        return myList;
 
     }
 
-
-
-    public List<GetAllOrderList> getNotripOrderLists (String user_phone_number)
-    {
-        return orderListDao.GetNotripOrderList(user_phone_number);
-    }
 
     /**
      * 未支付订单
-     * @param user_phone_number
-     * @return
      */
     public List<GetAllOrderList> getNopayOrderLists (String user_phone_number) {
         List<GetAllOrderList> allOrderLists = getAllOrderLists(user_phone_number);
+
         List<GetAllOrderList> noPayOrderList = new ArrayList<>();
         allOrderLists.forEach(item->{
             if(item.getOrder_status().equals("未支付")){
@@ -61,13 +57,31 @@ public class OrderListService {
         return noPayOrderList;
     }
 
-    public void RefundTicket(String user_phone_number ,String order_id)
-    {
+    /**
+     * 已支付订单
+     */
+    public List<GetAllOrderList> getAlreadyPayOrderLists(String user_phone_number) {
+        //获取所有订单
+        List<GetAllOrderList> allOrderLists = getAllOrderLists(user_phone_number);
+
+        List<GetAllOrderList> alreadyPayOrderList = new ArrayList<>();
+        allOrderLists.forEach(item->{
+            if(item.getOrder_status().equals("已支付")){
+                alreadyPayOrderList.add(item);
+            }
+        });
+        return alreadyPayOrderList;
+    }
+
+    public List<GetAllOrderList> getNotripOrderLists (String user_phone_number) {
+        return orderListDao.GetNotripOrderList(user_phone_number);
+    }
+
+    public void RefundTicket(String user_phone_number ,String order_id) {
         orderListDao.RefundTicket(user_phone_number,order_id);
     }
 
-    public  void ChangeTicket(String passenger_phone_number,String order_id)
-    {
+    public  void ChangeTicket(String passenger_phone_number,String order_id) {
         orderListDao.ChangeTicket(passenger_phone_number,order_id);
     }
 
@@ -77,12 +91,10 @@ public class OrderListService {
         return orderListDao.GetOrderInfo(order_id);
     }
 
-    public List<GetOrderList> GetOrderChagngeList(String user_phone_number, String datetime, String train_no,  String start_no,  String end_no,String passenger_phone_number)
-    {
+    public List<GetOrderList> GetOrderChagngeList(String user_phone_number, String datetime, String train_no,  String start_no,  String end_no,String passenger_phone_number) {
         return orderListDao.GetOrderChagngeList(user_phone_number,datetime,train_no,start_no,end_no,passenger_phone_number);
     }
-    public String getOrderMoney(String order_id)
-    {
+    public String getOrderMoney(String order_id) {
         return orderListDao.GetOrderMoney(order_id);
     }
 
@@ -105,14 +117,13 @@ public class OrderListService {
     {
             return orderListDao.GetAllNoTripOrder();
     }
-    public  List<AllOrder>  GetAllNoPayOrder()
-    {
+    public  List<AllOrder>  GetAllNoPayOrder() {
         return orderListDao.GetAllNoPayOrder();
     }
 
-    public List<AllOrder> GetAllNoTripOrderByPassenger(String passenger_phone_number)
-    {
+    public List<AllOrder> GetAllNoTripOrderByPassenger(String passenger_phone_number) {
         return orderListDao.GetAllNoTripOrderByPassenger(passenger_phone_number);
     }
+
 
 }
