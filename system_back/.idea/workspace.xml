@@ -4,16 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="" />
+    <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/UpdateStation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/PassengerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/PassengerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TicketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TicketController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainScheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/TrainInfoDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/manager/ScheduledTasks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/manager/ScheduledTasks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/OrderList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/OrderList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/PassengerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/PassengerInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/SeatInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/SeatInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/TrainInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/TrainInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/TrainParkingInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/TrainParkingInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/po/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/vo/GetAllOrderList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/vo/GetAllOrderList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/utils/RedisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/utils/RedisUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-liuyichang" />
+        <entry key="$PROJECT_DIR$/.." value="dev-huanxing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -138,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686132949468</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="前后端联调">
+      <created>1686558612206</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686558612206</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

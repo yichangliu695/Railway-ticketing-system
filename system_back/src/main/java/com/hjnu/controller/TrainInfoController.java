@@ -39,8 +39,7 @@ public class TrainInfoController {
      * 对应前端的getTrainInfoData请求
      */
     @RequestMapping(value ="/traininfo",method = RequestMethod.GET)
-    public TrainInfoReturnData TrainInfo(Integer offset, Integer limit)
-    {
+    public TrainInfoReturnData TrainInfo(Integer offset, Integer limit) {
 
         List<TrainInfo>  trainInfos = trainInfoService.selectAllTrainInfo(offset,limit);
 
@@ -269,7 +268,6 @@ public class TrainInfoController {
     @RequestMapping(value ="/addTrainStation",method = RequestMethod.POST)
     public RespBean addTrainStation(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
 
-
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult.getFieldError().getDefaultMessage());
         }
@@ -295,7 +293,14 @@ public class TrainInfoController {
 
     }
 
-
+    /**
+     * 修改站点信息
+     */
+    @RequestMapping(value ="/changeSiteInfo",method = RequestMethod.POST)
+    public RespBean changeStationInfo(@RequestBody UpdateStation updateStation){
+        trainInfoService.updateTrainStation(updateStation);
+        return new RespBean(1,"修改成功");
+    }
 
 
 }

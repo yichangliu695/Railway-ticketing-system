@@ -77,4 +77,8 @@ public interface TrainInfoDao {
             "#{trainInfo.start_time},#{trainInfo.running_time}," +
             "#{trainInfo.station_no},#{trainInfo.station_name})")
     void AddTrainStation(@Param("trainInfo") TrainParkingInfo trainParkingInfo, @Param("train_no") String train_no);
+
+    @Update("update train_info set train_start_station=#{train_start_station},train_end_station=#{train_end_station} where train_number=#{train_number}")
+    void updateStation(@Param("train_number") String train_number, @Param("train_start_station") String train_start_station,@Param("train_end_station") String train_end_station);
+
 }

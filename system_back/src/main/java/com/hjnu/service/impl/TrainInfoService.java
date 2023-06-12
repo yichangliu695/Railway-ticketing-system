@@ -4,6 +4,7 @@ import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
 import com.hjnu.dao.TrainInfoDao;
+import com.hjnu.model.vo.UpdateStation;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -86,5 +87,12 @@ public class TrainInfoService {
     {
 
         trainInfoDao.AddTrainStation(trainParkingInfo,train_no);
+    }
+
+    public void updateTrainStation(UpdateStation updateStation) {
+        String train_number = updateStation.getTrain_number();
+        String start_station_name = updateStation.getTrain_start_station();
+        String end_station_name = updateStation.getTrain_end_station();
+        trainInfoDao.updateStation(train_number,start_station_name,end_station_name);
     }
 }
