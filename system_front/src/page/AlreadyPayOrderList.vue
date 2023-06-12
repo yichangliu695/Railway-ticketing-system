@@ -135,7 +135,7 @@
 
 <script>
     import headTop from '../components/headTop';
-    import {getNoPayOrderList,paySuccess} from '@/api/getData';
+    import {getNoPayOrderList,paySuccess,getAlreadyPayOrderList} from '@/api/getData';
     import {setCookie,getCookie} from "../config/store_cookie";
     export default {
         data(){
@@ -184,7 +184,7 @@
             async initData(){
                 try{
 
-                    const res = await getNoPayOrderList({token:getCookie("token")});
+                    const res = await getAlreadyPayOrderList({token:getCookie("token")});
                     if (res.status == 1) {
 
                         this.tableData = [];
