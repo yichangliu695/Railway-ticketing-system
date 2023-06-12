@@ -142,7 +142,7 @@
                 </el-form>
                 <span slot="footer" class="dialog-footer">
     <el-button @click="dialogVisible1 = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible1 = false">确 定</el-button>
+    <el-button type="primary" @click="submit()">确 定</el-button>
   </span>
             </el-dialog>
         </div>
@@ -151,7 +151,8 @@
 
 <script>
     import headTop from '../components/headTop'
-    import {getUserList, getTrainInfoData,SearchTrainInfoData,getAllTrainNumber} from '@/api/getData'
+    import {getUserList, getTrainInfoData,SearchTrainInfoData,getAllTrainNumber,changeSiteInfo} from '@/api/getData'
+    import {getCookie} from "../config/store_cookie";
     export default {
         data(){
             return {
@@ -172,7 +173,8 @@
                     train_number: '',
                     train_start_station: '',
                     train_end_station: ''
-                }
+                },
+                formName: 'changSiteInfo'
 
             }
         },
@@ -293,6 +295,38 @@
             handleDelete (index,row) {
                 this.tableData.splice(index,1);
 
+            },
+            async submit () {
+                 this.dialogVisible1 = false
+                this.$refs[this.formName].validate(async (valid) => {
+                    if (valid) {
+                        const res = await changeSiteInfo({token:getCookie("token"),
+                            train_number:this.changSiteInfo.train_number,
+                            train_start_station: this.changSiteInfo.train_start_station,
+                            train_end_station: this.changSiteInfo.train_end_station
+                        })
+                        if (res.status == 1) {
+                            this.$message({
+                                type: 'success',
+                                message: '修改成功'
+                            });
+
+                            this.initData();
+                        }else{
+                            this.$message({
+                                type: 'error',
+                                message: res.message
+                            });
+                        }
+                    } else {
+                        this.$notify.error({
+                            title: '错误',
+                            message: '请输入正确的用户名密码',
+                            offset: 100
+                        });
+                        return false;
+                    }
+                });
             }
         },
     }

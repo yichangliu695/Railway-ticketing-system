@@ -200,4 +200,4 @@ export const getAllStationName = data => fetch('/train/getAllStationName', data,
 /**
  * 修改站点信息
  */
-export  const changeSiteInfo = data => fetch('/train/changeSiteInfo',data,);
+export  const changeSiteInfo = data => fetch('/train/changeSiteInfo',data,post);
