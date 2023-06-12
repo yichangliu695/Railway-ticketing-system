@@ -231,7 +231,6 @@
                     this.tableData.push(tableData);
                 }
                 console.log(this.tableData)
-
             },
             async submitForm(formName) {
                 this.$refs[formName].validate(async (valid) => {
@@ -297,10 +296,11 @@
                 const res =  deleteTrainInfo({
                     train_number: row.train_number
                 })
+                 this.initData();
                 if (res.status == 1) {
                     this.$message({
                         type: 'success',
-                        message: '修改成功'
+                        message: res.message
                     });
                     this.initData();
                 }else{
@@ -309,6 +309,7 @@
                         message: res.message
                     });
                 }
+                 this.initData();
             },
             async submit () {
                  this.dialogVisible1 = false
@@ -319,6 +320,7 @@
                             train_start_station: this.changSiteInfo.train_start_station,
                             train_end_station: this.changSiteInfo.train_end_station
                         })
+                        this.initData();
                         if (res.status == 1) {
                             this.$message({
                                 type: 'success',
@@ -341,6 +343,7 @@
                         return false;
                     }
                 });
+                 this.initData()
             }
         },
     }

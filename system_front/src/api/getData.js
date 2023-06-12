@@ -150,6 +150,12 @@ export const getNotripOrderList = data => fetch('/order/getNotripOrderList', dat
 export const getNoPayOrderList = data => fetch('/order/getNoPayOrderList', data);
 
 /**
+ * 查询用户已支付订单
+ * @param data
+ */
+export const getAlreadyPayOrderList = data => fetch('/order/getAlreadyPayOrderList', data);
+
+/**
  * 退票
  * @param data
  */
