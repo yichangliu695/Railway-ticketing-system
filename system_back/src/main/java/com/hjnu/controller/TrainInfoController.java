@@ -4,8 +4,8 @@ import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
 import com.hjnu.model.vo.*;
-import com.hjnu.service.TrainInfoService;
-import com.hjnu.service.TrainParkingStationService;
+import com.hjnu.service.impl.TrainInfoService;
+import com.hjnu.service.impl.StationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
@@ -32,14 +32,11 @@ public class TrainInfoController {
     private TrainInfoService  trainInfoService;
 
     @Resource
-    private TrainParkingStationService trainParkingStationService;
+    private StationService stationService;
 
     /**
      * 查询所有列车信息
      * 对应前端的getTrainInfoData请求
-     * @param offset
-     * @param limit
-     * @return
      */
     @RequestMapping(value ="/traininfo",method = RequestMethod.GET)
     public TrainInfoReturnData TrainInfo(Integer offset, Integer limit)
@@ -87,8 +84,8 @@ public class TrainInfoController {
     @RequestMapping(value ="/searchtrainparkingInfo",method = RequestMethod.GET)
     public TrainParkingInfoReturnData SearchTrainInfoList(String train_number)
     {
-        logger.info(train_number);
-        List<TrainParkingInfo> trainParkingInfos = trainParkingStationService.selectTrainParkingInfo(train_number);
+        //logger.info(train_number);
+        List<TrainParkingInfo> trainParkingInfos = stationService.selectTrainParkingInfo(train_number);
         logger.info(String.valueOf(trainParkingInfos.size()));
         for(TrainParkingInfo trainParkingInfo :trainParkingInfos)
         {
@@ -218,7 +215,7 @@ public class TrainInfoController {
     {
         try {
 
-            List<String> stationNameList = trainParkingStationService.selectAllStationName();
+            List<String> stationNameList = stationService.selectAllStationName();
                     List<TrainNumberData> trainNumberDatas = new ArrayList<>();
             for(int i = 0 ; i<stationNameList.size() ; i++)
             {

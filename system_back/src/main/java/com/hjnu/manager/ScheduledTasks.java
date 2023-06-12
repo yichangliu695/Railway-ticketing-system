@@ -3,8 +3,8 @@ package com.hjnu.manager;
 
 import com.hjnu.model.vo.AllOrder;
 import com.hjnu.model.vo.GetAllNoTripData;
-import com.hjnu.service.OrderListService;
-import com.hjnu.service.TrainTicketOrderService;
+import com.hjnu.service.impl.OrderListService;
+import com.hjnu.service.impl.TrainTicketOrderService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

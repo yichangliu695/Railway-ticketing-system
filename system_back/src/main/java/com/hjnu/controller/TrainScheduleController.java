@@ -4,7 +4,7 @@ import com.hjnu.utils.RedisUtils;
 import com.hjnu.model.vo.TrainScheduleInfo;
 import com.hjnu.model.vo.TrainScheduleReturnData;
 import com.hjnu.model.vo.TrainTransferScheduleReturnData;
-import com.hjnu.service.TrainScheduleService;
+import com.hjnu.service.impl.TrainScheduleService;
 import com.hjnu.model.vo.TrainTransferSchedule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

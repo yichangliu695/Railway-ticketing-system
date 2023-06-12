@@ -2,7 +2,7 @@ package com.hjnu.controller;
 
 import com.hjnu.utils.RedisUtils;
 import com.hjnu.model.vo.RespBean;
-import com.hjnu.service.PassengerService;
+import com.hjnu.service.impl.PassengerService;
 import com.hjnu.model.po.PassengerInfo;
 import com.hjnu.model.vo.PassengerInfoReturnData;
 import org.slf4j.Logger;

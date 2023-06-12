@@ -30,6 +30,7 @@ const AllOrderList = r => require.ensure([], () => r(require('@/page/AllOrderLis
 const NoTripOrderList = r => require.ensure([], () => r(require('@/page/NoTripOrderList')), 'NoTripOrderList');
 
 const NoPayOrderList = r => require.ensure([], () => r(require('@/page/NoPayOrderList')), 'NoPayOrderList');
+const AlreadyPayOrderList = r => require.ensure([], () => r(require('@/page/AlreadyPayOrderList')), 'AlreadyPayOrderList');
 
 const TicketChange = r => require.ensure([], () => r(require('@/page/TicketChange')), 'TicketChange');
 const routes = [
@@ -99,6 +100,11 @@ const routes = [
                 path: '/NoPayOrderList',
                 component: NoPayOrderList,
                 meta: ['订单列表', '未支付订单'],
+            },
+            {
+                path: '/AlreadyPayOrderList',
+                component: AlreadyPayOrderList,
+                meta: ['订单列表', '已支付订单'],
             }
 		,{
                 path: '/TicketChange',

@@ -4,10 +4,10 @@ package com.hjnu.controller;
 import com.hjnu.model.po.OrderList;
 import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.service.OrderListService;
-import com.hjnu.service.TrainParkingStationService;
-import com.hjnu.service.TrainTickerQueryService;
-import com.hjnu.service.TrainTicketOrderService;
+import com.hjnu.service.impl.OrderListService;
+import com.hjnu.service.impl.StationService;
+import com.hjnu.service.impl.TrainTickerQueryService;
+import com.hjnu.service.impl.TrainTicketOrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
@@ -35,7 +35,7 @@ public class OrderController {
     private TrainTicketOrderService trainTicketOrderService;
 
     @Resource
-    private TrainParkingStationService trainParkingStationService;
+    private StationService stationService;
     @Resource
     private RedisUtils redisUtils;
 
@@ -79,8 +79,8 @@ public class OrderController {
 
         String user_phone_number = data[1];
         String passenger_type = trainTicketOrderService.SelectPassengerType(user_phone_number,passenger_phone_number);
-        String start_station_name = trainParkingStationService.searchStation_name(train_no,start_no);
-        String end_station_name = trainParkingStationService.searchStation_name(train_no,end_no);
+        String start_station_name = stationService.searchStation_name(train_no,start_no);
+        String end_station_name = stationService.searchStation_name(train_no,end_no);
 
 
         //判断是否订购过本次列车

@@ -2,7 +2,7 @@ package com.hjnu.controller;
 
 import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.service.OrderListService;
+import com.hjnu.service.impl.OrderListService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
@@ -84,87 +84,67 @@ public class OrderListController {
                 result_seat +="D座";
             }
         }
-        if(Seat_type.equals("二等座") )
-        {
+        if(Seat_type.equals("二等座") ) {
             result_seat = String.valueOf(seat_no/5 +1) +"排";
-            if(seat_no%5 == 0)
-            {
+            if(seat_no%5 == 0) {
                 result_seat +="A座";
             }
-            if(seat_no%5 == 1)
-            {
+            if(seat_no%5 == 1) {
                 result_seat +="B座";
             }
-            if(seat_no%5 == 2)
-            {
+            if(seat_no%5 == 2) {
                 result_seat +="C座";
             }
-            if(seat_no%5 == 3)
-            {
+            if(seat_no%5 == 3) {
                 result_seat +="D座";
             }
-            if(seat_no%5 == 4)
-            {
+            if(seat_no%5 == 4) {
                 result_seat +="E座";
             }
         }
-        if(Seat_type.equals("软卧") )
-        {
+        if(Seat_type.equals("软卧") ) {
 
             result_seat = String.valueOf(seat_no/2 +1) +"排" ;
-            if(seat_no%2 == 0)
-            {
+            if(seat_no%2 == 0) {
                 result_seat +="上铺";
             }
-            if(seat_no%2 == 1)
-            {
+            if(seat_no%2 == 1) {
                 result_seat +="下铺";
             }
 
         }
 
-        if(Seat_type.equals("硬卧") )
-        {
+        if(Seat_type.equals("硬卧") ) {
             result_seat = String.valueOf(seat_no/3 +1) +"排";
-            if(seat_no%3 == 0)
-            {
+            if(seat_no%3 == 0) {
                 result_seat +="上铺";
             }
-            if(seat_no%3 == 1)
-            {
+            if(seat_no%3 == 1) {
                 result_seat +="中铺";
             }
-            if(seat_no%3 == 2)
-            {
+            if(seat_no%3 == 2) {
                 result_seat +="下铺";
             }
 
         }
-        if(Seat_type.equals("硬坐") )
-        {
+        if(Seat_type.equals("硬坐") ) {
             result_seat = String.valueOf(seat_no/6 +1) +"排";
-            if(seat_no%6 == 0)
-            {
+            if(seat_no%6 == 0) {
                 result_seat +="A座";
             }
-            if(seat_no%6 == 1)
-            {
+            if(seat_no%6 == 1) {
                 result_seat +="B座";
             }
-            if(seat_no%6 == 2)
-            {
+            if(seat_no%6 == 2) {
                 result_seat +="C座";
             }
-            if(seat_no%6 == 3)
-            {
+            if(seat_no%6 == 3) {
                 result_seat +="D座";
             }
-            if(seat_no%6 == 4)
-            {
+            if(seat_no%6 == 4) {
                 result_seat +="E座";
             }
-            if(seat_no%6 == 5)
-            {
+            if(seat_no%6 == 5) {
                 result_seat +=" F座";
             }
         }
@@ -201,8 +181,7 @@ public class OrderListController {
         String user_phone_number = data[1];
         List<GetAllOrderList> getNoPayOrderListLists = orderListService.getNopayOrderLists(user_phone_number);
         logger.info(String.valueOf(getNoPayOrderListLists.size()));
-        for(GetAllOrderList getAllOrderList :getNoPayOrderListLists)
-        {
+        for(GetAllOrderList getAllOrderList :getNoPayOrderListLists) {
             getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
 
         }
@@ -245,8 +224,7 @@ public class OrderListController {
         String order_id = (String)request.get("order_id");
 
        List<GetOrderList> getOrderLists = orderListService.getOrderInof(order_id);
-       for(GetOrderList getOrderList:getOrderLists)
-       {
+       for(GetOrderList getOrderList:getOrderLists) {
            getOrderList.setSeat_no(GetResult_Seat_no(getOrderList.getSeat_type(), Integer.parseInt(getOrderList.getSeat_no())));
        }
 
@@ -266,8 +244,7 @@ public class OrderListController {
         logger.info(datetime);
         List<GetOrderList> getOrderLists =   orderListService.GetOrderChagngeList(user_phone_number,datetime,train_no,start_no,end_no,passenger_phone_number);
         logger.info(String.valueOf(getOrderLists.size()));
-        for(GetOrderList getOrderList:getOrderLists)
-        {
+        for(GetOrderList getOrderList:getOrderLists) {
             getOrderList.setSeat_no(GetResult_Seat_no(getOrderList.getSeat_type(), Integer.parseInt(getOrderList.getSeat_no())));
         }
 
@@ -288,8 +265,7 @@ public class OrderListController {
     public GetAllOrderListReturnData GetOrderList(){
 
         List<GetAllOrderList> getAllOrderListLists = orderListService.GetAllOrder();
-        for(GetAllOrderList getAllOrderList :getAllOrderListLists)
-        {
+        for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
             getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
         }
 
@@ -300,8 +276,7 @@ public class OrderListController {
     public GetAllOrderListReturnData getOrderByPhoneNumber(@RequestParam String user_phone_number){
 
         List<GetAllOrderList> getAllOrderListLists = orderListService.getAllOrderLists(user_phone_number);
-        for(GetAllOrderList getAllOrderList :getAllOrderListLists)
-        {
+        for(GetAllOrderList getAllOrderList :getAllOrderListLists) {
             getAllOrderList.setSeat_no(GetResult_Seat_no(getAllOrderList.getSeat_type(), Integer.parseInt(getAllOrderList.getSeat_no())));
         }
 
