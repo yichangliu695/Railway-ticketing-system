@@ -10,6 +10,7 @@
                     <el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
                     <el-submenu index="2">
                         <template slot="title"><i class="el-icon-document"></i>列车信息查询</template>
+                        <el-menu-item index="SiteInformation">站点信息</el-menu-item>
                         <el-menu-item index="TrainInfoList">列车信息</el-menu-item>
 <!--                        <el-menu-item index="SearchTrainInfo">列车时刻表</el-menu-item>-->
                         <el-menu-item index="TrainSchedule">列车查询</el-menu-item>
