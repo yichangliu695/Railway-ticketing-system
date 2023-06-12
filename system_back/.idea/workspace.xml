@@ -4,173 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e60e6f3f-7d6b-44a5-abbf-3adae166ec43" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/PassengerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/0.3f2458140e369362cd26.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/1.7f5cafb8bd6ca50c3022.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/10.aaba54d7b43c6a5f099e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/11.8910b52c59d78c17fdc4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/12.578d8808399f501ea927.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/13.cd549d74422eadec4b9b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/14.1e1c2f46506a7611d921.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/15.40afc53f0adc593f00c2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/16.f371cf54c1ddebed4afb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/17.0ed0ba1ae636ae7f4b1e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/18.cb798290c69dbe23a282.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/19.9ed0cfeea921bf17af25.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/2.f0a6d483a68cda383c2c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/20.d2951f969da7bf134d24.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/21.335a7250cb673ad3afd3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/3.5e6ae4f5b49b0026a7db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/4.f58c8095e62a476b48c0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/5.a2b277b5e0da988ceb04.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/6.56734ef9dca942e7dc47.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/7.94a867389837af5a2fd6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/8.8541b48981e704d85855.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/9.7369570ac54bf7ab127e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/app.e517551119a4efa531cf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/manifest.5af25ff252af09192e57.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/manage/static/js/vendor.d880385a436a9659bd02.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system_front/src/page/AlreadyPayOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/PassengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/PassengerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/manager/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/manager/ScheduledTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/model/po/SeatInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/po/SeatInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/GetAllOrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/GetAllOrderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/OrderListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/PassengerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainParkingStationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/StationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainScheduleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainTickerQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainTickerQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/TrainTicketOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainTicketOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.eslintignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/vue2-manage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/vue2-manage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/.postcssrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.postcssrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/COPYING" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/COPYING" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/check-versions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/check-versions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/dev-client.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/dev-client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/dev-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/dev-server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/vue-loader.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/vue-loader.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/webpack.base.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/webpack.dev.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/webpack.prod.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/build/webpack.test.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/build/webpack.test.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/config/dev.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/config/dev.env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/config/prod.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/config/prod.env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/config/test.env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/config/test.env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/manage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/0.0dd13c81d3a8f6dcd7ae.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/1.3c1bbe388cdbe17d97bb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/10.7e137a1198837cb23ddd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/11.9b75ffdc216fe00bd1e1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/12.85d579892354ef43ce1b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/13.c3aa5ea4b9e58a48fdf0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/14.6c86f259f67f2423930d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/15.b1c098b6d071edd2b34d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/16.9ddecb080faa9b9064c7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/17.ad146392c8ac7112a913.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/18.81757e3d2d14ed5fead7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/19.fe8b378cdaca9938f6ce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/2.c87e2eb0cddf666e4328.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/20.c84919f68d5639020257.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/3.0e7c45aad7d9a7e63e58.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/4.326ede42eb2bc569824f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/5.3c1c82b9a062a160306e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/6.22e0b067a69ef04bf0b1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/7.8aa03cd8a8c81266fbb5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/8.b0419fe19dcef9f87a69.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/9.473a2a4d896cc9da16b6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/app.6d5a625a1f37385d880b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/manifest.0b9b993878b84b4b1284.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/manage/static/js/vendor.1b8e1dc08c88caaeea06.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/api/getData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/api/getData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/components/headTop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/components/headTop.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/components/tendency.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/components/tendency.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/components/visitorPie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/components/visitorPie.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/config/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/config/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/config/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/config/fetch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/config/mUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/config/mUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/config/store_cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/config/store_cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/AddPassenger.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/AddPassenger.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/AllOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/AllOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/ChangePassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/ChangePassword.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/ChangeUserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/ChangeUserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/NoPayOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/NoTripOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/NoTripOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/PassengerInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/PassengerInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TicketChange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TicketChange.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TicketOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TicketOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainInfoList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainInfoList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainParkingInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainParkingInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainSchedule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainSchedule.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainTransfer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainTransferTicketQuery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainTransferTicketQuery.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TransferTicketOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TransferTicketOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/manage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/manage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/ticketInquiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/ticketInquiry.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/vueEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/vueEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/style/common.less" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/style/common.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/style/mixin.less" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/style/mixin.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/style/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/e2e/custom-assertions/elementCount.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/e2e/custom-assertions/elementCount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/e2e/nightwatch.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/e2e/nightwatch.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/e2e/runner.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/e2e/runner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/e2e/specs/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/e2e/specs/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/unit/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/unit/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/unit/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/unit/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/unit/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/unit/karma.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/test/unit/specs/Hello.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/test/unit/specs/Hello.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-huanxing" />
+        <entry key="$PROJECT_DIR$/.." value="dev-liuyichang" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -178,44 +21,58 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Qusp0guV8Fj7zi0VLVyvm9BQ6T" />
-  <component name="ProjectLevelVcsManager">
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\java\repository" />
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2QnQ9jRLVaasd50lkQqI9IQwIqt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Coding/train_ticket_system/system_front",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "020852f3caa22453898c631794773f1b",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding/train_ticket_system/system_front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3816092&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;020852f3caa22453898c631794773f1b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="SystemBackApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="SystemBackApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" value="dev" />
       <module name="system_back" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hjnu.SystemBackApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hjnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -230,33 +87,84 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.SystemBackApplication" />
-        <item itemvalue="Spring Boot.SystemBackApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e60e6f3f-7d6b-44a5-abbf-3adae166ec43" name="Changes" comment="" />
-      <created>1686214985980</created>
+      <changelist id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="" />
+      <created>1685986720348</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1686214985980</updated>
-      <workItem from="1686214988073" duration="148000" />
-      <workItem from="1686215158602" duration="3181000" />
-      <workItem from="1686493012678" duration="104000" />
-      <workItem from="1686535395467" duration="642000" />
-      <workItem from="1686552601119" duration="4967000" />
+      <updated>1685986720348</updated>
+      <workItem from="1685986722149" duration="2380000" />
+      <workItem from="1685989624960" duration="301000" />
+      <workItem from="1686016308647" duration="1731000" />
+      <workItem from="1686018156491" duration="3609000" />
+      <workItem from="1686042248383" duration="4116000" />
+      <workItem from="1686122176075" duration="8369000" />
     </task>
+    <task id="LOCAL-00001" summary="后端代码提交">
+      <created>1685989857778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989857778</updated>
+    </task>
+    <task id="LOCAL-00002" summary="结构调整">
+      <created>1686017837513</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686017837513</updated>
+    </task>
+    <task id="LOCAL-00003" summary="搞定数据库，后端成功部署">
+      <created>1686044109180</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686044109180</updated>
+    </task>
+    <task id="LOCAL-00004" summary="前后端联调">
+      <created>1686124749303</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686124749303</updated>
+    </task>
+    <task id="LOCAL-00005" summary="前后端联调">
+      <created>1686132949468</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686132949468</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="后端代码提交" />
+    <MESSAGE value="结构调整" />
+    <MESSAGE value="搞定数据库，后端成功部署" />
+    <MESSAGE value="前后端联调" />
+    <option name="LAST_COMMIT_MESSAGE" value="前后端联调" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
