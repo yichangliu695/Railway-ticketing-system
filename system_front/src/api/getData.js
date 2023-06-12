@@ -201,3 +201,9 @@ export const getAllStationName = data => fetch('/train/getAllStationName', data,
  * 修改站点信息
  */
 export const changeSiteInfo = data => fetch('/train/changeSiteInfo', data,'POST');
+
+
+/**
+ * 删除站点信息
+ */
+export const deleteTrainInfo = data => fetch('/train/deleteTrainInfo', data,'POST');

@@ -151,7 +151,7 @@
 
 <script>
     import headTop from '../components/headTop'
-    import {getUserList, getTrainInfoData,SearchTrainInfoData,getAllTrainNumber,changeSiteInfo} from '@/api/getData'
+    import {getUserList, getTrainInfoData,SearchTrainInfoData,getAllTrainNumber,changeSiteInfo,deleteTrainInfo} from '@/api/getData'
     import {getCookie} from "../config/store_cookie";
     export default {
         data(){
@@ -230,6 +230,7 @@
                     tableData.train_arrive_day = TrainInfoData.trainInfos[i].train_arrive_day
                     this.tableData.push(tableData);
                 }
+                console.log(this.tableData)
 
             },
             async submitForm(formName) {
@@ -268,8 +269,7 @@
             },
             async showAll()
             {
-                this.initData();
-
+                this.initData()
             },
             async querySearch(queryString, cb) {
                 var houseNumberList = this.trainData;
@@ -292,9 +292,23 @@
                 this.changSiteInfo.train_start_station = row.train_start_station
                 this.changSiteInfo.train_end_station = row.train_end_station
             },
-            handleDelete (index,row) {
+             handleDelete (index,row) {
                 this.tableData.splice(index,1);
-
+                const res =  deleteTrainInfo({
+                    train_number: row.train_number
+                })
+                if (res.status == 1) {
+                    this.$message({
+                        type: 'success',
+                        message: '修改成功'
+                    });
+                    this.initData();
+                }else{
+                    this.$message({
+                        type: 'error',
+                        message: res.message
+                    });
+                }
             },
             async submit () {
                  this.dialogVisible1 = false

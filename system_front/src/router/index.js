@@ -56,24 +56,24 @@ const routes = [
 		},{
 			path: '/TrainInfoList',
 			component: TrainInfoList,
-			meta: ['列车信息查询', '列车信息'],
+			meta: ['信息维护', '列车信息'],
 		},{
             path: '/SiteInformation',
             component: SiteInformation,
-            meta: ['列车信息查询', '站点信息'],
+            meta: ['信息维护', '站点信息'],
         },
             {
                 path: '/SearchTrainInfo',
                 component: TrainParkingInfo,
-                meta: ['列车信息查询', '列车时刻表'],
+                meta: ['信息维护', '列车时刻表'],
         },{
 			path: '/TrainSchedule',
 			component: TrainSchedule,
-			meta: ['列车信息查询', '列车查询'],
+			meta: ['信息维护', '列车查询'],
 		},{
             path: '/TrainTransfer',
             component: TrainTransfer,
-            meta: ['列车信息查询', '接续换乘'],
+            meta: ['信息维护', '接续换乘'],
         },{
 			path: '/ticketInquiry',
 			component: ticketInquiry,
