@@ -300,7 +300,7 @@
                  this.dialogVisible1 = false
                 this.$refs[this.formName].validate(async (valid) => {
                     if (valid) {
-                        const res = await changeSiteInfo({token:getCookie("token"),
+                        const res = await changeSiteInfo({
                             train_number:this.changSiteInfo.train_number,
                             train_start_station: this.changSiteInfo.train_start_station,
                             train_end_station: this.changSiteInfo.train_end_station
