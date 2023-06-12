@@ -36,8 +36,6 @@ public class PassengerController {
      * 根据用户  获取此用户下的乘客信息
      *
      * 对应前端的getPassengerInfo请求
-     * @param token
-     * @return
      */
     @RequestMapping(value ="/getPassengerInfo",method = RequestMethod.GET)
     public PassengerInfoReturnData getPassengerInfo(@RequestParam String token) {
@@ -57,9 +55,7 @@ public class PassengerController {
      *
      * 用户添加乘客
      * 对应前端的addPassengerInfo请求
-     * @param request
-     * @param bindingResult
-     * @return
+
      */
     @RequestMapping(value ="/addPassengerInfo",method = RequestMethod.POST)
     public RespBean UserRegister(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {

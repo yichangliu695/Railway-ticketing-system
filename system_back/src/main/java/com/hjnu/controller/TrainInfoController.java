@@ -10,12 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  *
@@ -37,30 +37,21 @@ public class TrainInfoController {
      */
     @RequestMapping(value ="/traininfo",method = RequestMethod.GET)
     public TrainInfoReturnData TrainInfo(Integer offset, Integer limit) {
-
         List<TrainInfo>  trainInfos = trainInfoService.selectAllTrainInfo(offset,limit);
-
-
-        if(!trainInfos.isEmpty())
-        {
+        if(!trainInfos.isEmpty()) {
             return new TrainInfoReturnData(1,trainInfos);
         }
-
         return new TrainInfoReturnData(404,trainInfos);
     }
 
     /**
-     *
      * 根据车次查询列车信息
-     *
      */
     @RequestMapping(value ="/searchtraininfo",method = RequestMethod.GET)
-    public SearchTrainInfoReturnData SearchTrainInfo(String train_number)
-    {
+    public SearchTrainInfoReturnData SearchTrainInfo(String train_number) {
 
         TrainInfo trainInfo = trainInfoService.selectTrainInfo(train_number);
-        if(!trainInfo.toString().equals(""))
-        {
+        if(!trainInfo.toString().equals("")) {
             return new SearchTrainInfoReturnData(1, trainInfo);
         }
 
@@ -70,21 +61,11 @@ public class TrainInfoController {
     /**
      *
      *根据车次查询列车的经停信息
-     * 对应前端的 SearchTrainParkingInfo请求
      */
     @RequestMapping(value ="/searchtrainparkingInfo",method = RequestMethod.GET)
-    public TrainParkingInfoReturnData SearchTrainInfoList(String train_number)
-    {
-        //logger.info(train_number);
+    public TrainParkingInfoReturnData SearchTrainInfoList(String train_number) {
         List<TrainParkingInfo> trainParkingInfos = stationService.selectTrainParkingInfo(train_number);
-        logger.info(String.valueOf(trainParkingInfos.size()));
-        for(TrainParkingInfo trainParkingInfo :trainParkingInfos)
-        {
-            logger.info(trainParkingInfo.getStation_no());
-        }
         return new TrainParkingInfoReturnData(1,trainParkingInfos);
-
-
     }
 
     @RequestMapping(value ="/updateTrainTypeStart",method = RequestMethod.GET)
@@ -111,102 +92,68 @@ public class TrainInfoController {
     public SeatInfoReturnData SelectSeatInfoByTrainNumber(String train_number) {
         try {
             return new SeatInfoReturnData(1, trainInfoService.SelectSeatInfoByTrainNumber(train_number));
-
         } catch (Exception e) {
-
-            logger.info(e.getMessage());
             return new SeatInfoReturnData(404,null);
-
         }
     }
-
 
     @RequestMapping(value ="/deleteTrainSeat",method = RequestMethod.GET)
     public RespBean deleteTrainSeat(String train_no,String carriage_no) {
         try {
             trainInfoService.deleteTrainSeat(train_no,carriage_no);
             return new RespBean(1, "删除成功");
-
         } catch (Exception e) {
-
             return new RespBean(404,"删除失败");
-
         }
-
     }
+
     @RequestMapping(value ="/addTrainSeat",method = RequestMethod.GET)
-    public RespBean addTrainSeat(String train_no,String carriage_no,String seat_type,String seat_count)
-    {
-
-        try
-        {
-
+    public RespBean addTrainSeat(String train_no,String carriage_no,String seat_type,String seat_count) {
+        try {
            SeatInfo seatInfo = new SeatInfo(train_no,null,carriage_no,seat_type,Integer.parseInt(seat_count));
            trainInfoService.addTrainSeat(seatInfo);
-            return new RespBean(1, "添加成功");
-
-        }
-        catch (Exception e)
-        {
-
-            logger.info(e.getMessage());
+           return new RespBean(1, "添加成功");
+        } catch (Exception e) {
             return new RespBean(404,"添加失败");
-
         }
     }
 
 
     @RequestMapping(value ="/getAllTrainNumber",method = RequestMethod.GET)
-    public GetAllTrainNumberListReturnData getAllTrainNumber()
-    {
+    public GetAllTrainNumberListReturnData getAllTrainNumber() {
         try {
-
             List<String> trainNumberLists = trainInfoService.selectAllTrainNumber();
             List<TrainNumberData> trainNumberDatas = new ArrayList<>();
-            for(int i = 0 ; i<trainNumberLists.size() ; i++)
-            {
-
-                TrainNumberData trainNumberData = new TrainNumberData(trainNumberLists.get(i),"111");
+            for (String trainNumberList : trainNumberLists) {
+                TrainNumberData trainNumberData = new TrainNumberData(trainNumberList, "111");
                 trainNumberDatas.add(trainNumberData);
             }
             return new GetAllTrainNumberListReturnData(1,trainNumberDatas);
-        }
-       catch (Exception e)
-       {
-           logger.info(e.getMessage());
+        } catch (Exception e) {
            return new GetAllTrainNumberListReturnData(404,null);
 
        }
     }
 
     @RequestMapping(value ="/getAllStationName",method = RequestMethod.GET)
-    public GetAllTrainNumberListReturnData getAllStationName()
-    {
+    public GetAllTrainNumberListReturnData getAllStationName() {
         try {
-
             List<String> stationNameList = stationService.selectAllStationName();
-                    List<TrainNumberData> trainNumberDatas = new ArrayList<>();
-            for(int i = 0 ; i<stationNameList.size() ; i++)
-            {
-
-                TrainNumberData trainNumberData = new TrainNumberData(stationNameList.get(i),"111");
+            List<TrainNumberData> trainNumberDatas = new ArrayList<>();
+            for (String s : stationNameList) {
+                TrainNumberData trainNumberData = new TrainNumberData(s, "111");
                 trainNumberDatas.add(trainNumberData);
             }
             return new GetAllTrainNumberListReturnData(1,trainNumberDatas);
-        }
-        catch (Exception e)
-        {
-            logger.info(e.getMessage());
+        } catch (Exception e) {
             return new GetAllTrainNumberListReturnData(404,null);
-
         }
     }
     @RequestMapping(value ="/addTrainInfo",method = RequestMethod.POST)
     public RespBean UserLogin(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
 
-
         if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            System.out.println(Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage());
         }
         String train_no = (String) request.get("train_no");
         String train_number = (String) request.get("train_number");
@@ -220,13 +167,11 @@ public class TrainInfoController {
         String train_running_time = (String) request.get("train_running_time");
         String train_running_type = (String) request.get("train_running_type");
 
-        try
-        {
+        try {
             TrainInfo trainInfo = new TrainInfo(train_no,train_number,train_type,train_carriages,train_start_station,train_end_station,train_start_time,train_end_time,train_arrive_day,train_running_time,train_running_type);
             trainInfoService.AddTrainInfo(trainInfo);
             return new RespBean(1,"插入成功");
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             logger.info(e.getMessage());
             return new RespBean(403,"插入失败");
@@ -237,7 +182,6 @@ public class TrainInfoController {
 
     @RequestMapping(value ="/addTrainStation",method = RequestMethod.POST)
     public RespBean addTrainStation(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
-
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult.getFieldError().getDefaultMessage());
         }
@@ -249,18 +193,15 @@ public class TrainInfoController {
         String start_time = (String) request.get("start_time");
         String running_time = (String) request.get("running_time");
         String arrive_day_str = (String) request.get("arrive_day_str");
-        try
-        {
-            TrainParkingInfo trainParkingInfo = new TrainParkingInfo(station_no,station_name,train_number,start_time,arrive_time,running_time,arrive_day_str);
+        try {
+            TrainParkingInfo trainParkingInfo = new TrainParkingInfo(
+                    station_no,station_name,train_number,start_time,arrive_time,running_time,arrive_day_str
+            );
             trainInfoService.AddTrainStation(trainParkingInfo,train_no);
             return new RespBean(1,"插入成功");
-        }catch (Exception e)
-        {
-            logger.info(e.getMessage());
+        }catch (Exception e) {
             return new RespBean(403,"插入失败");
         }
-
-
     }
 
     /**
@@ -284,6 +225,5 @@ public class TrainInfoController {
         }
         return new RespBean(1,"删除成功");
     }
-
 
 }

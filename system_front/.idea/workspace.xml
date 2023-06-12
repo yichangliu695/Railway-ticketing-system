@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e6a1b75-298f-44a7-a7c4-20164ed4b530" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../system_back/src/test/java/com/hjnu/service/OrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/PassengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/PassengerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/TrainInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/TrainInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/TicketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/TicketController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/PassengerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/PassengerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/TrainInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/TrainInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/TrainInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/TrainInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/vo/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/vo/UserInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -22,8 +22,6 @@ public class OrderListService {
 
     /**
      * 所有订单
-     * @param user_phone_number
-     * @return
      */
     public List<GetAllOrderList> getAllOrderLists (String user_phone_number) {
         //查询订单表
@@ -37,6 +35,7 @@ public class OrderListService {
         });
 
         return allOrderLists;
+
     }
 
 
