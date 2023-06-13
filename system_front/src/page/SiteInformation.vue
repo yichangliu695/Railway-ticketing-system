@@ -186,8 +186,8 @@
 
         },
         methods: {
-             initData(){
-               /* try{
+          async   initData(){
+                try{
 
                     const res = await getAllTrainNumber()
                     this.trainData = res.dataLists;
@@ -203,7 +203,7 @@
                     this.getLists();
                 }catch(err){
                     console.log('获取数据失败', err);
-                }*/
+                }
                 this.getLists()
                  //this.getInfoList()
             },
