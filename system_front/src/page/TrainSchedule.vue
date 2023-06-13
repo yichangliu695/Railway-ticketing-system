@@ -159,7 +159,7 @@
                     </el-row>
                 </el-scrollbar>
                 <span slot="footer" class="dialog-footer">
-                    <el-button  v-show="active<=2" type="primary" @click="next" >下一步</el-button>
+                    <el-button  v-show="active<2" type="primary" @click="next" >下一步</el-button>
                 <el-button type="primary" v-show="active>=2" @click="close">{{this.operator}}</el-button>
                 </span>
 <!--                <el-row>
@@ -213,7 +213,7 @@
     import headTop from '../components/headTop'
     import TicketOrder from "./TicketOrder";
     import {baseUrl, baseImgPath} from '@/config/env'
-    import {getTrainScheduleList,searchTrainSchedule,getAllStationName} from '@/api/getData'
+    import {getTrainScheduleList,searchTrainSchedule,getAllStationName,generateOrderInformation} from '@/api/getData'
     export default {
         data(){
             return {
@@ -556,6 +556,11 @@
             payMoney(){
                 this.active ++
                 this.innerVisible1 = false
+                generateOrderInformation({
+                    passenger_data:this.passenger_data,
+                    order_money: this.amout_money,
+
+                })
             }
         },
 

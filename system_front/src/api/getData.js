@@ -220,3 +220,9 @@ export const changeSiteInfo = data => fetch('/train/changeSiteInfo', data,'POST'
  * 删除站点信息
  */
 export const deleteTrainInfo = data => fetch('/train/deleteTrainInfo', data,'POST');
+
+
+/**
+ * 生成订单信息
+ */
+export const generateOrderInformation = data => fetch('/order/generateOrderInformation', data,'POST');
