@@ -49,12 +49,11 @@ public class UserController {
 
             for (UserLogin userlogin : userlogins) {
                 if (userlogin.getUser_phone_number().equals(username)  && userlogin.getUser_password().equals(password)) {
-                    logger.info("username{} password{}",username,password);
+                    //logger.info("username{} password{}",username,password);
                     logger.info("登录成功");
 
                     //token生成  用户信息redis缓存
                     User user  = userService.selectUserInfo(userlogin.getUser_phone_number());
-
 
                     return saveToken(user,userlogin);
                 }
@@ -75,7 +74,6 @@ public class UserController {
     @RequestMapping(value ="/info",method = RequestMethod.GET)
     public UserInfoReturnData GetUserInfo(@RequestParam String token) {
         try {
-            String [] roles = new String[1];
             String a = redisUtils.get(token);
             String data [] = a.split(",");
             return new UserInfoReturnData(1,new UserInfo(data[0],data[1],data[2],data[3],data[4],data[5],data[6]));
