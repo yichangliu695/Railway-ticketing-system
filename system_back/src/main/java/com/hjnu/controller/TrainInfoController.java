@@ -149,35 +149,6 @@ public class TrainInfoController {
             return new GetAllTrainNumberListReturnData(404,null);
         }
     }
-    @RequestMapping(value ="/addTrainInfo",method = RequestMethod.POST)
-    public RespBean UserLogin(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            System.out.println(Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage());
-        }
-        String train_no = (String) request.get("train_no");
-        String train_number = (String) request.get("train_number");
-        String train_type = (String) request.get("train_type");
-        String train_carriages = (String) request.get("train_carriages");
-        String train_start_station = (String) request.get("train_start_station");
-        String train_end_station = (String) request.get("train_end_station");
-        String train_start_time = (String) request.get("train_start_time");
-        String train_end_time = (String) request.get("train_end_time");
-        String train_arrive_day = (String) request.get("train_arrive_day");
-        String train_running_time = (String) request.get("train_running_time");
-        String train_running_type = (String) request.get("train_running_type");
-
-        try {
-            TrainInfo trainInfo = new TrainInfo(train_no,train_number,train_type,train_carriages,train_start_station,train_end_station,train_start_time,train_end_time,train_arrive_day,train_running_time,train_running_type);
-            trainInfoService.AddTrainInfo(trainInfo);
-            return new RespBean(1,"插入成功");
-        } catch (Exception e)
-        {
-            logger.info(e.getMessage());
-            return new RespBean(403,"插入失败");
-        }
-
-    }
 
 
     @RequestMapping(value ="/addTrainStation",method = RequestMethod.POST)

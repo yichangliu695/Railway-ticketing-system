@@ -4,6 +4,7 @@ import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
 import com.hjnu.dao.TrainInfoDao;
+import com.hjnu.model.vo.AddTrainInfoVo;
 import com.hjnu.model.vo.UpdateStation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,6 @@ public class TrainInfoService {
     /**
      *
      * 查询所有列车信息
-     * @return
      */
     public List<TrainInfo> selectAllTrainInfo()
     {
@@ -34,9 +34,6 @@ public class TrainInfoService {
     /**
      *
      * 分页查询
-     * @param offset
-     * @param limit
-     * @return
      */
     public List<TrainInfo> selectAllTrainInfo(int offset,int limit)
     {
@@ -46,8 +43,6 @@ public class TrainInfoService {
     /**
      *
      * 查询对应车次的列车信息
-     * @param train_number
-     * @return
      */
     public TrainInfo selectTrainInfo(String train_number)
     {
@@ -81,12 +76,8 @@ public class TrainInfoService {
         return trainInfoDao.selectAllTrainNumber();
     }
 
-    public void AddTrainInfo(TrainInfo trainInfo)
-    {
-        trainInfoDao.AddTrainInfo(trainInfo);
-    }
-    public void AddTrainStation(TrainParkingInfo trainParkingInfo, String train_no)
-    {
+
+    public void AddTrainStation(TrainParkingInfo trainParkingInfo, String train_no) {
 
         trainInfoDao.AddTrainStation(trainParkingInfo,train_no);
     }
@@ -100,5 +91,13 @@ public class TrainInfoService {
 
     public void deleteTrainInfo(String train_number) {
         trainInfoDao.deleteTrainByNumber(train_number);
+    }
+
+    /**
+     * 添加车次信息
+     */
+    public void AddTrainInfo(AddTrainInfoVo trainInfo) {
+        int rand=(int)(Math.random()*9+1)*10000;
+        trainInfoDao.AddTrainInfo(trainInfo,rand+"");
     }
 }

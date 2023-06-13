@@ -8,10 +8,7 @@ import com.hjnu.service.impl.TrainScheduleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -119,8 +116,19 @@ public class TrainScheduleController {
         String [] time2 = time.split(":");
         int Hour = Integer.parseInt(time2[0]);
         int Min = Integer.parseInt(time2[1]);
-        int Min_result  = Hour *60 +Min;
 
-        return Min_result;
+        return Hour *60 +Min;
     }
+
+    /**
+     * 添加车次信息
+     */
+    @RequestMapping(value ="/AddTrainInformation",method = RequestMethod.POST)
+    public RespBean addTrainInformation(@RequestBody AddTrainInfoVo trainInfoVo){
+
+        trainInfoService.AddTrainInfo(trainInfoVo);
+        return new RespBean(1,"添加成功");
+
+    }
+
 }
