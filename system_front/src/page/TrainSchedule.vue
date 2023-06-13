@@ -130,17 +130,20 @@
                     if (valid) {
                         this.tableData = [];
                         const res = await searchTrainSchedule({train_start_station:this.searchForm.start_station , train_end_station:this.searchForm.end_station})
+                         console.log('列车查询')
+                        console.log(res)
                         if (res.status == 1) {
                             this.$message({
                                 type: 'success',
                                 message: '搜索成功'
 
                             });
+                            // trainScheduleInfoList
                             this.tableData = [];
-                            for(var i = 0 ; i < res.trainScheduleInfoList.length ; i++ )
+                            /*for(var i = 0 ; i < res.trainInfos.length ; i++ )
                             {
-
-                                let tableData = {
+                                 console.log(res.trainInfos[i])
+                                let   tableData = {
                                     train_number:"",
                                     start_station:"",
                                     end_station:"",
@@ -156,13 +159,14 @@
                                             arrive_time:"059",
                                             running_time:"069"
                                         }]};
-                                tableData.train_number = res.trainScheduleInfoList[i].train_number;
-                                tableData.start_station =res.trainScheduleInfoList[i].start_station;
-                                tableData.end_station = res.trainScheduleInfoList[i].end_station;
-                                tableData.start_time = res.trainScheduleInfoList[i].start_time;
-                                tableData.arrive_time = res.trainScheduleInfoList[i].arrive_time;
-                                let start_running_time = res.trainScheduleInfoList[i].start_running_time;
-                                let end_running_time = res.trainScheduleInfoList[i].end_running_time;
+                                tableData.train_number = res.trainInfos[i].train_number;
+                                tableData.start_station =res.trainInfos[i].start_station;
+                                tableData.end_station = res.trainInfos[i].end_station;
+                                tableData.start_time = res.trainInfos[i].start_time;
+                                tableData.arrive_time = res.trainInfos[i].arrive_time;
+                                let start_running_time = res.trainInfos[i].start_running_time;
+                                let end_running_time = res.trainInfos[i].end_running_time;
+                                //console.log(start_running_time)
                                 let start_running_time2 = start_running_time.split(":");
                                 let end_running_time2 = end_running_time.split(":");
                                 let start_second =  parseInt(start_running_time2[0]) *60   + parseInt(start_running_time2[1]);
@@ -195,7 +199,7 @@
 
                                 tableData.running_time = result;
 
-                                const TrainScheduleList  = await getTrainScheduleList({train_start_station_no:res.trainScheduleInfoList[i].start_no , train_end_station_no:res.trainScheduleInfoList[i].end_no ,train_no :res.trainScheduleInfoList[i].train_no})
+                                const TrainScheduleList  = await getTrainScheduleList({train_start_station_no:res.trainInfos[i].start_no , train_end_station_no:res.trainInfos[i].end_no ,train_no :res.trainInfos[i].train_no})
                                 if(TrainScheduleList.status == 1)
                                 {
                                     var tableData_c = [];
@@ -248,6 +252,21 @@
                                 this.tableData.push(tableData);
                                 this.TrainRank();
 
+                            }*/
+                            for(var i=0;i< res.trainInfos.length ;i++){
+                                const tableData = {};
+                              //  tableData.train_no = res.trainInfos[i].train_no;
+                                tableData.train_number = res.trainInfos[i].train_number;
+                                tableData.type = res.trainInfos[i].train_type;
+                                tableData.carriages = res.trainInfos[i].train_carriages;
+                                tableData.start_station = res.trainInfos[i].train_start_station;
+                                tableData.end_station = res.trainInfos[i].train_end_station;
+                                tableData.start_time = res.trainInfos[i].train_start_time;
+                                tableData.arrive_time = res.trainInfos[i].train_end_time;
+                                tableData.running_time = res.trainInfos[i].train_running_time;
+                               // tableData.train_arrive_day = res.trainInfos[i].train_arrive_day
+                                console.log(tableData)
+                                this.tableData.push(tableData);
                             }
                         }else{
                             this.$message({

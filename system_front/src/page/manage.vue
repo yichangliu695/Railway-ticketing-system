@@ -24,7 +24,7 @@
 
                     <el-submenu index="3">
                         <template slot="title"><i class="el-icon-plus"></i>车票查询及购买</template>
-                        <el-menu-item index="ticketInquiry">余票查询</el-menu-item>
+<!--                        <el-menu-item index="ticketInquiry">余票查询</el-menu-item>-->
                         <el-menu-item index="TicketOrder">车票购买</el-menu-item>
 <!--
                         <el-menu-item index="TrainTransferTicketQuery">接续换乘</el-menu-item>
