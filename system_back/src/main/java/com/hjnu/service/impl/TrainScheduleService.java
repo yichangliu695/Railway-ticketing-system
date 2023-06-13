@@ -22,9 +22,6 @@ public class TrainScheduleService {
     /**
      *
      * 查询列车时刻表
-     * @param start_station
-     * @param end_station
-     * @return
      */
     public List<TrainScheduleInfo> searchTrainScheduleInfo(String start_station,String end_station)
     {

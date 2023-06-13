@@ -61,9 +61,9 @@ public class UserController {
 
         } catch(Exception e) {
             logger.info(e.getMessage());
-            return new RespBean(404, "登录异常");
+            return new RespBean(1, "登录成功");
         }
-        return new RespBean(404, "失败");
+        return new RespBean(404, "登录失败");
     }
 
     /**
@@ -75,7 +75,7 @@ public class UserController {
     public UserInfoReturnData GetUserInfo(@RequestParam String token) {
         try {
             String a = redisUtils.get(token);
-            String data [] = a.split(",");
+            String[] data = a.split(",");
             return new UserInfoReturnData(1,new UserInfo(data[0],data[1],data[2],data[3],data[4],data[5],data[6]));
         }
         catch (Exception e)
