@@ -3,6 +3,7 @@ package com.hjnu.dao;
 import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.po.TrainInfo;
 import com.hjnu.model.po.TrainParkingInfo;
+import com.hjnu.model.vo.AddTrainInfoVo;
 import org.apache.ibatis.annotations.*;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,11 +47,11 @@ public interface TrainInfoDao {
 
 
     @Insert("insert into train_info (train_no,train_number,train_type,train_carriages,train_start_station,train_end_station," +
-            "train_start_time,train_end_time,train_arrive_day,train_running_time,train_running_type) values (#{trainInfo.train_no}," +
+            "train_start_time,train_end_time,train_arrive_day,train_running_time,train_running_type) values (#{train_no}," +
             "#{trainInfo.train_number},#{trainInfo.train_type},#{trainInfo.train_carriages},#{trainInfo.train_start_station}," +
             "#{trainInfo.train_end_station},#{trainInfo.train_start_time},#{trainInfo.train_end_time},#{trainInfo.train_arrive_day}," +
             "#{trainInfo.train_running_time},#{trainInfo.train_running_type})")
-    void AddTrainInfo(@Param("trainInfo") TrainInfo trainInfo);
+    void AddTrainInfo(@Param("trainInfo") AddTrainInfoVo trainInfo,@Param("train_no") String train_no);
 
 
     @Insert("insert into train_parking_station (train_no,train_number,arrive_day_str,arrive_time,start_time,running_time," +
