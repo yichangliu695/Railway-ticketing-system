@@ -93,7 +93,7 @@
 <script>
     import headTop from '../components/headTop'
     import {mapState} from 'vuex'
-    import {addPassengerInfo} from '@/api/getData'
+    import {AddTrainInformation} from '@/api/getData'
     import {setCookie,getCookie} from "../config/store_cookie";
     export default {
         data(){
@@ -112,18 +112,6 @@
                     train_running_type: ''
                 },
                 rules: {
-                    passenger_real_name: [
-                        { required: true, message: '请输入内容', trigger: 'blur' }
-                    ],
-                    passenger_id_number: [
-                        { required: true, message: '请输入内容', trigger: 'blur' }
-                    ],
-                    passenger_type: [
-                        { required: true, message: '请输入内容', trigger: 'blur' }
-                    ],
-                    passenger_address: [
-                        { required: true, message: '请输入内容', trigger: 'blur' }
-                    ],
                 },
                 showLogin: true,
             }
@@ -140,10 +128,18 @@
             async submitForm(formName) {
                 this.$refs[formName].validate(async (valid) => {
                     if (valid) {
-
-                        const res = await addPassengerInfo({token:getCookie("token"),passenger_phone_number: this.ChangeForm.passenger_phone_number,
-                            passenger_real_name:this.ChangeForm.passenger_real_name,passenger_id_number:this.ChangeForm.passenger_id_number,passenger_type:this.ChangeForm.passenger_type
-                            , passenger_address:this.ChangeForm. passenger_address})
+                        const res = await AddTrainInformation({token:getCookie("token"),
+                            train_number: this.ChangeForm.train_number,
+                            train_type:this.ChangeForm.train_type,
+                            train_carriages:this.ChangeForm.train_carriages,
+                            train_start_station:this.ChangeForm.train_start_station,
+                            train_end_station:this.ChangeForm. train_end_station,
+                            train_start_time:this.ChangeForm. train_start_time,
+                            train_end_time:this.ChangeForm. train_end_time,
+                            train_running_time:this.ChangeForm. train_running_time,
+                            train_arrive_day:this.ChangeForm. train_arrive_day,
+                            train_running_type:this.ChangeForm. train_running_type
+                        })
 
                         if (res.status == 1) {
                             this.$message({

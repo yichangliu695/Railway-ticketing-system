@@ -116,8 +116,8 @@
                 :close-on-click-modal="false"
                 >
                 <el-form :model="changSiteInfo" ref="changSiteInfo">
-                    <el-form-item prop="train_number">
-                        <el-input v-model="changSiteInfo.train_number" placeholder="车次"><span>dsfsf</span></el-input>
+                    <el-form-item prop="train_number" >
+                        <el-input    v-model="changSiteInfo.train_number"  placeholder="车次"  ></el-input>
                     </el-form-item>
                     <el-form-item prop="train_start_station">
                         <el-input  placeholder="始发站" v-model="changSiteInfo.train_start_station"></el-input>
@@ -182,11 +182,12 @@
             headTop,
         },
         created(){
-            this.initData();
+           this.initData();
+
         },
         methods: {
-            async initData(){
-                try{
+             initData(){
+               /* try{
 
                     const res = await getAllTrainNumber()
                     this.trainData = res.dataLists;
@@ -202,7 +203,9 @@
                     this.getLists();
                 }catch(err){
                     console.log('获取数据失败', err);
-                }
+                }*/
+                this.getLists()
+                 //this.getInfoList()
             },
             handleSizeChange(val) {
                 console.log(`每页 ${val} 条`);
@@ -215,6 +218,8 @@
             async getLists(){
                 const TrainInfoData = await getTrainInfoData({offset: this.offset, limit: this.limit});
                 this.tableData = [];
+                console.log('列车信息')
+                console.log(TrainInfoData)
                 for(var i = 0 ; i < TrainInfoData.trainInfos.length ; i++ )
                 {
                     const tableData = {};
@@ -230,8 +235,21 @@
                     tableData.train_arrive_day = TrainInfoData.trainInfos[i].train_arrive_day
                     this.tableData.push(tableData);
                 }
+                this.$forceUpdate();
                 console.log(this.tableData)
             },
+            getInfoList () {
+                  /* console.log('axios请求')
+                    this.$axios.get('http://localhost:8080/train/traininfo', {
+                        offset: this.offset,
+                        limit: this.limit
+                    }).then(response => {
+                        console.log(axios)
+                        console.log( response.data)
+                    }, error => {
+                        console.log('错误', error.message)
+                    })*/
+                },
             async submitForm(formName) {
                 this.$refs[formName].validate(async (valid) => {
                     if (valid) {
@@ -254,7 +272,7 @@
                             tableData.train_running_time = res.trainInfo['train_running_time'];
                             tableData.train_arrive_day = res.trainInfo['train_arrive_day'];
                             this.tableData.push(tableData);
-                            this.count=1;
+                           // this.count=1;
 
                         }else{
                             this.$message({
@@ -296,19 +314,6 @@
                 const res =  deleteTrainInfo({
                     train_number: row.train_number
                 })
-                 this.initData();
-                if (res.status == 1) {
-                    this.$message({
-                        type: 'success',
-                        message: res.message
-                    });
-                    this.initData();
-                }else{
-                    this.$message({
-                        type: 'error',
-                        message: res.message
-                    });
-                }
                  this.initData();
             },
             async submit () {
@@ -360,7 +365,7 @@
         padding: 25px;
         border-radius: 5px;
         text-align: center;
-        background-color: #fff;
+        /*background-color: #fff;*/
         .submit_btn{
             width: 100%;
             font-size: 16px;
