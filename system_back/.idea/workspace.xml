@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/AddTrainInfoVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/TrainScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/TrainInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TrainScheduleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/TrainInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/TrainInfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +121,7 @@
       <workItem from="1686122176075" duration="8369000" />
       <workItem from="1686580633630" duration="110000" />
       <workItem from="1686623653260" duration="1349000" />
-      <workItem from="1686625150180" duration="3567000" />
+      <workItem from="1686625150180" duration="4614000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码提交">
       <created>1685989857778</created>
@@ -211,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686626962282</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="添加车次">
+      <created>1686629250489</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686629250489</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +242,8 @@
     <MESSAGE value="更新" />
     <MESSAGE value="推送" />
     <MESSAGE value="查询车站" />
-    <option name="LAST_COMMIT_MESSAGE" value="查询车站" />
+    <MESSAGE value="添加车次" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加车次" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

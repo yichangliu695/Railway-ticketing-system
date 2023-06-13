@@ -1,6 +1,8 @@
 package com.hjnu.model.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 /**
  *
@@ -11,7 +13,9 @@ import lombok.Data;
  */
 
 @Data
+@AllArgsConstructor
 public class UserLogin {
     private String user_phone_number;
+
     private String user_password;
 }

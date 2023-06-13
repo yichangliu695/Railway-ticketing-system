@@ -36,7 +36,11 @@ public class UserService {
      * @return
      */
     public List<UserLogin> selectAllUserLogin() {
-        return userDao.findAllUserLogin();
+        List<UserLogin> allUserLogin = userDao.findAllUserLogin();
+        for(UserLogin user:allUserLogin){
+            System.out.println("用户名："+user.getUser_phone_number()+" 密码："+user.getUser_password());
+        }
+        return allUserLogin;
     }
 
 
