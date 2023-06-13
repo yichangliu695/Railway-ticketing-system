@@ -140,7 +140,6 @@
                         <el-button size="mini" type="primary" @click="handleAdd(scope.row.carriage_number,scope.row.seat_type,'C')">C</el-button>
                         <el-button size="mini" type="primary" @click="handleAdd(scope.row.carriage_number,scope.row.seat_type,'D')">D</el-button>
                         <el-button size="mini" type="primary" @click="handleAdd(scope.row.carriage_number,scope.row.seat_type,'E')">E</el-button>
-
                     </template>
                 </el-table-column>
             </el-table>
@@ -258,13 +257,7 @@
                 low_seat_GD:[],
                 tableDatas:[],
                 passenger_data:
-                [
-                   /* {
-                        passenger_real_name:'胡安兴',
-                        passenger_phone_number:'17343529433',
-                        passenger_id_number:'532124111111'
-                    }*/
-                ],
+                [],
                 ticket_data: [],
                 dialogFormVisible_wx:false,
                 dialogFormVisible_zfb:false,

@@ -82,9 +82,14 @@
                 </el-col>
                 <el-col :span="12">
                     <div class="grid-content bg-purple">
-                        <el-form-item prop="train_running_type">
-                            <el-input v-model="ChangeForm.train_running_type" placeholder="当前状态"><span>dsfsf</span></el-input>
-                        </el-form-item>
+                        <el-select style="width: 100%;" v-model="ChangeForm.train_running_type" placeholder="请选择列车当前状态">
+                            <el-option
+                                v-for="item in options1"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
                     </div>
                 </el-col>
             </el-row>
@@ -158,6 +163,13 @@
                 }, {
                     value: '选项3',
                     label: '动车'
+                }],
+                options1: [{
+                    value: '选项1',
+                    label: '正在运行'
+                }, {
+                    value: '选项2',
+                    label: '已停运'
                 }],
                 value1:[]
             }

@@ -71,7 +71,13 @@
                     label="运行及停靠时间"
                     prop="running_time">
                 </el-table-column>
-
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <el-button
+                            size="mini"
+                            @click="handleEdit(scope.$index, scope.row)">订购</el-button>
+                    </template>
+                </el-table-column>
             </el-table>
 <!--            <el-row style="margin-top: 30px;margin-left: 150px">
                 <el-col :span="24"><div class="grid-content bg-purple-dark" style="color: #1c8de0">如果查询结果中没有满足需求的车次，您还可以使用接续换乘 功能，查询途中换乘一次的部分列车余票情况</div></el-col>
@@ -82,11 +88,130 @@
                 </div></el-col>
             </el-row>-->
         </div>
+            <el-dialog
+                title="购票"
+                :visible.sync="dialogVisible"
+                width="80%"
+                :before-close="handleClose"
+                :close-on-click-modal="false"
+            >
+                <el-dialog
+                    width="30%"
+                    title="添加乘客"
+                    :visible.sync="innerVisible"
+                    append-to-body>
+                    <el-form :rules="rules" class="form_contianer" :model="passenger" ref="passenger">
+                        <el-form-item prop="passenger_phone_number">
+                            <el-input v-model="passenger.passenger_phone_number" placeholder="电话号码"><span>dsfsf</span></el-input>
+                        </el-form-item>
+                        <el-form-item prop="passenger_real_name">
+                            <el-input  placeholder="真实姓名" v-model="passenger.passenger_real_name"></el-input>
+                        </el-form-item>
+                        <el-form-item prop="passenger_id_number">
+                            <el-input  placeholder="身份证号" v-model="passenger.passenger_id_number"></el-input>
+                        </el-form-item>
+                    </el-form>
+                     <span slot="footer" class="dialog-footer">
+                    <el-button   @click="innerVisible=false" >取消</el-button>
+                <el-button type="primary" @click="addPass">确认</el-button>
+                </span>
+                </el-dialog>
+                <el-scrollbar style="height:400px;">
+                    <el-steps :active="active" align-center style="margin-top: 10px">
+                        <el-step title="添加乘客" ></el-step>
+                        <el-step title="选择座位等级" ></el-step>
+                        <el-step title="付款" ></el-step>
+                        <el-step title="订票成功" ></el-step>
+                    </el-steps>
+                    <el-table :data="passenger_data" v-show="active==0" style="width: 1000px;margin-left: 80px;margin-top: 20px">
+                        <el-table-column property="passenger_real_name" label="乘客姓名" ></el-table-column>
+                        <el-table-column property="passenger_phone_number" label="乘客电话号码" ></el-table-column>
+                        <el-table-column property="passenger_id_number" label="身份证号"></el-table-column>
+                    </el-table>
+                    <el-row>
+                        <el-button style="margin-top: 30px; margin-left: 80px;margin-right: 50px" @click="add" v-show="active==0"  type="primary" size="mini" >添加乘客</el-button>
+                    </el-row>
+                    <el-row>
+                    <div style="margin-top: 30px; margin-left: 50px;margin-right: 50px"  v-show="this.active==3">
+                        <el-alert
+                            title="恭喜您购票成功,请在已支付订单中查看详细的信息"
+                            type="success"
+                            effect="dark">
+                        </el-alert>
+                    </div>
+                    </el-row>
+                    <el-row v-show="active==1">
+                        <div  style="margin-top: 30px; margin-left: 100px;margin-right: 50px">
+                        <el-radio v-model="seat_type" label="特等座">特等座</el-radio>
+                        <el-radio v-model="seat_type" label="一等座">一等座</el-radio>
+                        <el-radio v-model="seat_type" label="二等座">二等座</el-radio>
+                        </div>
+                    </el-row>
+                    <el-row>
+                        <div style="margin-top: 30px; margin-left: 50px;margin-right: 50px"  v-show="active==2">
+                            <el-alert
+                                :title="price_detail"
+                                type="success"
+                                effect="dark">
+                            </el-alert>
+                            <el-button style="margin-top: 30px;" @click="innerVisible1=true" type="primary">点击付款</el-button>
+                        </div>
+                    </el-row>
+                </el-scrollbar>
+                <span slot="footer" class="dialog-footer">
+                    <el-button  v-show="active<=2" type="primary" @click="next" >下一步</el-button>
+                <el-button type="primary" v-show="active>=2" @click="close">{{this.operator}}</el-button>
+                </span>
+<!--                <el-row>
+                    <el-col :span="12"><div class="grid-content bg-purple">
+                        <div class="block">
+
+                            <el-image
+                                style="width: 300px; height: 500px"
+                                :src="url2"
+                                :fit="fit"></el-image>
+                        </div>
+                    </div></el-col>
+                    <el-col :span="12"><div class="grid-content bg-purple-light"> <div class="block">
+                        <el-image
+                            style="width: 300px; height: 500px"
+                            :src="url1"
+                            :fit="fit"></el-image>
+                    </div></div></el-col>
+                </el-row>-->
+                <el-dialog
+                    width="60%"
+                    title="支付成功"
+                    :visible.sync="innerVisible1"
+                    append-to-body>
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>详细账单</span>
+                        </div>
+                        <div  class="text item">
+                            {{'座位等级:'+this.seat_type}}
+                        </div>
+                        <div  class="text item">
+                            {{'单价:'+this.ridao*100}}
+                        </div>
+                        <div  class="text item">
+                            {{'票数:'+this.passenger_data.length}}
+                        </div>
+                        <div  class="text item">
+                            {{'总金额:'+this.amout_money}}
+                        </div>
+                    </el-card>
+                    <span slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="payMoney">确认</el-button>
+                </span>
+                </el-dialog>
+            </el-dialog>
     </div>
 </template>
 
 <script>
     import headTop from '../components/headTop'
+    import TicketOrder from "./TicketOrder";
     import {baseUrl, baseImgPath} from '@/config/env'
     import {getTrainScheduleList,searchTrainSchedule,getAllStationName} from '@/api/getData'
     export default {
@@ -114,6 +239,44 @@
 
                     },
                 stationData:[],
+                dialogVisible: false,
+                active:0,
+                operator: '',
+                passenger_data:[],
+                innerVisible:false,
+                passenger:{
+                    assenger_phone_number: '',
+                    passenger_real_name:'',
+                    passenger_id_number:''
+                },
+                rules: {
+                    passenger_phone_number: [
+                        { required: true, message: '请输入内容', trigger: 'blur' },
+                        { pattern: /^1[3|5|7|8|9]\d{9}$/, message: '请输入正确的号码格式', trigger: 'blur' }
+                    ],
+                    passenger_real_name: [
+                        { required: true, message: '请输入内容', trigger: 'blur' }
+                    ],
+                    passenger_id_number: [
+                        { required: true, message: '请输入内容', trigger: 'blur' },
+                        {
+                            pattern: /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/,
+                            message: '证件号码格式有误！',
+                            trigger: 'blur'
+                        }
+                    ],
+                    passenger_type: [
+                        { required: true, message: '请输入内容', trigger: 'blur' }
+                    ],
+                    passenger_address: [
+                        { required: true, message: '请输入内容', trigger: 'blur' }
+                    ],
+                },
+                seat_type:'特等座',
+                amout_money:0,
+                price_detail:'',
+                ridao: 1,
+                innerVisible1: false
             }
         },
        async created(){
@@ -122,7 +285,28 @@
         },
     	components: {
     		headTop,
+            TicketOrder
     	},
+        watch:{
+            active:{
+                handler(a,b){
+                     if(this.active==2){
+                         this.operator='稍后支付'
+                         if(this.seat_type === '特等座')
+                             this.ridao = 1
+                         else  if(this.seat_type ==='二等座')
+                             this.ridao = 2
+                         else
+                             this.ridao = 3
+                         this.amout_money = this.passenger_data.length * this.ridao * 100
+                         this.price_detail = '您一共花费了'+this.amout_money+'元，请点击下方按钮完成付款,也可点击右下角按钮，稍后在未支付订单中进行付款'
+                     }
+
+                    if(this.active==3)
+                        this.operator='完成'
+                }
+            }
+        },
         methods: {
 
             async submitForm(formName) {
@@ -345,6 +529,34 @@
 
 
             },
+            handleEdit(index,row) {
+                //this.$router.push('/TransferTicketOrder')
+                this.dialogVisible = true
+            },
+            close(){
+                  this.dialogVisible=false;
+                  this.passenger_data = []
+                  this.active=0;
+            },
+            next(){
+                 this.active++;
+            },
+            add(){
+                     this.innerVisible=true
+            },
+            addPass() {
+                this.passenger_data.push(this.passenger)
+                this.passenger={}
+                this.innerVisible=false
+            },
+            handleDelete(index,row){
+                  console.log('删除数据')
+                 this.passenger_data.splice(index,1)
+            },
+            payMoney(){
+                this.active ++
+                this.innerVisible1 = false
+            }
         },
 
     }
@@ -395,4 +607,30 @@
         height: 120px;
         display: block;
     }
+
+    .el-scrollbar__wrap {
+        overflow-x: hidden!important;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .item {
+        margin-bottom: 18px;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        content: "";
+    }
+    .clearfix:after {
+        clear: both
+    }
+
+    .box-card {
+        width: 480px;
+    }
+
 </style>
