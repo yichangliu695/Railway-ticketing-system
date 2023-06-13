@@ -18,11 +18,20 @@
                 </el-col>
                 <el-col :span="12">
                     <div class="grid-content bg-purple">
-                        <el-form-item prop="train_type">
+<!--                        <el-form-item prop="train_type">
                             <el-input v-model="ChangeForm.train_type" placeholder="列车类型"><span>dsfsf</span></el-input>
-                        </el-form-item>
+                        </el-form-item>-->
+                        <el-select style="width: 100%;" v-model="ChangeForm.train_type" placeholder="请选择列车类型">
+                            <el-option
+                                v-for="item in options"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
                     </div>
                 </el-col>
+                <div  style="height: 70px;"></div>
                 <el-col :span="12">
                     <div class="grid-content bg-purple">
                         <el-form-item prop="train_carriages">
@@ -45,26 +54,25 @@
                     </div>
                 </el-col>
                 <el-col :span="12">
-                    <div class="grid-content bg-purple">
+<!--                    <div class="grid-content bg-purple">
                         <el-form-item prop="train_start_time">
                             <el-input v-model="ChangeForm.train_start_time" placeholder="开车时间"><span>dsfsf</span></el-input>
                         </el-form-item>
-                    </div>
+                    </div>-->
+                    <el-time-picker
+                        is-range
+                        v-model="value1"
+                        range-separator="至"
+                        start-placeholder="开始时间"
+                        end-placeholder="结束时间"
+                        placeholder="选择时间范围"
+                        style="width: 100%;"
+                    >
+                    </el-time-picker>
                 </el-col>
-                <el-col :span="12">
-                    <div class="grid-content bg-purple">
-                        <el-form-item prop="train_end_time">
-                            <el-input v-model="ChangeForm.train_end_time" placeholder="到达时间"><span>dsfsf</span></el-input>
-                        </el-form-item>
-                    </div>
-                </el-col>
-                <el-col :span="12">
-                    <div class="grid-content bg-purple">
-                        <el-form-item prop="train_running_time">
-                            <el-input v-model="ChangeForm.train_running_time" placeholder="总时间"><span>dsfsf</span></el-input>
-                        </el-form-item>
-                    </div>
-                </el-col>
+                <div  style="height: 150px;">
+
+                </div>
                 <el-col :span="12">
                     <div class="grid-content bg-purple">
                         <el-form-item prop="train_arrive_day">
@@ -114,6 +122,44 @@
                 rules: {
                 },
                 showLogin: true,
+                pickerOptions: {
+                    shortcuts: [{
+                        text: '最近一周',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: '最近一个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: '最近三个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }]
+                },
+                options: [{
+                    value: '选项1',
+                    label: '特快'
+                }, {
+                    value: '选项2',
+                    label: '普快'
+                }, {
+                    value: '选项3',
+                    label: '动车'
+                }],
+                value1:[]
             }
         },
         created(){
@@ -125,7 +171,13 @@
         computed: {
         },
         methods: {
+            getTime() {
+                   this.ChangeForm.train_start_time=this.value1[0]
+                   this.ChangeForm.train_end_time=this.value1[1]
+            },
             async submitForm(formName) {
+                this.getTime()
+                console.log(this.ChangeForm)
                 this.$refs[formName].validate(async (valid) => {
                     if (valid) {
                         const res = await AddTrainInformation({token:getCookie("token"),
@@ -146,8 +198,7 @@
                                 type: 'success',
                                 message: '添加成功'
                             });
-
-                            this.initData();
+                            this.ChangeForm={}
                         }else{
                             this.$message({
                                 type: 'error',
