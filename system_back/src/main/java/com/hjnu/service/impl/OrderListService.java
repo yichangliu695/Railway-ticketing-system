@@ -37,7 +37,6 @@ public class OrderListService {
         //查询订单表
         List<GetAllOrderList> allOrderLists = orderListDao.GetAllOrderList(user_phone_number);
 
-
         //补全座位号和座位类型
         allOrderLists.forEach(item ->{
             String seat_type=orderListDao.getSeatTypeByNo(item.getCarriage_no());
@@ -45,10 +44,10 @@ public class OrderListService {
 
         });
         //补全车次信息
-//        allOrderLists.forEach(item ->{
-//            String trainNumber=trainInfoDao.getTrainNumber( item.getStart_station_name(),item.getEnd_station_name());
-//            item.setTrain_number(trainNumber);
-//        });
+        allOrderLists.forEach(item ->{
+            String trainNumber=trainInfoDao.getTrainNumber(item.getTrain_no());
+            item.setTrain_number(trainNumber);
+        });
 
         //补全真实姓名
         allOrderLists.forEach(item ->{
@@ -57,7 +56,6 @@ public class OrderListService {
         });
 
         return allOrderLists;
-
     }
 
 

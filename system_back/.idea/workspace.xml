@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/GenerateOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/PassengerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/model/po/PassengerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/po/PassengerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +144,7 @@
       <workItem from="1686639365079" duration="2950000" />
       <workItem from="1686664201088" duration="5953000" />
       <workItem from="1686705863586" duration="2438000" />
-      <workItem from="1686725417279" duration="2382000" />
+      <workItem from="1686725417279" duration="3171000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码提交">
       <created>1685989857778</created>
@@ -262,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686708298446</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="改了bug">
+      <created>1686727858888</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686727858888</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +296,8 @@
     <MESSAGE value="添加车次" />
     <MESSAGE value="改bug" />
     <MESSAGE value="10:14改了bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="10:14改了bug" />
+    <MESSAGE value="改了bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="改了bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

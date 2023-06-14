@@ -29,7 +29,8 @@ public interface OrderListDao {
             "A.order_status as order_status," +
             "A.passenger_phone_number as passenger_phone_number," +
             "A.passenger_id_number as passenger_id_number ," +
-            "A.order_money as order_money " +
+            "A.order_money as order_money, " +
+            "A.train_no as train_no "+
             "from order_list as A " +
             "where A.user_phone_number =#{user_phone_number}")
     List<GetAllOrderList> GetAllOrderList(@Param("user_phone_number") String user_phone_number);

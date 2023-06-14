@@ -68,6 +68,6 @@ public interface TrainInfoDao {
     void deleteTrainByNumber(@Param("train_number") String train_number);
 
 
-    @Select("select train_number from train_info where train_start_station like #{start_station_name} and train_end_station like #{train_end_station}")
-    String getTrainNumber(@Param("start_station_name") String start_station_name, @Param("end_station_name") String end_station_name);
+    @Select("select train_number from train_info where  train_no like #{train_no}")
+    String getTrainNumber(@Param("train_no") String train_no);
 }
