@@ -49,7 +49,6 @@ public class OrderListController {
         String user = redisUtils.get(token);
         String[] data = user.split(",");
         String user_phone_number = data[1];
-       // String user_phone_number="131";
         List<GetAllOrderList> getNoPayOrderList = orderListService.getNopayOrderLists(user_phone_number);
         return new GetAllOrderListReturnData(1,getNoPayOrderList);
 

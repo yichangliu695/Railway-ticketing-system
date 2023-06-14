@@ -18,16 +18,13 @@ public class PassengerService {
     private PassengerDao passengerDao;
 
     /**
-     *
      * 查询对应用户下的所有乘客信息
      */
-    public List<PassengerInfo>  selectPassenger(String user_phone_number)
-    {
+    public List<PassengerInfo>  selectPassenger(String user_phone_number) {
         return passengerDao.findPassenger(user_phone_number);
     }
 
     /**
-     *
      *
      * 添加乘客
      */
@@ -37,16 +34,13 @@ public class PassengerService {
     }
 
     /**
-     *
      * 删除乘客
      */
-    public void deletePassenger(String user_phone_number, String passenger_phone_number)
-    {
+    public void deletePassenger(String user_phone_number, String passenger_phone_number) {
         passengerDao.deletePassenger(user_phone_number,passenger_phone_number);
     }
 
-    public List<PassengerInfo> selectPassengerBynumber(String passenger_phone_number)
-    {
+    public List<PassengerInfo> selectPassengerBynumber(String passenger_phone_number) {
         return passengerDao.searchPassenger(passenger_phone_number);
     }
 
