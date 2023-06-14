@@ -154,6 +154,7 @@ export const getNotripOrderList = data => fetch('/order/getNotripOrderList', dat
  * 查询用户未支付订单
  * @param data
  */
+/*export const getNoPayOrderList = data => fetch('/order/getNoPayOrderList', data);*/
 export const getNoPayOrderList = data => fetch('/order/getNoPayOrderList', data);
 
 /**
@@ -161,6 +162,14 @@ export const getNoPayOrderList = data => fetch('/order/getNoPayOrderList', data)
  * @param data
  */
 export const getAlreadyPayOrderList = data => fetch('/order/getAlreadyPayOrderList', data);
+
+/**
+ * 改变订单状态
+ * @param data
+ */
+export const changeOrderStatus = data => fetch('/order/changeOrderStatus', data);
+
+
 
 /**
  * 退票

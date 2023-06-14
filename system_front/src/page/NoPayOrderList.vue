@@ -83,7 +83,7 @@
                     label="订单状态"
                     prop="order_status">
                 </el-table-column>-->
-<!--                <el-table-column label="操作" width="200">
+                <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
                         <el-button
                             size="mini"
@@ -91,10 +91,10 @@
                             @click="handlePay(scope.row.order_id)">支付</el-button>
 
                     </template>
-                </el-table-column>-->
+                </el-table-column>
             </el-table>
-            <el-dialog title="支付" :visible.sync="dialogTableVisible" style="width: 1500px">
-                <el-row>
+            <el-dialog title="支付" :visible.sync="dialogTableVisible"   :close-on-click-modal="false" style="width: 1500px">
+<!--                <el-row>
                     <el-col :span="12"><div class="grid-content bg-purple">
                         <div class="block">
 
@@ -116,7 +116,17 @@
                     size="mini"
                     type="success"
                     style="margin-left: 300px"
-                    @click="handlepaysuccess()">支付成功</el-button>
+                    @click="handlepaysuccess()">支付成功</el-button>-->
+                <div style="margin-top: 30px; margin-left: 50px;margin-right: 50px" >
+                    <el-alert
+                        title="恭喜您购票成功,请在已支付订单中查看详细的信息"
+                        type="success"
+                        effect="dark">
+                    </el-alert>
+                </div>
+                <span slot="footer" class="dialog-footer">
+                <el-button type="primary"  @click="dialogTableVisible=false">确认</el-button>
+                </span>
             </el-dialog>
             <div class="Pagination">
                 <el-pagination
@@ -135,7 +145,7 @@
 
 <script>
     import headTop from '../components/headTop';
-    import {getNoPayOrderList,paySuccess} from '@/api/getData';
+    import {getNoPayOrderList,paySuccess,changeOrderStatus} from '@/api/getData';
     import {setCookie,getCookie} from "../config/store_cookie";
     export default {
         data(){
@@ -175,7 +185,7 @@
             }
         },
         created(){
-           // this.initData();
+            this.initData();
         },
         components: {
             headTop,
@@ -239,6 +249,12 @@
             {
                     this.dialogTableVisible = true;
                     this.order_list = order_id+",";
+                    console.log('未支付订单')
+                    console.log(order_id)
+                    changeOrderStatus({
+                        order_id:order_id
+                    })
+                     this.initData()
             },
            async handlepaysuccess()
             {

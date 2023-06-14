@@ -6,21 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4e6a1b75-298f-44a7-a7c4-20164ed4b530" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/OrderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/PassengerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/PassengerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/TrainInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/TrainInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/GenerateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/GenerateOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/OrderListDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/OrderListDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/TrainInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/TrainInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/OrderList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/OrderList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/PassengerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/PassengerInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/TrainInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/TrainInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/getData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +330,7 @@
       <workItem from="1686644388477" duration="601000" />
       <workItem from="1686664208333" duration="2907000" />
       <workItem from="1686705874643" duration="722000" />
-      <workItem from="1686724565761" duration="3411000" />
+      <workItem from="1686724565761" duration="5145000" />
     </task>
     <task id="LOCAL-00001" summary="qianduan">
       <created>1686730164061</created>
