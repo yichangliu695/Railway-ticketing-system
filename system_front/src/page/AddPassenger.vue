@@ -18,7 +18,6 @@
                 <el-input  placeholder="身份证号" v-model="ChangeForm.passenger_id_number"></el-input>
             </el-form-item>
             <el-form-item prop="user_passenger_type">
-<!--                <el-input  placeholder="乘客类型（成人/学生）" v-model="ChangeForm.passenger_type"></el-input>-->
                 <el-select style="width: 100%;" v-model="ChangeForm.passenger_type" placeholder="请选择乘客类型">
                     <el-option
                         v-for="item in options"

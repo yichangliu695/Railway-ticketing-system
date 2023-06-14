@@ -110,6 +110,19 @@
                         <el-form-item prop="passenger_id_number">
                             <el-input  placeholder="身份证号" v-model="passenger.passenger_id_number"></el-input>
                         </el-form-item>
+                        <el-form-item prop="user_passenger_type">
+                            <el-select style="width: 100%;" v-model="passenger.passenger_type" placeholder="请选择乘客类型">
+                                <el-option
+                                    v-for="item in options"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item prop="passenger_address">
+                            <el-input  placeholder="乘客地址" v-model="passenger.passenger_address"></el-input>
+                        </el-form-item>
                     </el-form>
                      <span slot="footer" class="dialog-footer">
                     <el-button   @click="innerVisible=false" >取消</el-button>
@@ -162,7 +175,7 @@
                             <el-card class="box-card"  v-for="(tableData)  in tableDatas" style="width: 1000px;margin-left: 80px;margin-top: 20px">
                                 <div slot="header" class="clearfix">
                                     <span>{{tableData.passenger_real_name}}</span>
-                                    <el-button style="float: right; padding: 3px 0"  @click="AddPassengerInfo(tableData.passenger_real_name,tableData.passenger_phone_number,tableData.passenger_id_number)" type="text">添加</el-button>
+                                    <el-button style="float: right; padding: 3px 0"  @click="AddPassengerInfo(tableData)" type="text">添加</el-button>
                                 </div>
                                 <div  class="text item">
                                     <span>电话号码：</span><span>{{tableData.passenger_phone_number}}</span>
@@ -307,7 +320,15 @@
                 train_start_station:'',
                 train_end_station:'',
                 train_start_time:'',
-                tabledatas:[]
+                train_number:'',
+                tabledatas:[],
+                options: [{
+                    value: '选项1',
+                    label: '成人'
+                }, {
+                    value: '选项2',
+                    label: '学生'
+                }]
             }
         },
        async created(){
@@ -568,6 +589,7 @@
                 // this.train_start_station = row.
                 console.log('列车信息')
                 console.log(row)
+                this.train_number = row.train_number
                 this.train_start_station = row.start_station
                 this.train_end_station = row.end_station
                 this.train_start_time = row.start_time
@@ -578,9 +600,7 @@
                       generateOrderInformation({
                           passenger_data:this.passenger_data,
                           order_money: this.amout_money,
-                          train_start_station: this.train_start_station,
-                          train_end_station: this.train_end_station,
-                          train_start_time: this.train_start_time,
+                          train_number: this.train_number,
                           order_status: '未支付'
                       })
                   }
@@ -609,9 +629,7 @@
                 generateOrderInformation({
                     passenger_data:this.passenger_data,
                     order_money: this.amout_money,
-                    train_start_station: this.train_start_station,
-                    train_end_station: this.train_end_station,
-                    train_start_time: this.train_start_time,
+                    train_number: this.train_number,
                     order_status: '已支付'
                 })
             },
@@ -632,6 +650,9 @@
                         message: res.success
                     });
                 }
+            },
+            AddPassengerInfo(data){
+                  this.passenger_data.push(data)
             }
         },
 
