@@ -276,7 +276,10 @@
                 amout_money:0,
                 price_detail:'',
                 ridao: 1,
-                innerVisible1: false
+                innerVisible1: false,
+                train_start_station:'',
+                train_end_station:'',
+                train_start_time:''
             }
         },
        async created(){
@@ -531,9 +534,25 @@
             },
             handleEdit(index,row) {
                 //this.$router.push('/TransferTicketOrder')
+                // this.train_start_station = row.
+                console.log('列车信息')
+                console.log(row)
+                this.train_start_station = row.start_station
+                this.train_end_station = row.end_station
+                this.train_start_time = row.start_time
                 this.dialogVisible = true
             },
             close(){
+                  if(this.active==2){
+                      generateOrderInformation({
+                          passenger_data:this.passenger_data,
+                          order_money: this.amout_money,
+                          train_start_station: this.train_start_station,
+                          train_end_station: this.train_end_station,
+                          train_start_time: this.train_start_time,
+                          order_status: '未支付'
+                      })
+                  }
                   this.dialogVisible=false;
                   this.passenger_data = []
                   this.active=0;
@@ -559,7 +578,10 @@
                 generateOrderInformation({
                     passenger_data:this.passenger_data,
                     order_money: this.amout_money,
-
+                    train_start_station: this.train_start_station,
+                    train_end_station: this.train_end_station,
+                    train_start_time: this.train_start_time,
+                    order_status: '已支付'
                 })
             }
         },

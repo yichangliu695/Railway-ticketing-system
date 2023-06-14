@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  *
+ *
+ * 乘客的dao层
  * 在数据库的passenger上进行操作
  */
 @Mapper
@@ -16,14 +18,7 @@ public interface PassengerDao {
      *
      * 查询某用户下的所有乘客
      */
-    @Select("SELECT " +
-            "user_phone_number," +
-            "passenger_real_name," +
-            "passenger_phone_number," +
-            "passenger_id_number," +
-            "passenger_type," +
-            "passenger_address " +
-            "FROM passenger where user_phone_number = #{user_phone_number}")
+    @Select("SELECT * FROM passenger where user_phone_number = #{user_phone_number}")
     List<PassengerInfo> findPassenger(@Param("user_phone_number") String user_phone_number);
 
     /**

@@ -5,83 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e6a1b75-298f-44a7-a7c4-20164ed4b530" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/manage/static/js/0.084b8aedfd0e7a31e7f2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/1.6e16b5dfc134a18ab1f2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/10.dc16eb9e7401be0281bf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/11.476af21492ba981db94c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/12.342cc938099d646381e4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/13.d1cc993502dadc4109cf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/14.288aa8d82cf5b61504ce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/15.0253d8d8c420eb4effcc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/16.ef21b1560ee9c742f76c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/17.a9cb0605b7d89cf9eb69.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/18.499e23782ff02e9dcf73.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/19.0d56f2bedb5044785288.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/2.901901ab581cb42ac650.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/20.dbc735b9f253710c7062.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/21.3ba37817bf7bd260c05f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/22.133eaa7d0c20c3f6a7b5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/23.9e8aa4cc55cdee005c3d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/3.cec544ff451ae1a04006.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/4.2c973268adf0af551db2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/5.b022a6a506cbd3afdf84.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/6.9065e29021eaf5093572.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/7.7409b8c014eb847b3a87.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/8.de2f6148d27cbaaaba7a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/9.793c7cee069ef14116b7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/app.01312e6585f09deb74db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/manifest.2bdf24a1bd9a99a6272b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage/static/js/vendor.abd0ec07e681def2e191.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/PassengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/PassengerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/PassengerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/PassengerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/po/PassengerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/GetAllOrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/GetAllOrderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/OrderListService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/PassengerService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/PassengerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/StationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/StationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/TrainInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/TrainInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/test/java/com/hjnu/service/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/test/java/com/hjnu/service/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/PassengerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/PassengerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/TicketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/TicketController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/OrderListDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/OrderListDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/PassengerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/PassengerDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/TrainInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/TrainInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/PassengerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/po/PassengerInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/vo/GetAllOrderList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/vo/GetAllOrderList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/service/OrderListService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/service/PassengerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/vo/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/model/vo/UserInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/manage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/0.3f2458140e369362cd26.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/1.7f5cafb8bd6ca50c3022.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/10.aaba54d7b43c6a5f099e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/11.8910b52c59d78c17fdc4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/12.578d8808399f501ea927.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/13.cd549d74422eadec4b9b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/14.1e1c2f46506a7611d921.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/15.40afc53f0adc593f00c2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/16.f371cf54c1ddebed4afb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/17.0ed0ba1ae636ae7f4b1e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/18.cb798290c69dbe23a282.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/19.9ed0cfeea921bf17af25.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/2.f0a6d483a68cda383c2c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/20.d2951f969da7bf134d24.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/21.335a7250cb673ad3afd3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/3.5e6ae4f5b49b0026a7db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/4.f58c8095e62a476b48c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/5.a2b277b5e0da988ceb04.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/6.56734ef9dca942e7dc47.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/7.94a867389837af5a2fd6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/8.8541b48981e704d85855.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/9.7369570ac54bf7ab127e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/app.e517551119a4efa531cf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/manifest.5af25ff252af09192e57.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/static/js/vendor.d880385a436a9659bd02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/TrainsAdded.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainsAdded.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -398,8 +339,7 @@
       <workItem from="1686625095938" duration="1871000" />
       <workItem from="1686639335583" duration="2701000" />
       <workItem from="1686644388477" duration="601000" />
-      <workItem from="1686664208333" duration="2907000" />
-      <workItem from="1686705874643" duration="722000" />
+      <workItem from="1686664208333" duration="1757000" />
     </task>
     <servers />
   </component>
