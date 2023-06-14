@@ -2,6 +2,8 @@ package com.hjnu.model.po;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 订单信息
@@ -9,6 +11,8 @@ import lombok.Data;
  * 对应订单表
  */
 @Data
+@Getter
+@Setter
 public class OrderList {
 
     private String user_phone_number;

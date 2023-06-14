@@ -100,11 +100,11 @@ public class OrderController {
      */
     @RequestMapping(value = "/generateOrderInformation",method = RequestMethod.POST)
     public RespBean generateOrderInformation(@RequestBody GenerateOrder generateOrder ){
-//        try {
-//            orderListService.generateOrder(generateOrder);
-//        }catch (Exception e){
-//            return new RespBean(500,"失败");
-//        }
+        try {
+            orderListService.generateOrder(generateOrder);
+        }catch (Exception e){
+            return new RespBean(500,"失败");
+        }
 
         return new RespBean(1,"成功");
     }

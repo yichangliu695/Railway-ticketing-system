@@ -1,6 +1,7 @@
 package com.hjnu.dao;
 
 
+import com.hjnu.model.po.OrderList;
 import com.hjnu.model.vo.AllOrder;
 import com.hjnu.model.vo.GetAllNoTripData;
 import com.hjnu.model.vo.GetAllOrderList;
@@ -137,5 +138,14 @@ public interface OrderListDao {
     String getSeatTypeByNo(@Param("seat_no")String seat_no);
 
 
-
+    @Insert("insert into order_list (order_id, user_phone_number, passenger_phone_number, start_station_no, end_station_no, carriage_no, seat_no, order_create_time, order_status, train_start_date, train_no, order_money, end_station_name, start_station_name, passenger_id_number) " +
+            "values (#{order_id}, #{orderList.user_phone_number}, #{orderList.passenger_phone_number}, " +
+            "#{orderList.start_station_no}, #{orderList.end_station_no}, " +
+            "#{orderList.carriage_no}, " +
+            "#{orderList.seat_no}, #{orderList.order_create_time}, " +
+            "#{orderList.order_status}, #{orderList.train_start_date}, " +
+            "#{orderList.train_no}, #{orderList.order_money}, " +
+            "#{orderList.end_station_name}, #{orderList.start_station_name}, " +
+            "#{orderList.passenger_id_number}) ")
+    void insertOrder(@Param("order_id") String order_list, @Param("orderList") OrderList orderList);
 }

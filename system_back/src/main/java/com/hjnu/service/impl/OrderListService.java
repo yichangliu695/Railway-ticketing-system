@@ -2,17 +2,18 @@ package com.hjnu.service.impl;
 
 import com.hjnu.dao.PassengerDao;
 import com.hjnu.dao.TrainInfoDao;
+import com.hjnu.model.po.OrderList;
+import com.hjnu.model.po.PassengerInfo;
 import com.hjnu.model.po.SeatInfo;
-import com.hjnu.model.vo.AllOrder;
-import com.hjnu.model.vo.GetAllNoTripData;
-import com.hjnu.model.vo.GetAllOrderList;
-import com.hjnu.model.vo.GetOrderList;
+import com.hjnu.model.po.TrainInfo;
+import com.hjnu.model.vo.*;
 import com.hjnu.dao.OrderListDao;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -119,23 +120,32 @@ public class OrderListService {
         return orderListDao.GetAllOrder();
     }
 
-    public   void UpdateNoPayOrderStatus( int order_id) {
-        orderListDao.UpdateNoPayOrderStatus(order_id);
-    }
-    public   void UpdatePayOrderStatus( String order_id) {
-        orderListDao.UpdatePayOrderStatus(order_id);
-    }
-
-    public   List<GetAllNoTripData>  GetAllNoTripOrder() {
-            return orderListDao.GetAllNoTripOrder();
-    }
-    public  List<AllOrder>  GetAllNoPayOrder() {
-        return orderListDao.GetAllNoPayOrder();
-    }
-
-    public List<AllOrder> GetAllNoTripOrderByPassenger(String passenger_phone_number) {
-        return orderListDao.GetAllNoTripOrderByPassenger(passenger_phone_number);
-    }
+    public void generateOrder(GenerateOrder generateOrder) {
+        //获取列车信息
+        String train_number = generateOrder.getTrain_number();
+        TrainInfo trainInfo = trainInfoDao.getTrainInfoByNum(train_number);
 
 
+        //获取乘客信息
+        List<PassengerInfo> pas = generateOrder.getPassenger_data();
+        //插入订单表
+        for (PassengerInfo passenger : pas) {
+            int rand1 = (int) (Math.random() * 9 + 1) * 1000;
+            int rand2 = (int) (Math.random() * 9 + 1) * 100;
+            String time = LocalDateTime.now()+"";
+            //生成座位号
+            String chars = "ABCDEFGHIZKLMNOPQRSTUVWXYZ"; //大写字母
+            char seat_pre = chars.charAt((int)(Math.random() * 26)); //随机取一个字母
+            OrderList orderList = new OrderList(passenger.getUser_phone_number(), passenger.getPassenger_phone_number(),
+                    passenger.getPassenger_id_number(), trainInfo.getTrain_no(),
+                    rand1 + "4", trainInfo.getTrain_start_station(),
+                    rand1 + "5", trainInfo.getTrain_end_station(),
+                    rand2 + "2", seat_pre+ "" + rand2, generateOrder.getOrder_money(),
+                    time.substring(0,10), generateOrder.getOrder_status(), trainInfo.getTrain_start_time());
+            orderListDao.insertOrder(rand1 + "9", orderList);
+        }
+
+
+
+    }
 }

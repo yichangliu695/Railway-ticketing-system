@@ -70,4 +70,9 @@ public interface TrainInfoDao {
 
     @Select("select train_number from train_info where  train_no like #{train_no}")
     String getTrainNumber(@Param("train_no") String train_no);
+
+    @Select("select train_no,train_number,train_type,train_carriages,train_start_station,train_end_station," +
+            "train_start_time,train_end_time,train_arrive_day,train_running_time,train_running_type " +
+            "from train_info where train_number=#{train_number}")
+    TrainInfo getTrainInfoByNum(@Param("train_number") String train_number);
 }

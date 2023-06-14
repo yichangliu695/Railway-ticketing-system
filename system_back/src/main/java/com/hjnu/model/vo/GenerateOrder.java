@@ -15,8 +15,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class GenerateOrder {
+
     //车次id
-    String train_no;
+    String train_number;
 
     //订单价格
     String order_money;

@@ -2,6 +2,8 @@ package com.hjnu.model.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**、
  *乘客类  对应数据的passenger表
