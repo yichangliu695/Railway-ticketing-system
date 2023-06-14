@@ -1,5 +1,7 @@
 package com.hjnu.service.impl;
 
+import com.hjnu.dao.PassengerDao;
+import com.hjnu.dao.TrainInfoDao;
 import com.hjnu.model.po.SeatInfo;
 import com.hjnu.model.vo.AllOrder;
 import com.hjnu.model.vo.GetAllNoTripData;
@@ -22,22 +24,39 @@ public class OrderListService {
     @Resource
     private OrderListDao orderListDao;
 
+    @Resource
+    private PassengerDao passengerDao;
+
+    @Resource
+    private TrainInfoDao trainInfoDao;
+
     /**
      * 所有订单
      */
     public List<GetAllOrderList> getAllOrderLists (String user_phone_number) {
-
         //查询订单表
         List<GetAllOrderList> allOrderLists = orderListDao.GetAllOrderList(user_phone_number);
 
-        List<GetAllOrderList> myList = allOrderLists.stream().distinct().collect(Collectors.toList());
+
         //补全座位号和座位类型
-        myList.forEach(item ->{
+        allOrderLists.forEach(item ->{
             String seat_type=orderListDao.getSeatTypeByNo(item.getCarriage_no());
             item.setSeat_type(seat_type);
 
         });
-        return myList;
+        //补全车次信息
+//        allOrderLists.forEach(item ->{
+//            String trainNumber=trainInfoDao.getTrainNumber( item.getStart_station_name(),item.getEnd_station_name());
+//            item.setTrain_number(trainNumber);
+//        });
+
+        //补全真实姓名
+        allOrderLists.forEach(item ->{
+            String realName=passengerDao.getRealName(item.getPassenger_phone_number());
+            item.setPassenger_real_name(realName);
+        });
+
+        return allOrderLists;
 
     }
 
@@ -86,8 +105,7 @@ public class OrderListService {
     }
 
 
-    public List<GetOrderList> getOrderInof(String order_id)
-    {
+    public List<GetOrderList> getOrderInof(String order_id) {
         return orderListDao.GetOrderInfo(order_id);
     }
 
@@ -99,22 +117,18 @@ public class OrderListService {
     }
 
 
-    public List<GetAllOrderList> GetAllOrder()
-    {
+    public List<GetAllOrderList> GetAllOrder() {
         return orderListDao.GetAllOrder();
     }
 
-    public   void UpdateNoPayOrderStatus( int order_id)
-    {
+    public   void UpdateNoPayOrderStatus( int order_id) {
         orderListDao.UpdateNoPayOrderStatus(order_id);
     }
-    public   void UpdatePayOrderStatus( String order_id)
-    {
+    public   void UpdatePayOrderStatus( String order_id) {
         orderListDao.UpdatePayOrderStatus(order_id);
     }
 
-    public   List<GetAllNoTripData>  GetAllNoTripOrder()
-    {
+    public   List<GetAllNoTripData>  GetAllNoTripOrder() {
             return orderListDao.GetAllNoTripOrder();
     }
     public  List<AllOrder>  GetAllNoPayOrder() {

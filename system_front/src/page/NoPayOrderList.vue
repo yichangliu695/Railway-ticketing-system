@@ -83,7 +83,7 @@
                     label="订单状态"
                     prop="order_status">
                 </el-table-column>-->
-                <el-table-column label="操作" width="200">
+<!--                <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
                         <el-button
                             size="mini"
@@ -91,7 +91,7 @@
                             @click="handlePay(scope.row.order_id)">支付</el-button>
 
                     </template>
-                </el-table-column>
+                </el-table-column>-->
             </el-table>
             <el-dialog title="支付" :visible.sync="dialogTableVisible" style="width: 1500px">
                 <el-row>
@@ -143,7 +143,7 @@
 
                 tableData: [
                     {
-                        order_id:"01",
+                       /* order_id:"01",
                         passenger_real_name:"02",
                         train_number:"03",
                         start_station_name:"04",
@@ -157,7 +157,7 @@
                         passenger_phone_number:"11",
                         passenger_id_number:"12",
                         order_money:"12",
-
+*/
 
                     }
                 ],
@@ -175,7 +175,7 @@
             }
         },
         created(){
-            this.initData();
+           // this.initData();
         },
         components: {
             headTop,
@@ -185,6 +185,8 @@
                 try{
 
                     const res = await getNoPayOrderList({token:getCookie("token")});
+                    console.log('订单信息')
+                    console.log(res)
                     if (res.status == 1) {
 
                         this.tableData = [];
