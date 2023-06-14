@@ -157,6 +157,32 @@
                             <el-button style="margin-top: 30px;" @click="innerVisible1=true" type="primary">点击付款</el-button>
                         </div>
                     </el-row>
+                    <el-row  v-show="active === 0" >
+                        <div >
+                            <el-card class="box-card"  v-for="(tableData)  in tableDatas" style="width: 1000px;margin-left: 80px;margin-top: 20px">
+                                <div slot="header" class="clearfix">
+                                    <span>{{tableData.passenger_real_name}}</span>
+                                    <el-button style="float: right; padding: 3px 0"  @click="AddPassengerInfo(tableData.passenger_real_name,tableData.passenger_phone_number,tableData.passenger_id_number)" type="text">添加</el-button>
+                                </div>
+                                <div  class="text item">
+                                    <span>电话号码：</span><span>{{tableData.passenger_phone_number}}</span>
+                                </div>
+                                <div v-if="tableData.passenger_type == 1 " class="text item">
+                                    <span>用户类型：</span><span>成人</span>
+                                </div>
+                                <div  v-else class="text item">
+                                    <span>用户类型：</span><span>学生</span>
+                                </div>
+                                <div  class="text item">
+                                    <span>身份证号：</span><span>{{tableData.passenger_id_number}}</span>
+                                </div>
+                                <div  class="text item">
+                                    <span>地址：</span><span>{{tableData.passenger_address}}</span>
+                                </div>
+
+                            </el-card>
+                        </div>
+                    </el-row>
                 </el-scrollbar>
                 <span slot="footer" class="dialog-footer">
                     <el-button  v-show="active<2" type="primary" @click="next" >下一步</el-button>
@@ -213,7 +239,8 @@
     import headTop from '../components/headTop'
     import TicketOrder from "./TicketOrder";
     import {baseUrl, baseImgPath} from '@/config/env'
-    import {getTrainScheduleList,searchTrainSchedule,getAllStationName,generateOrderInformation} from '@/api/getData'
+    import {getTrainScheduleList,searchTrainSchedule,getAllStationName,generateOrderInformation,getPassengerInfo} from '@/api/getData'
+    import {getCookie} from "../config/store_cookie";
     export default {
         data(){
             return {
@@ -279,14 +306,18 @@
                 innerVisible1: false,
                 train_start_station:'',
                 train_end_station:'',
-                train_start_time:''
+                train_start_time:'',
+                tabledatas:[]
             }
         },
        async created(){
            const res = await getAllStationName()
            this.stationData = res.dataLists;
         },
-    	components: {
+        mounted() {
+            this.getPassenger()
+        },
+        components: {
     		headTop,
             TicketOrder
     	},
@@ -583,6 +614,24 @@
                     train_start_time: this.train_start_time,
                     order_status: '已支付'
                 })
+            },
+            async getPassenger()
+            {
+                const PassengerInfoData = await getPassengerInfo({token:getCookie("token")})
+                if (
+                    PassengerInfoData.status == 1) {
+                    this.$message({
+                        type: 'success',
+                        message: '成功'
+                    });
+                    this.tableDatas = PassengerInfoData.passengerInfos;
+                    console.log(this.tableDatas)
+                }else{
+                    this.$message({
+                        type: 'error',
+                        message: res.success
+                    });
+                }
             }
         },
 
