@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/GenerateOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/PassengerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/TrainInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/TrainInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hjnu/service/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hjnu/service/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/PassengerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/PassengerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TicketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/TicketController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/model/po/PassengerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/po/PassengerInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/OrderListDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/OrderListDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/PassengerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/PassengerDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/TrainInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/TrainInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/vo/GetAllOrderList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/vo/GetAllOrderList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/model/vo/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/model/vo/UserInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/NoPayOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainsAdded.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainsAdded.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +146,9 @@
       <workItem from="1686623653260" duration="1349000" />
       <workItem from="1686625150180" duration="5986000" />
       <workItem from="1686639365079" duration="2950000" />
-      <workItem from="1686664201088" duration="4581000" />
+      <workItem from="1686664201088" duration="5953000" />
+      <workItem from="1686705863586" duration="2438000" />
+      <workItem from="1686725417279" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码提交">
       <created>1685989857778</created>
@@ -256,7 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686630309241</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="改bug">
+      <created>1686670663758</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686670663758</updated>
+    </task>
+    <task id="LOCAL-00016" summary="10:14改了bug">
+      <created>1686708298446</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686708298446</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,18 +292,8 @@
     <MESSAGE value="查询车站" />
     <MESSAGE value="添加车次" />
     <MESSAGE value="改bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="改bug" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hjnu/controller/UserController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="10:14改了bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="10:14改了bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
