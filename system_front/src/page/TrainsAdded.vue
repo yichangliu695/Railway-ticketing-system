@@ -73,14 +73,14 @@
                 <div  style="height: 150px;">
 
                 </div>
-                <el-col :span="12">
+<!--                <el-col :span="12">
                     <div class="grid-content bg-purple">
                         <el-form-item prop="train_arrive_day">
                             <el-input v-model="ChangeForm.train_arrive_day" placeholder="到达日期"><span>dsfsf</span></el-input>
                         </el-form-item>
                     </div>
-                </el-col>
-                <el-col :span="12">
+                </el-col>-->
+                <el-col :span="24">
                     <div class="grid-content bg-purple">
                         <el-select style="width: 100%;" v-model="ChangeForm.train_running_type" placeholder="请选择列车当前状态">
                             <el-option
@@ -95,7 +95,7 @@
             </el-row>
 
             <el-form-item>
-                <el-button style="margin-left: 545px;" type="primary" @click="submitForm('ChangeForm')" class="submit_btn">添加车次</el-button>
+                <el-button style="margin-left: 50%;" type="primary" @click="submitForm('ChangeForm')" class="submit_btn">添加车次</el-button>
             </el-form-item>
         </el-form>
          </div>
@@ -127,33 +127,6 @@
                 rules: {
                 },
                 showLogin: true,
-                pickerOptions: {
-                    shortcuts: [{
-                        text: '最近一周',
-                        onClick(picker) {
-                            const end = new Date();
-                            const start = new Date();
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-                            picker.$emit('pick', [start, end]);
-                        }
-                    }, {
-                        text: '最近一个月',
-                        onClick(picker) {
-                            const end = new Date();
-                            const start = new Date();
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-                            picker.$emit('pick', [start, end]);
-                        }
-                    }, {
-                        text: '最近三个月',
-                        onClick(picker) {
-                            const end = new Date();
-                            const start = new Date();
-                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-                            picker.$emit('pick', [start, end]);
-                        }
-                    }]
-                },
                 options: [{
                     value: '选项1',
                     label: '特快'
@@ -171,7 +144,7 @@
                     value: '选项2',
                     label: '已停运'
                 }],
-                value1:[]
+                value1:[new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)]
             }
         },
         created(){

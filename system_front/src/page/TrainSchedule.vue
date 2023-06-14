@@ -175,7 +175,7 @@
                             <el-card class="box-card"  v-for="(tableData)  in tableDatas" style="width: 1000px;margin-left: 80px;margin-top: 20px">
                                 <div slot="header" class="clearfix">
                                     <span>{{tableData.passenger_real_name}}</span>
-                                    <el-button style="float: right; padding: 3px 0"  @click="AddPassengerInfo(tableData)" type="text">添加</el-button>
+                                    <el-button  style="margin-left: 80%;"  @click="AddPassengerInfo(tableData)" type="text">添加</el-button>
                                 </div>
                                 <div  class="text item">
                                     <span>电话号码：</span><span>{{tableData.passenger_phone_number}}</span>

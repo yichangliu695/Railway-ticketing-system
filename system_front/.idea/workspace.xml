@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4e6a1b75-298f-44a7-a7c4-20164ed4b530" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/TrainSchedule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainSchedule.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/TrainsAdded.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainsAdded.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +330,7 @@
       <workItem from="1686644388477" duration="601000" />
       <workItem from="1686664208333" duration="2907000" />
       <workItem from="1686705874643" duration="722000" />
-      <workItem from="1686724565761" duration="1625000" />
+      <workItem from="1686724565761" duration="2604000" />
     </task>
     <servers />
   </component>
@@ -378,13 +378,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/page/TrainSchedule.vue</url>
-          <line>391</line>
+          <line>412</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/page/TicketOrder.vue</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/page/TicketOrder.vue</url>
@@ -395,6 +390,12 @@
           <url>file://$PROJECT_DIR$/src/page/TrainParkingInfo.vue</url>
           <line>122</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/page/TicketOrder.vue</url>
+          <line>54</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
