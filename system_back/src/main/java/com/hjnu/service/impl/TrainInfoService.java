@@ -24,15 +24,6 @@ public class TrainInfoService {
 
     /**
      *
-     * 查询所有列车信息
-     */
-    public List<TrainInfo> selectAllTrainInfo()
-    {
-        return trainInfoDao.findAllTrainInfo();
-    }
-
-    /**
-     *
      * 分页查询
      */
     public List<TrainInfo> selectAllTrainInfo(int offset,int limit)
