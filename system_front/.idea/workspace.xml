@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4e6a1b75-298f-44a7-a7c4-20164ed4b530" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/dao/PassengerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/GenerateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/model/vo/GenerateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/OrderListDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/OrderListDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/PassengerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../system_back/target/classes/com/hjnu/dao/PassengerDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/NoPayOrderList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/TrainSchedule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TrainSchedule.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +338,9 @@
       <workItem from="1686644388477" duration="601000" />
       <workItem from="1686664208333" duration="2907000" />
       <workItem from="1686705874643" duration="722000" />
-      <workItem from="1686724565761" duration="5145000" />
+      <workItem from="1686724565761" duration="7318000" />
+      <workItem from="1686838439930" duration="1218000" />
+      <workItem from="1686879784926" duration="1237000" />
     </task>
     <task id="LOCAL-00001" summary="qianduan">
       <created>1686730164061</created>
@@ -339,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686730164061</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="qianduan">
+      <created>1686734466061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686734466061</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -389,11 +406,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/page/TrainSchedule.vue</url>
-          <line>412</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/page/TicketOrder.vue</url>
           <line>419</line>
           <option name="timeStamp" value="5" />
@@ -406,7 +418,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/page/TicketOrder.vue</url>
           <line>54</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

@@ -31,6 +31,7 @@ public class OrderListService {
     @Resource
     private TrainInfoDao trainInfoDao;
 
+
     /**
      * 所有订单
      */
@@ -40,7 +41,7 @@ public class OrderListService {
 
         //补全座位号和座位类型
         allOrderLists.forEach(item ->{
-            String seat_type=orderListDao.getSeatTypeByNo(item.getCarriage_no());
+            String seat_type=orderListDao.getSeatTypeByNo(item.getTrain_no(),item.getCarriage_no());
             item.setSeat_type(seat_type);
 
         });
@@ -125,7 +126,6 @@ public class OrderListService {
         String train_number = generateOrder.getTrain_number();
         TrainInfo trainInfo = trainInfoDao.getTrainInfoByNum(train_number);
 
-
         //获取乘客信息
         List<PassengerInfo> pas = generateOrder.getPassenger_data();
         //插入订单表
@@ -142,10 +142,30 @@ public class OrderListService {
                     rand1 + "5", trainInfo.getTrain_end_station(),
                     rand2 + "2", seat_pre+ "" + rand2, generateOrder.getOrder_money(),
                     time.substring(0,10), generateOrder.getOrder_status(), trainInfo.getTrain_start_time());
+
             orderListDao.insertOrder(rand1 + "9", orderList);
+
+            SeatInfo seatInfo = new SeatInfo(trainInfo.getTrain_no(), train_number, orderList.getCarriage_no(), generateOrder.getSeat_type(), pas.size());
+            passengerDao.insertData(seatInfo);
+
         }
 
 
+
+    }
+
+    /**
+     * 支付订单
+     */
+    public void changeOrderStatus(String orderId) {
+        //查找
+//        OrderList orderList=orderListDao.getOrderById(orderId);
+//        //删除
+//        orderListDao.deleteById(orderId);
+//        //插入
+//        orderList.setOrder_status("已支付");
+//        orderListDao.insertOrder(orderId,orderList);
+        orderListDao.updateStatus("已支付",orderId);
 
     }
 }

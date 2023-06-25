@@ -25,6 +25,9 @@ public class GenerateOrder {
     //支付状态,已支付，未支付
     String order_status;
 
+    //座位类型
+    String seat_type;
+
     //乘客
     List<PassengerInfo> passenger_data;
 

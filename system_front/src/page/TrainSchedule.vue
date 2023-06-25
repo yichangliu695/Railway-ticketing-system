@@ -601,7 +601,8 @@
                           passenger_data:this.passenger_data,
                           order_money: this.amout_money,
                           train_number: this.train_number,
-                          order_status: '未支付'
+                          order_status: '未支付',
+                          seat_type: this.seat_type
                       })
                   }
                   this.dialogVisible=false;
@@ -630,7 +631,8 @@
                     passenger_data:this.passenger_data,
                     order_money: this.amout_money,
                     train_number: this.train_number,
-                    order_status: '已支付'
+                    order_status: '已支付',
+                    seat_type: this.seat_type
                 })
             },
             async getPassenger()

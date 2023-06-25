@@ -1,6 +1,7 @@
 package com.hjnu.dao;
 
 import com.hjnu.model.po.PassengerInfo;
+import com.hjnu.model.po.SeatInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -48,4 +49,8 @@ public interface PassengerDao {
 
     @Select("select passenger_real_name from passenger where passenger_phone_number=#{passenger_phone_number}")
     String getRealName(@Param("passenger_phone_number") String passenger_phone_number);
+
+    @Insert("insert into seat(train_no,train_number,carriage_no,seat_type,seat_count)" +
+            " values (#{seatInfo.train_no},#{seatInfo.train_number},#{seatInfo.carriage_no},#{seatInfo.seat_type},#{seatInfo.seat_count})")
+    void insertData(@Param("seatInfo") SeatInfo seatInfo);
 }

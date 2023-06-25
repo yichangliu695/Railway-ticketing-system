@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ea104e-6362-4d4a-b544-8ee17f9a773a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/controller/OrderListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/OrderListDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/dao/PassengerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/GenerateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/model/vo/GenerateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjnu/service/impl/OrderListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/OrderListDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/OrderListDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hjnu/dao/PassengerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hjnu/dao/PassengerDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/api/getData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/api/getData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../system_front/src/page/NoPayOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/NoPayOrderList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../system_front/src/page/TrainSchedule.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../system_front/src/page/TrainSchedule.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,37 +58,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "last_opened_file_path": "D:/Coding/train_ticket_system/system_back",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.3816092",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "spring.configuration.checksum": "020852f3caa22453898c631794773f1b",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding/train_ticket_system/system_back&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3816092&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;020852f3caa22453898c631794773f1b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -145,7 +153,9 @@
       <workItem from="1686639365079" duration="2950000" />
       <workItem from="1686664201088" duration="5953000" />
       <workItem from="1686705863586" duration="2438000" />
-      <workItem from="1686725417279" duration="8017000" />
+      <workItem from="1686725417279" duration="11678000" />
+      <workItem from="1686838475632" duration="1212000" />
+      <workItem from="1686879770752" duration="1270000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码提交">
       <created>1685989857778</created>

@@ -134,8 +134,8 @@ public interface OrderListDao {
     @Select("select * from order_list where order_status = '未出行' and  passenger_phone_number = #{passenger_phone_number}")
      List<AllOrder>  GetAllNoTripOrderByPassenger(@Param("passenger_phone_number") String passenger_phone_number);
 
-    @Select("select seat_type from seat where carriage_no=#{seat_no}")
-    String getSeatTypeByNo(@Param("seat_no")String seat_no);
+    @Select("select seat_type from seat where train_no=#{train_no} and carriage_no=#{carriage_no}")
+    String getSeatTypeByNo(@Param("train_no")String train_no,@Param("carriage_no") String carriage_no );
 
 
     @Insert("insert into order_list (order_id, user_phone_number, passenger_phone_number, start_station_no, end_station_no, carriage_no, seat_no, order_create_time, order_status, train_start_date, train_no, order_money, end_station_name, start_station_name, passenger_id_number) " +
@@ -147,5 +147,31 @@ public interface OrderListDao {
             "#{orderList.train_no}, #{orderList.order_money}, " +
             "#{orderList.end_station_name}, #{orderList.start_station_name}, " +
             "#{orderList.passenger_id_number}) ")
-    void insertOrder(@Param("order_id") String order_list, @Param("orderList") OrderList orderList);
+    void insertOrder(@Param("order_id") String order_Id, @Param("orderList") OrderList orderList);
+
+
+    @Update("update order_list set order_status=#{status} where order_id=#{order_id}")
+    void updateStatus(@Param("status") String status,@Param("order_id") String orderId);
+
+//    @Delete("delete order_list where order_id=#{order_id}")
+//    void deleteById(@Param("order_Id") String orderId);
+
+    @Select("select A.order_id as order_id ," +
+            " A.order_id as passenger_real_name," +
+            " A.order_id as train_number ," +
+            " A.start_station_name as start_station_name, " +
+            " A.end_station_name as end_station_name," +
+            " A.carriage_no as carriage_no," +
+            " A.order_id as seat_type," +
+            " A.seat_no as seat_no," +
+            " A.train_start_date as start_date," +
+            " A.train_start_date as start_time ," +
+            " A.order_status as order_status," +
+            " A.passenger_phone_number as passenger_phone_number," +
+            " A.passenger_id_number as passenger_id_number ," +
+            " A.order_money as order_money, " +
+            " A.train_no as train_no " +
+            " from order_list as A " +
+            " where A.order_id =#{order_id}")
+    OrderList getOrderById(@Param("order_id") String orderId);
 }

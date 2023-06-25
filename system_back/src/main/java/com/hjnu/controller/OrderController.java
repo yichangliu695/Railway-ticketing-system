@@ -1,16 +1,11 @@
 package com.hjnu.controller;
 
-
-import com.hjnu.model.po.OrderList;
 import com.hjnu.model.vo.*;
 import com.hjnu.utils.RedisUtils;
 import com.hjnu.service.impl.OrderListService;
-import com.hjnu.service.impl.StationService;
 import com.hjnu.service.impl.TrainTickerQueryService;
 import com.hjnu.service.impl.TrainTicketOrderService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.validation.BindingResult;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -42,19 +37,6 @@ public class OrderController {
      *
      * 具体的高铁动车选座算法 根据不同的 要求进行选座
      */
-    private int getSeat_no_count(int Seat_count,int start,int interval,List<TrainSeatQuery> trainCarriageSeatCountList) {
-        int seat_no = 0;
-        for(int i = start ; i< Seat_count ; i = i+interval)
-        {
-               if( equals(trainCarriageSeatCountList,i))
-               {
-                    seat_no = i;
-                    break;
-               }
-
-        }
-        return seat_no;
-    }
     public boolean equals(List<TrainSeatQuery> trainCarriageSeatCountList , int i) {
         for(TrainSeatQuery trainSeatQuery:trainCarriageSeatCountList) {
             if(Integer.parseInt(trainSeatQuery.getSeat_no()) == i) {
@@ -104,6 +86,21 @@ public class OrderController {
             orderListService.generateOrder(generateOrder);
         }catch (Exception e){
             return new RespBean(500,"失败");
+        }
+
+        return new RespBean(1,"成功");
+    }
+
+    /**
+     * 支付订单
+     */
+    @RequestMapping(value="/changeOrderStatus",method = RequestMethod.GET)
+    public RespBean changeOrderStatus (@RequestParam("order_id") String orderId){
+
+        try{
+            orderListService.changeOrderStatus(orderId);
+        }catch (Exception e){
+            return new RespBean(400,"失败");
         }
 
         return new RespBean(1,"成功");
