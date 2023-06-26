@@ -18,7 +18,14 @@
                 <el-input  placeholder="身份证号" v-model="ChangeForm.passenger_id_number"></el-input>
             </el-form-item>
             <el-form-item prop="user_passenger_type">
-                <el-input  placeholder="乘客类型（成人/学生）" v-model="ChangeForm.passenger_type"></el-input>
+                <el-select style="width: 100%;" v-model="ChangeForm.passenger_type" placeholder="请选择乘客类型">
+                    <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                </el-select>
             </el-form-item>
             <el-form-item prop="passenger_address">
                 <el-input  placeholder="乘客地址" v-model="ChangeForm.passenger_address"></el-input>
@@ -49,14 +56,25 @@
                     passenger_id_number:'',
                     passenger_type:'',
                     passenger_address:''
-
+/*
+{ pattern: /^1[3|5|7|8|9]\d{9}$/, message: '请输入正确的号码格式', trigger: 'blur' }
+ */
                 },
                 rules: {
+                    passenger_phone_number: [
+                        { required: true, message: '请输入内容', trigger: 'blur' },
+                        { pattern: /^1[3|5|7|8|9]\d{9}$/, message: '请输入正确的号码格式', trigger: 'blur' }
+                    ],
                     passenger_real_name: [
                         { required: true, message: '请输入内容', trigger: 'blur' }
                     ],
                     passenger_id_number: [
-                        { required: true, message: '请输入内容', trigger: 'blur' }
+                        { required: true, message: '请输入内容', trigger: 'blur' },
+                        {
+                            pattern: /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/,
+                            message: '证件号码格式有误！',
+                            trigger: 'blur'
+                        }
                     ],
                     passenger_type: [
                         { required: true, message: '请输入内容', trigger: 'blur' }
@@ -65,6 +83,13 @@
                         { required: true, message: '请输入内容', trigger: 'blur' }
                     ],
                 },
+                options: [{
+                    value: '选项1',
+                    label: '成人'
+                }, {
+                    value: '选项2',
+                    label: '学生'
+                }],
                 showLogin: true,
             }
         },

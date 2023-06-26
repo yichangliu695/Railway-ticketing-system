@@ -44,6 +44,13 @@ export const getPassengerInfo= data => fetch('/passenger/getPassengerInfo', data
 export const addPassengerInfo= data => fetch('/passenger/addPassengerInfo', data,'POST');
 
 /**
+ * 添加车次信息
+ * @param data
+ */
+export const AddTrainInformation= data => fetch('/trainSchedule/AddTrainInformation', data,'POST');
+
+
+/**
  * 删除乘客
  * @param data
  */
@@ -147,7 +154,22 @@ export const getNotripOrderList = data => fetch('/order/getNotripOrderList', dat
  * 查询用户未支付订单
  * @param data
  */
+/*export const getNoPayOrderList = data => fetch('/order/getNoPayOrderList', data);*/
 export const getNoPayOrderList = data => fetch('/order/getNoPayOrderList', data);
+
+/**
+ * 查询用户已支付订单
+ * @param data
+ */
+export const getAlreadyPayOrderList = data => fetch('/order/getAlreadyPayOrderList', data);
+
+/**
+ * 改变订单状态
+ * @param data
+ */
+export const changeOrderStatus = data => fetch('/order/changeOrderStatus', data);
+
+
 
 /**
  * 退票
@@ -195,3 +217,21 @@ export const getAllTrainNumber = data => fetch('/train/getAllTrainNumber', data,
 
 
 export const getAllStationName = data => fetch('/train/getAllStationName', data,);
+
+
+/**
+ * 修改站点信息
+ */
+export const changeSiteInfo = data => fetch('/train/changeSiteInfo', data,'POST');
+
+
+/**
+ * 删除站点信息
+ */
+export const deleteTrainInfo = data => fetch('/train/deleteTrainInfo', data,'POST');
+
+
+/**
+ * 生成订单信息
+ */
+export const generateOrderInformation = data => fetch('/order/generateOrderInformation', data,'POST');

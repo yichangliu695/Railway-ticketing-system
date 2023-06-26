@@ -1,9 +1,8 @@
 package com.hjnu.controller;
 
 import com.hjnu.model.vo.*;
-import com.hjnu.utils.RedisUtils;
-import com.hjnu.service.TrainScheduleService;
-import com.hjnu.service.TrainTickerQueryService;
+import com.hjnu.service.impl.TrainScheduleService;
+import com.hjnu.service.impl.TrainTickerQueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
@@ -11,10 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 车票查询的业务处理层
@@ -33,8 +29,6 @@ public class TicketController {
     @Resource
     private TrainScheduleService trainScheduleService;
 
-    @Resource
-    private RedisUtils redisUtils;
     private static final Logger logger = LoggerFactory.getLogger(TicketController.class);
 
     /**
@@ -45,38 +39,27 @@ public class TicketController {
      */
     @RequestMapping(value ="/queryTrainTicket",method = RequestMethod.GET)
     public TrainTicketPriceQueryReturnData GetTrainScheduleInfo(@RequestParam String train_start_station, String train_end_station, String datetime) {
-
-
         java.util.Date dt = new java.util.Date();
-        java.text.SimpleDateFormat sdfs =
-                new java.text.SimpleDateFormat("yyyy-MM-dd");
+        java.text.SimpleDateFormat sdfs = new java.text.SimpleDateFormat("yyyy-MM-dd");
         String currentTime = sdfs.format(dt);
-
         java.util.Date dt2 = new java.util.Date();
-        java.text.SimpleDateFormat sdfs2 =
-                new java.text.SimpleDateFormat("HH:mm:ss");
+        java.text.SimpleDateFormat sdfs2 = new java.text.SimpleDateFormat("HH:mm:ss");
         String currentTime2 = sdfs2.format(dt2);
 
 
-        if(datetime.compareTo(currentTime)<0)
-        {
+        if(datetime.compareTo(currentTime)<0) {
             return new TrainTicketPriceQueryReturnData(406,null);
         }
-            List<TrainScheduleInfo> trainScheduleInfos = trainScheduleService.searchTrainScheduleInfo(train_start_station,train_end_station);
-            List<TrainTicketPriceInfo> trainTicketPriceInfos = new ArrayList<>();
-            for(TrainScheduleInfo trainScheduleInfo :trainScheduleInfos)
-            {
-                    if(trainScheduleInfo.getTrain_number().charAt(0) == 'G' || trainScheduleInfo.getTrain_number().charAt(0) == 'D')
-                    {
-
-                        trainTicketPriceInfos.add(trainTickerQueryService.queryTicketPrice_GD(train_start_station,train_end_station,trainScheduleInfo.getTrain_no()));
+        List<TrainScheduleInfo> trainScheduleInfos = trainScheduleService.searchTrainScheduleInfo(train_start_station,train_end_station);
+        List<TrainTicketPriceInfo> trainTicketPriceInfos = new ArrayList<>();
+        for(TrainScheduleInfo trainScheduleInfo :trainScheduleInfos) {
+            if(trainScheduleInfo.getTrain_number().charAt(0) == 'G' || trainScheduleInfo.getTrain_number().charAt(0) == 'D') {
+                trainTicketPriceInfos.add(trainTickerQueryService.queryTicketPrice_GD(train_start_station,train_end_station,trainScheduleInfo.getTrain_no()));
                     }
-                    else
-                    {
-                        trainTicketPriceInfos.add(trainTickerQueryService.queryTicketPrice(train_start_station,train_end_station,trainScheduleInfo.getTrain_no()));
-
-                    }
+            else {
+                trainTicketPriceInfos.add(trainTickerQueryService.queryTicketPrice(train_start_station,train_end_station,trainScheduleInfo.getTrain_no()));
             }
+        }
             String high_price_GD = null;
             String medium_price_GD = null;
             String low_price_GD = null;
@@ -89,11 +72,9 @@ public class TicketController {
                 trainTicketPriceInfos.remove(null);
             }
         }
-            for(TrainTicketPriceInfo trainTicketPriceInfo :trainTicketPriceInfos)
-            {
+            for(TrainTicketPriceInfo trainTicketPriceInfo :trainTicketPriceInfos) {
                 if( trainTicketPriceInfo != null) {
-                    if(trainTicketPriceInfo.getTrain_number().charAt(0) == 'G' || trainTicketPriceInfo.getTrain_number().charAt(0) == 'D')
-                    {
+                    if(trainTicketPriceInfo.getTrain_number().charAt(0) == 'G' || trainTicketPriceInfo.getTrain_number().charAt(0) == 'D') {
                         if(!trainTicketPriceInfo.getHigh_seat_price().equals(""))
                         {
                             high_price_GD =trainTicketPriceInfo.getHigh_seat_price();
@@ -107,11 +88,8 @@ public class TicketController {
                             low_price_GD =trainTicketPriceInfo.getLow_seat_price();
                         }
 
-                    }
-                    else
-                    {
-                        if(!trainTicketPriceInfo.getHigh_seat_price().equals(""))
-                        {
+                    } else {
+                        if(!trainTicketPriceInfo.getHigh_seat_price().equals("")) {
                             high_price =trainTicketPriceInfo.getHigh_seat_price();
                         }
                         if(!trainTicketPriceInfo.getMedium_seat_price().equals(""))
@@ -127,39 +105,27 @@ public class TicketController {
             }
 
 
-        for(TrainTicketPriceInfo trainTicketPriceInfo :trainTicketPriceInfos)
-        {
-
-            if(trainTicketPriceInfo != null)
-            {
-                if(trainTicketPriceInfo.getTrain_number().charAt(0) == 'G' || trainTicketPriceInfo.getTrain_number().charAt(0) == 'D')
-                {
-                    if(trainTicketPriceInfo.getHigh_seat_price().equals(""))
-                    {
+        for(TrainTicketPriceInfo trainTicketPriceInfo :trainTicketPriceInfos) {
+            if(trainTicketPriceInfo != null) {
+                if(trainTicketPriceInfo.getTrain_number().charAt(0) == 'G' || trainTicketPriceInfo.getTrain_number().charAt(0) == 'D') {
+                    if(trainTicketPriceInfo.getHigh_seat_price().equals("")) {
                         trainTicketPriceInfo.setHigh_seat_price(high_price_GD);
                     }
-                    if(trainTicketPriceInfo.getMedium_seat_price().equals(""))
-                    {
+                    if(trainTicketPriceInfo.getMedium_seat_price().equals("")) {
                         trainTicketPriceInfo.setMedium_seat_price(medium_price_GD);
                     }
-                    if(trainTicketPriceInfo.getLow_seat_price().equals(""))
-                    {
+                    if(trainTicketPriceInfo.getLow_seat_price().equals("")) {
                         trainTicketPriceInfo.setLow_seat_price(low_price_GD);
                     }
 
-                }
-                else
-                {
-                    if(trainTicketPriceInfo.getHigh_seat_price().equals(""))
-                    {
+                } else {
+                    if(trainTicketPriceInfo.getHigh_seat_price().equals("")) {
                         trainTicketPriceInfo.setHigh_seat_price(high_price);
                     }
-                    if(trainTicketPriceInfo.getMedium_seat_price().equals(""))
-                    {
+                    if(trainTicketPriceInfo.getMedium_seat_price().equals("")) {
                         trainTicketPriceInfo.setMedium_seat_price(medium_price);
                     }
-                    if(trainTicketPriceInfo.getLow_seat_price().equals(""))
-                    {
+                    if(trainTicketPriceInfo.getLow_seat_price().equals("")) {
                         trainTicketPriceInfo.setLow_seat_price(low_price);
                     }
                 }
@@ -167,19 +133,8 @@ public class TicketController {
 
         }
 
-        if(datetime.compareTo(currentTime) == 0)
-        {
-
-            Iterator<TrainTicketPriceInfo> iterator = trainTicketPriceInfos.iterator();
-
-            while (iterator.hasNext())
-            {
-                TrainTicketPriceInfo trainTicketPriceInfo = iterator.next();
-               if(trainTicketPriceInfo.getStart_time().compareTo(currentTime2)<0 )
-               {
-                   iterator.remove();
-               }
-            }
+        if(datetime.compareTo(currentTime) == 0) {
+            trainTicketPriceInfos.removeIf(trainTicketPriceInfo -> trainTicketPriceInfo.getStart_time().compareTo(currentTime2) < 0);
         }
        if(trainTicketPriceInfos.size() != 0)
        {
@@ -212,28 +167,17 @@ public class TicketController {
         List<TrainRemainingSeats_GD> trainRemainingSeats_gds =  new ArrayList<>();
 
         List<TrainRemainingSeats> trainRemainingSeatsList =  new ArrayList<>();
-        logger.info("41412412412");
-        logger.info(train_number.substring(0,1));
-            if(train_number.charAt(0) == 'G' || train_number.charAt(0) == 'D')
-            {
-                logger.info("777777");
-                for(TrainSeatCount trainSeatCount : trainSeatCountList)
-                {
+
+            if(train_number.charAt(0) == 'G' || train_number.charAt(0) == 'D') {
+                for(TrainSeatCount trainSeatCount : trainSeatCountList) {
                     TrainRemainingSeats_GD trainRemainingSeats_gd = new TrainRemainingSeats_GD(trainSeatCount.getCarriage_no(),trainSeatCount.getSeat_type());
                     trainRemainingSeats_gds.add(trainRemainingSeats_gd);
-                    logger.info("88888888");
-                    logger.info(String.valueOf(trainSeatQueriesList.size()));
-                    logger.info(String.valueOf(trainRemainingSeats_gds.size()));
+
                 }
-                for(TrainSeatQuery trainSeatQuery :trainSeatQueriesList)
-                {
-                    for(TrainRemainingSeats_GD trainRemainingSeats_gd :trainRemainingSeats_gds)
-                    {
-                        logger.info(trainRemainingSeats_gd.getCarriage_no() + "    "+ trainSeatQuery.getCarriage_no());
-                        if(trainRemainingSeats_gd.getCarriage_no().equals(trainSeatQuery.getCarriage_no()))
-                        {
+                for(TrainSeatQuery trainSeatQuery :trainSeatQueriesList) {
+                    for(TrainRemainingSeats_GD trainRemainingSeats_gd :trainRemainingSeats_gds) {
+                        if(trainRemainingSeats_gd.getCarriage_no().equals(trainSeatQuery.getCarriage_no())) {
                             trainRemainingSeats_gd.Count(Integer.parseInt(trainSeatQuery.getSeat_no()));
-                            logger.info(trainSeatQuery.getSeat_no());
                         }
                     }
                 }
@@ -378,7 +322,7 @@ public class TicketController {
                         low_price =trainTransferTicketPriceInfo.getLow_seat_price_1();
                     }
                 }
-                if(trainTransferTicketPriceInfo.getTrain_number_2().substring(0,1).equals("G") ||trainTransferTicketPriceInfo.getTrain_number_2().substring(0,1).equals("D"))
+                if(trainTransferTicketPriceInfo.getTrain_number_2().charAt(0) == 'G' || trainTransferTicketPriceInfo.getTrain_number_2().charAt(0) == 'D')
                 {
                     if(!trainTransferTicketPriceInfo.getHigh_seat_price_2().equals(""))
                     {
@@ -412,113 +356,81 @@ public class TicketController {
             }
         }
 
-        for(TrainTransferTicketPriceInfo trainTransferTicketPriceInfo :trainTransferTicketPriceInfoList)
-        {
+        for(TrainTransferTicketPriceInfo trainTransferTicketPriceInfo :trainTransferTicketPriceInfoList) {
 
-            if(trainTransferTicketPriceInfo != null)
-            {
-                if(trainTransferTicketPriceInfo.getTrain_number_1().substring(0,1).equals("G") ||trainTransferTicketPriceInfo.getTrain_number_1().substring(0,1).equals("D"))
-                {
-                    if(trainTransferTicketPriceInfo.getHigh_seat_price_1().equals(""))
-                    {
+            if(trainTransferTicketPriceInfo != null) {
+                if(trainTransferTicketPriceInfo.getTrain_number_1().charAt(0) == 'G' ||trainTransferTicketPriceInfo.getTrain_number_1().substring(0,1).equals("D")) {
+                    if(trainTransferTicketPriceInfo.getHigh_seat_price_1().equals("")) {
                         trainTransferTicketPriceInfo.setHigh_seat_price_1(high_price_GD);
                     }
-                    if(trainTransferTicketPriceInfo.getMedium_seat_price_1().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getMedium_seat_price_1().equals("")) {
                         trainTransferTicketPriceInfo.setMedium_seat_price_1(medium_price_GD);
                     }
-                    if(trainTransferTicketPriceInfo.getLow_seat_price_1().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getLow_seat_price_1().equals("")) {
                         trainTransferTicketPriceInfo.setLow_seat_price_1(low_price_GD);
                     }
 
-                }
-                else
-                {
-                    if(trainTransferTicketPriceInfo.getHigh_seat_price_1().equals(""))
-                    {
+                } else {
+                    if(trainTransferTicketPriceInfo.getHigh_seat_price_1().equals("")) {
                         trainTransferTicketPriceInfo.setHigh_seat_price_1(high_price);
                     }
-                    if(trainTransferTicketPriceInfo.getMedium_seat_price_1().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getMedium_seat_price_1().equals("")) {
                         trainTransferTicketPriceInfo.setMedium_seat_price_1(medium_price);
                     }
-                    if(trainTransferTicketPriceInfo.getLow_seat_price_1().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getLow_seat_price_1().equals("")) {
                         trainTransferTicketPriceInfo.setLow_seat_price_1(low_price);
                     }
                 }
 
-                if(trainTransferTicketPriceInfo.getTrain_number_2().substring(0,1).equals("G") ||trainTransferTicketPriceInfo.getTrain_number_2().substring(0,1).equals("D"))
-                {
-                    if(trainTransferTicketPriceInfo.getHigh_seat_price_2().equals(""))
-                    {
+                if(trainTransferTicketPriceInfo.getTrain_number_2().substring(0,1).equals("G") ||trainTransferTicketPriceInfo.getTrain_number_2().substring(0,1).equals("D")) {
+                    if(trainTransferTicketPriceInfo.getHigh_seat_price_2().equals("")) {
                         trainTransferTicketPriceInfo.setHigh_seat_price_2(high_price_GD_2);
                     }
-                    if(trainTransferTicketPriceInfo.getMedium_seat_price_2().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getMedium_seat_price_2().equals("")) {
                         trainTransferTicketPriceInfo.setMedium_seat_price_2(medium_price_GD_2);
                     }
-                    if(trainTransferTicketPriceInfo.getLow_seat_price_2().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getLow_seat_price_2().equals("")) {
                         trainTransferTicketPriceInfo.setLow_seat_price_2(low_price_GD_2);
                     }
 
-                }
-                else
-                {
-                    if(trainTransferTicketPriceInfo.getHigh_seat_price_2().equals(""))
-                    {
+                } else {
+                    if(trainTransferTicketPriceInfo.getHigh_seat_price_2().equals("")) {
                         trainTransferTicketPriceInfo.setHigh_seat_price_2(high_price_2);
                     }
-                    if(trainTransferTicketPriceInfo.getMedium_seat_price_2().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getMedium_seat_price_2().equals("")) {
                         trainTransferTicketPriceInfo.setMedium_seat_price_2(medium_price_2);
                     }
-                    if(trainTransferTicketPriceInfo.getLow_seat_price_2().equals(""))
-                    {
+                    if(trainTransferTicketPriceInfo.getLow_seat_price_2().equals("")) {
                         trainTransferTicketPriceInfo.setLow_seat_price_2(low_price_2);
                     }
                 }
             }
 
         }
-        if(trainTransferTicketPriceInfoList.size() != 0)
-        {
+        if(trainTransferTicketPriceInfoList.size() != 0) {
             return new TrainTransferTicketPriceReturnData(1,trainTransferTicketPriceInfoList);
-        }
-        else if(trainTransferTicketPriceInfoList.size() == 0)
-        {
+        } else {
             return new TrainTransferTicketPriceReturnData(404,trainTransferTicketPriceInfoList);
         }
-        else
-        {
-            return new TrainTransferTicketPriceReturnData(405,trainTransferTicketPriceInfoList);
-        }
-//
-
 
     }
-    public int getMin(String time)
-    {
+    public int getMin(String time) {
         String [] time2 = time.split(":");
         int Hour = Integer.parseInt(time2[0]);
         int Min = Integer.parseInt(time2[1]);
-        int Min_result  = Hour *60 +Min;
 
-        return Min_result;
+        return Hour *60 +Min;
     }
     @RequestMapping(value ="/queryTransferTrainTicketNum",method = RequestMethod.POST)
     public TrainTransferSeatCountReturnData queryTransferTrainTicketNum(@Valid @RequestBody Map<String,Object> request, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            System.out.println(Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage());
         }
         java.util.Date dt = new java.util.Date();
         java.text.SimpleDateFormat sdfs =
                 new java.text.SimpleDateFormat("yyyy-MM-dd");
         String currentTime = sdfs.format(dt);
-
 
 
         String datetime = (String) request.get("datetime");
@@ -530,8 +442,7 @@ public class TicketController {
         String train_number_2 = (String) request.get("train_number_2");
         String transfer_station_no_2 = (String) request.get("transfer_station_no_2");
         String end_station_no = (String) request.get("end_station_no");
-        if(datetime.compareTo(currentTime)<0)
-        {
+        if(datetime.compareTo(currentTime)<0) {
             return new TrainTransferSeatCountReturnData(404,null);
         }
         List<TrainSeatQuery> trainSeatQuerieList_1 = trainTickerQueryService.queryTrainSeat(train_no_1,start_station_no,transfer_station_no_1,datetime);
@@ -543,31 +454,24 @@ public class TicketController {
 
         List<TrainTransferSeatCount> trainTransferSeatCountList = new ArrayList<>();
 
-        for(TrainSeatCount trainSeatCount :trainSeatCountList_1)
-        {
+        for(TrainSeatCount trainSeatCount :trainSeatCountList_1) {
             TrainTransferSeatCount trainTransferSeatCount = new TrainTransferSeatCount(train_no_1,trainSeatCount.getCarriage_no(),trainSeatCount.getSeat_type(),trainSeatCount.getSeat_count(),train_number_1);
             trainTransferSeatCountList.add(trainTransferSeatCount);
         }
 
-        for(TrainSeatCount trainSeatCount :trainSeatCountList_2)
-        {
+        for(TrainSeatCount trainSeatCount :trainSeatCountList_2) {
             TrainTransferSeatCount trainTransferSeatCount = new TrainTransferSeatCount(train_no_2,trainSeatCount.getCarriage_no(),trainSeatCount.getSeat_type(),trainSeatCount.getSeat_count(),train_number_2);
             trainTransferSeatCountList.add(trainTransferSeatCount);
         }
 
-        for(TrainTransferSeatCount trainTransferSeatCount :trainTransferSeatCountList)
-        {
-            for(TrainSeatQuery trainSeatQuery:trainSeatQuerieList_1)
-
-            {
+        for(TrainTransferSeatCount trainTransferSeatCount :trainTransferSeatCountList) {
+            for(TrainSeatQuery trainSeatQuery:trainSeatQuerieList_1) {
                     if(trainTransferSeatCount.getCarriage_no().equals(trainSeatQuery.getCarriage_no()) &&trainTransferSeatCount.getTrain_no().equals(trainSeatQuery.getTrain_no()))
                     {
                         trainTransferSeatCount.count();
                     }
             }
-            for(TrainSeatQuery trainSeatQuery:trainSeatQuerieList_2)
-
-            {
+            for(TrainSeatQuery trainSeatQuery:trainSeatQuerieList_2) {
                 if(trainTransferSeatCount.getCarriage_no().equals(trainSeatQuery.getCarriage_no()) &&trainTransferSeatCount.getTrain_no().equals(trainSeatQuery.getTrain_no()))
                 {
                     trainTransferSeatCount.count();

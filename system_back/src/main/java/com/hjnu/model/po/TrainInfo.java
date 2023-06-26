@@ -22,7 +22,6 @@ public class TrainInfo {
     private String train_end_time;
     private String train_arrive_day;
     private String train_running_time;
-
     private String train_running_type;
 
     public TrainInfo(String train_no, String train_number, String train_type, String train_carriages, String train_start_station, String train_end_station, String train_start_time, String train_end_time, String train_arrive_day, String train_running_time, String train_running_type) {

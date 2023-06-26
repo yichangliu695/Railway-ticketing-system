@@ -7,7 +7,11 @@ const login = r => require.ensure([], () => r(require('@/page/login')), 'login')
 const register = r => require.ensure([], () => r(require('@/page/register')), 'register');
 const manage = r => require.ensure([], () => r(require('@/page/manage')), 'manage');
 const home = r => require.ensure([], () => r(require('@/page/home')), 'home');
+
 const TrainInfoList = r => require.ensure([], () => r(require('@/page/TrainInfoList')), 'TrainInfoList');
+const SiteInformation = r => require.ensure([], () => r(require('@/page/SiteInformation')), 'SiteInformation');
+const TrainsAdded = r => require.ensure([], () => r(require('@/page/TrainsAdded')), 'TrainsAdded');
+
 const TrainParkingInfo = r => require.ensure([], () => r(require('@/page/TrainParkingInfo')), 'TrainParkingInfo');
 const TrainSchedule = r => require.ensure([], () => r(require('@/page/TrainSchedule')), 'TrainSchedule');
 const TrainTransfer = r => require.ensure([], () => r(require('@/page/TrainTransfer')), 'TrainTransfer');
@@ -30,6 +34,7 @@ const AllOrderList = r => require.ensure([], () => r(require('@/page/AllOrderLis
 const NoTripOrderList = r => require.ensure([], () => r(require('@/page/NoTripOrderList')), 'NoTripOrderList');
 
 const NoPayOrderList = r => require.ensure([], () => r(require('@/page/NoPayOrderList')), 'NoPayOrderList');
+const AlreadyPayOrderList = r => require.ensure([], () => r(require('@/page/AlreadyPayOrderList')), 'AlreadyPayOrderList');
 
 const TicketChange = r => require.ensure([], () => r(require('@/page/TicketChange')), 'TicketChange');
 const routes = [
@@ -52,20 +57,29 @@ const routes = [
 		},{
 			path: '/TrainInfoList',
 			component: TrainInfoList,
-			meta: ['列车信息查询', '列车信息'],
+			meta: ['信息维护', '列车信息'],
 		},{
+            path: '/SiteInformation',
+            component: SiteInformation,
+            meta: ['信息维护', '站点信息'],
+        },
+            {
                 path: '/SearchTrainInfo',
                 component: TrainParkingInfo,
-                meta: ['列车信息查询', '列车时刻表'],
+                meta: ['信息维护', '列车时刻表'],
         },{
 			path: '/TrainSchedule',
 			component: TrainSchedule,
-			meta: ['列车信息查询', '列车查询'],
+			meta: ['信息维护', '列车查询'],
 		},{
             path: '/TrainTransfer',
             component: TrainTransfer,
-            meta: ['列车信息查询', '接续换乘'],
+            meta: ['信息维护', '接续换乘'],
         },{
+                path: '/TrainsAdded',
+                component: TrainsAdded,
+                meta: ['信息维护', '车次添加'],
+            },{
 			path: '/ticketInquiry',
 			component: ticketInquiry,
 			meta: ['车票查询及购买', '余票查询'],
@@ -99,6 +113,11 @@ const routes = [
                 path: '/NoPayOrderList',
                 component: NoPayOrderList,
                 meta: ['订单列表', '未支付订单'],
+            },
+            {
+                path: '/AlreadyPayOrderList',
+                component: AlreadyPayOrderList,
+                meta: ['订单列表', '已支付订单'],
             }
 		,{
                 path: '/TicketChange',

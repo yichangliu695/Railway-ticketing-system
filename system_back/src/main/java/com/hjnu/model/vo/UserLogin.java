@@ -1,5 +1,9 @@
 package com.hjnu.model.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+
 /**
  *
  * 登陆注册 时
@@ -7,23 +11,11 @@ package com.hjnu.model.vo;
  * 用户查询用户是否注册
  * 是否重复注册过用户
  */
+
+@Data
+@AllArgsConstructor
 public class UserLogin {
     private String user_phone_number;
+
     private String user_password;
-
-    public String getUser_password() {
-        return user_password;
-    }
-
-    public void setUser_password(String user_password) {
-        this.user_password = user_password;
-    }
-
-    public String getUser_phone_number() {
-        return user_phone_number;
-    }
-
-    public void setUser_phone_number(String user_phone_number) {
-        this.user_phone_number = user_phone_number;
-    }
 }

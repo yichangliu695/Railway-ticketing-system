@@ -1,19 +1,17 @@
 package com.hjnu.controller;
 
+import com.hjnu.model.po.TrainInfo;
+import com.hjnu.model.vo.*;
+import com.hjnu.service.impl.TrainInfoService;
 import com.hjnu.utils.RedisUtils;
-import com.hjnu.model.vo.TrainScheduleInfo;
-import com.hjnu.model.vo.TrainScheduleReturnData;
-import com.hjnu.model.vo.TrainTransferScheduleReturnData;
-import com.hjnu.service.TrainScheduleService;
-import com.hjnu.model.vo.TrainTransferSchedule;
+import com.hjnu.service.impl.TrainScheduleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -30,8 +28,8 @@ public class TrainScheduleController {
     @Resource
     private TrainScheduleService trainScheduleService;
 
-    @Resource
-    private RedisUtils redisUtils;
+    @Autowired
+    private TrainInfoService trainInfoService;
 
     private static final Logger logger = LoggerFactory.getLogger(TrainInfoController.class);
 
@@ -42,11 +40,18 @@ public class TrainScheduleController {
      * 对应前端的searchTrainSchedule请求
      */
     @RequestMapping(value ="/searchTrainSchedule",method = RequestMethod.GET)
-    public TrainScheduleReturnData GetTrainScheduleInfo(@RequestParam String train_start_station, String train_end_station) {
+    public TrainInfoReturnData GetTrainScheduleInfo(@RequestParam String train_start_station, String train_end_station) {
 
-        List<TrainScheduleInfo> trainScheduleInfos = trainScheduleService.searchTrainScheduleInfo(train_start_station,train_end_station);
-        return new TrainScheduleReturnData(1,trainScheduleInfos);
 
+        List<TrainInfo>  trainInfos = trainInfoService.selectAllTrainInfo(0,2141);
+        ArrayList<TrainInfo> result = new ArrayList<>();
+        trainInfos.forEach(item->{
+            if(item.getTrain_start_station().equals(train_start_station)&&item.getTrain_end_station().equals(train_end_station)){
+                result.add(item);
+            }
+        });
+
+        return new TrainInfoReturnData(1,result);
     }
 
 
@@ -111,8 +116,19 @@ public class TrainScheduleController {
         String [] time2 = time.split(":");
         int Hour = Integer.parseInt(time2[0]);
         int Min = Integer.parseInt(time2[1]);
-        int Min_result  = Hour *60 +Min;
 
-        return Min_result;
+        return Hour *60 +Min;
     }
+
+    /**
+     * 添加车次信息
+     */
+    @RequestMapping(value ="/AddTrainInformation",method = RequestMethod.POST)
+    public RespBean addTrainInformation(@RequestBody AddTrainInfoVo trainInfoVo){
+
+        trainInfoService.AddTrainInfo(trainInfoVo);
+        return new RespBean(1,"添加成功");
+
+    }
+
 }

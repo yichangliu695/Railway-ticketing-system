@@ -15,6 +15,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "echarts": "^3.8.5",
     "element-ui": "^2.10.0",
     "time-formater": "^1.0.1",

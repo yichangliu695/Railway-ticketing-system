@@ -140,7 +140,6 @@
                         <el-button size="mini" type="primary" @click="handleAdd(scope.row.carriage_number,scope.row.seat_type,'C')">C</el-button>
                         <el-button size="mini" type="primary" @click="handleAdd(scope.row.carriage_number,scope.row.seat_type,'D')">D</el-button>
                         <el-button size="mini" type="primary" @click="handleAdd(scope.row.carriage_number,scope.row.seat_type,'E')">E</el-button>
-
                     </template>
                 </el-table-column>
             </el-table>
@@ -246,7 +245,7 @@
                 active:0,
                 dialogTableVisible: false,
                 dialogTableVisible_GD: false,
-                show_passenger:false,
+                show_passenger:true,
                 show_passenger_ticket:false,
                 show_order_list:false,
                 passenger_count:0,

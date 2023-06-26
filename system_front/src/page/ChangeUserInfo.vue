@@ -6,7 +6,7 @@
         <meta http-equiv="Pragma" content="no-cache">
 
         <header class="admin_title">修改个人信息</header>
-        <el-form class="form_contianer" :model="ChangeForm" ref="ChangeForm">
+        <el-form  :rules="rules" class="form_contianer" :model="ChangeForm" ref="ChangeForm">
             <el-form-item prop="user_real_name">
                 <el-input v-model="ChangeForm.user_real_name" placeholder="真实姓名"><span>dsfsf</span></el-input>
             </el-form-item>
@@ -14,10 +14,25 @@
                 <el-input  placeholder="邮箱" v-model="ChangeForm.user_email"></el-input>
             </el-form-item>
             <el-form-item prop="user_type">
-                <el-input  placeholder="用户类型" v-model="ChangeForm.user_type"></el-input>
+<!--                <el-input  placeholder="用户类型" v-model="ChangeForm.user_type"></el-input>-->
+                <el-select  style="width: 100%;" v-model="ChangeForm.user_type" placeholder="请选择类型">
+                    <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                </el-select>
             </el-form-item>
             <el-form-item prop="user_gender">
-                <el-input  placeholder="性别" v-model="ChangeForm.user_gender"></el-input>
+                <el-select  style="width: 100%;" v-model="ChangeForm.user_gender" placeholder="请选择性别">
+                    <el-option
+                        v-for="item in options1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                </el-select>
             </el-form-item>
             <el-form-item prop="user_id_number">
                 <el-input  placeholder="身份证号" v-model="ChangeForm.user_id_number"></el-input>
@@ -55,6 +70,34 @@
 
                 },
                 showLogin: true,
+                rules: {
+                    user_email: [
+                        { required: true, message: '请输入内容', trigger: 'blur' },
+                        { pattern: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/, message: '请输入正确的邮箱格式', trigger: 'blur' }
+                    ],
+                    user_id_number: [
+                        { required: true, message: '请输入内容', trigger: 'blur' },
+                        {
+                            pattern: /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/,
+                            message: '证件号码格式有误！',
+                            trigger: 'blur'
+                        }
+                    ]
+                },
+                options: [{
+                    value: '选项1',
+                    label: '成人'
+                }, {
+                    value: '选项2',
+                    label: '学生'
+                }],
+                options1: [{
+                    value: '选项1',
+                    label: '男'
+                }, {
+                    value: '选项2',
+                    label: '女'
+                }]
             }
         },
         created(){

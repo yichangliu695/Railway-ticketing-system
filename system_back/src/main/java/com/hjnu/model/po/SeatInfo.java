@@ -18,4 +18,4 @@ public class SeatInfo {
         this.seat_count = seat_count;
     }
 
-    }
+}
